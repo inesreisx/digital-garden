@@ -1,1 +1,1 @@
-# digital-garden-of-In-s-Reis
+# digital garden of Inês Reis.
