@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Career</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="03ae9c41-15bb-4b49-a6d7-6aeb1bbc5125" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">👩‍💻</span></div><h1 class="page-title">Career</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1fe1fbad-35c5-4375-ba0a-26c0fff526b9"><div style="font-size:1.5em"><span class="icon">📎</span></div><div style="width:100%">TABLE OF CONTENTS<nav id="0b63a147-a6eb-4a75-82b2-9defcd454f07" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e4327224-2068-4ed6-9c15-8f24d79ffd95"><strong><span style="border-bottom:0.05em solid">Humble Beginnings</span></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#73732724-4f0a-4d09-b0f3-41adf7e4e030"><span style="border-bottom:0.05em solid">It’s ok not to have one true calling</span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#85724c38-9a81-4bbc-a648-fa7625c8b755"><span style="border-bottom:0.05em solid">YOLO, do what makes you happy</span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ac12a4f7-aebb-42be-b7d0-95b903cd902d"><span style="border-bottom:0.05em solid">My radical honest thoughts on career and future plans</span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#96cb53b1-78ff-423b-90f2-0b45bafd3658"><span style="border-bottom:0.05em solid">Salary Transparency</span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#72da89a3-c7f0-4270-8ca5-181bb0869d7e"><span style="border-bottom:0.05em solid"><strong>To Commute or Not To Commute</strong></span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#10c2b276-a9e5-459a-bcb8-9846d0932194"><span style="border-bottom:0.05em solid">How to not give up when you’re unemployed</span></a></div></nav></div></figure><h2 id="e4327224-2068-4ed6-9c15-8f24d79ffd95" class=""><strong><span style="border-bottom:0.05em solid">Humble Beginnings</span></strong></h2><blockquote id="c3dd2a9c-6488-44a5-a0d9-52ea6815d537" class=""><em>&quot;When I grow up I want to wear a gabardine and be able to support myself.</em>&quot; When younger, independency and wearing a gabardine was my definition of what a successful person was in what it seemed to be still a far far away future. Time flew by and 18 years later, I&#x27;ve become independent, but I should tell my younger self, I ended up not enjoying gabardines as much.</blockquote><p id="279dee12-19b9-4117-b46a-5050c9be3bc2" class="">I come from a low/middle class family. My mother was the first in the family to obtain an university degree, my grandfather worked in the merchant marine, and my grandmother still had more than one job after she retired. Hard work and dreams have always been present throughout life. My sister has also worked throughout her bachelor and master studies.</p><p id="440dee89-b63f-44c8-9d26-ce6fbc4af0b1" class="">At age 9, I started selling small handmade clay decorations and scoobies strings to my friends at school and at church. 18 euros was my biggest gain! And I remember being extremely happy.</p><blockquote id="0a8dbb19-a81f-4716-882d-c4ea7a586eee" class=""><em>&quot;If you can dream it, you can do it&quot;.</em></blockquote><p id="938d6c90-55a0-4129-82bf-8c89c27d29c4" class="">For the years to follow after the 2008 crisis, finances became tighter. When the time to apply for uni arrived, I didn&#x27;t know exactly what to do nor who “I wanted to be”. I tried Management and Accounting but didn’t enjoyed nor performed well. Alongside, job search in Portugal for someone without qualifications was (and unfortunately still is) tough.</p><p id="5ec97789-41a5-4572-958f-3f3256d0ba3d" class="">In 2016, I got the opportunity to join my mother who had moved to the UK a handful of years before, and enrolled in Marketing Management under a student finance loan.</p><p id="74395cd9-7764-447e-802a-f51e0c6061b1" class="">In August 2017 at age 20, I started working as a Kitchen Porter at different venues, and as a Student Ambassador at uni in Manchester, UK. Although the dishwasher roles were tough and I didn’t have holidays nor weekends for almost two years, I loved both of these experiences, mainly because I met a lot of hardworking people from many different backgrounds, and learned many lessons.</p><p id="89a1c3f3-7e76-44c9-b2bb-239f8d98c087" class="">By December 2019, I had finished uni, left the kitchens, and got my first Junior role in SEO at an eCommerce agency in Bolton, UK. I was then laid off in March 2020 during the pandemic.</p><p id="ee5cd2fe-e0fd-40b7-8f29-d278fd4d00c7" class="">I went back to Portugal and spent a couple of months applying for jobs. I also had my first experience as a freelancer link-builder working from my laptop. And I got this domain!</p><p id="103fc8d6-2d5e-409d-b2f6-e79342ed6aec" class="">By June 2020, I got a job as a Junior SEO Specialist and moved countries again, now to Amsterdam, The Netherlands. After one year there and reflecting back on <a href="https://www.polywork.com/inesreis">my previous different experiences</a>, I realized this:</p><blockquote id="8a2079eb-8fdf-4578-90c2-d96a91f28305" class=""><em>“Life’s too short to not follow your dreams”</em></blockquote><p id="e6aa4c76-879e-4e93-8eff-8fb27a212dc6" class="">After two years and even being promoted to Content Marketing Specialist, I quit in April 2022 and went on to look for something different. I quickly got a role as a Junior SEO Content Manager in May, but it wasn’t a match and left in July. </p><p id="c93bfa79-fd6c-4e0c-97fa-704b4497c34d" class="">By August, I decided to let myself relax to re-orientate my life, my goals, to cultivate myself more, to be with my family. I hadn’t been to the beach for the past two years, nor really had a summer holiday since 2017.</p><h2 id="73732724-4f0a-4d09-b0f3-41adf7e4e030" class=""><span style="border-bottom:0.05em solid">It’s ok not to have one true calling</span></h2><p id="50181e91-b67f-485a-807c-a3646a080efd" class="">One of the best email feedbacks I’ve ever received from a job application, came from the US: <em><strong>“Focus on making sure that you get your narrative crystal clear.”</strong></em></p><p id="482a84a7-cf20-4b4b-9151-2ac525199465" class="">I have dreamed of being a doctor, a scientist, an architect, a writer, a journalist, or just a woman working in an office doing any office work. Although I enjoy learning about Sciences and Arts in my spare time, these areas never sparked anything professionally-driven in me. I remember coming across a leaflet on a 12th grade job fair about Product Design and keep reading about it. I still remember it because it makes sense for me now. For more than 20 years I have been “forcing” myself to get on the “right path” because I like to learn and do a bit of everything. But, is there really a “right path”? Nope. </p><p id="812c9f76-643f-402f-bcff-29b1a7236d37" class="">When I came across the term “<a href="https://puttylike.com/terminology/">multipotentialite</a>” it just hit me. I don’t have nor feel (until now at least) to have one true calling, and that’s totally fine.</p><p id="9e21dc60-30a3-44c8-81b0-b5269fc05abb" class="">Yet, I did notice a pattern across all <a href="https://inesreisx.com/projects">my journey and projects and works so far</a>: I truly love to create. Create to solve problems. Create for people. Create to get feedback. Create to make whatever it is, to come to life and grow. And that’s how I came across Product Management.</p><figure id="a240f271-1d70-49ac-a0be-54881aaf5172" class="link-to-page"><a href="Career%2003ae9c4115bb4b49a6d76aeb1bbc5125/Product%20Management%20a240f2711d7049aca0be54881aaf5172.html"><span class="icon">💡</span>Product Management</a></figure><h2 id="85724c38-9a81-4bbc-a648-fa7625c8b755" class=""><span style="border-bottom:0.05em solid">YOLO, do what makes you happy</span></h2><p id="20d950b3-08d6-4181-b7b7-b70195657468" class="">Super clichê but 100% true. You’re not coming back to this life ever again (maybe in another form for the believers like me), so why not trying to live your best life and doing what makes you happy? “<em>That only happens to others</em>”, “<em>I keep trying but nothing happens</em>” are total excuses (what are the others doing that you aren’t? Are you <em>truly</em> trying or just saying you are?). And as my mother says: “Don’t you dare saying I can’t”. Saying <em>I can’t</em> immediately builds a mental barrier. As Gandhi said:</p><blockquote id="0c8fd2fa-117a-490c-bfb1-a69bf2516e0e" class=""><em>“Your beliefs become your thoughts,
+Your thoughts become your words,
+Your words become your actions,
+Your actions become your habits,
+Your habits become your values,
+Your values become your destiny.”</em></blockquote><p id="715b5885-2f7d-4ea4-a657-9ef01a4339f3" class="">For a long time I believed I couldn’t do certain things. I couldn’t play chess - I learned. I couldn’t ride a bike - I learned. I couldn’t speak to others without blushing - now I even moved countries.</p><p id="e6f09494-ab3b-480b-b034-5c98c850f22e" class="">If there’s one quote I could reference it as my favorite, it is: “If you can dream it, you can do it”. </p><h2 id="ac12a4f7-aebb-42be-b7d0-95b903cd902d" class=""><span style="border-bottom:0.05em solid">My radical honest thoughts on career and future plans</span></h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="eaa08a96-0bcc-4f69-aeed-56d93be75ef4"><div style="font-size:1.5em"><span class="icon">📌</span></div><div style="width:100%"><strong>As of 2022, my future 5-year-plan career goals are: WIP</strong><ul id="7ee9c49e-667d-4180-8293-8785908e4208" class="bulleted-list"><li style="list-style-type:disc">To work 100% remotely, and balance between WFH and co-working spaces</li></ul><ul id="dfe9e88c-2d40-4426-8268-6a86eaffcb80" class="bulleted-list"><li style="list-style-type:disc">To work 4 days a week (or one day per week on a side project)</li></ul><ul id="e3b99c51-b67e-400d-84c3-4c4cd51c05a6" class="bulleted-list"><li style="list-style-type:disc">To become a product manager and work in a really cool product within a really cool team</li></ul></div></figure><div id="d8b33d62-9d20-4b35-af16-b5c1e11f987b" class="column-list"><div id="ffc0a83c-5ecb-4fd1-a874-6e0cf9a7c684" style="width:43.75%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6010a736-1610-45fd-8de1-762db7489bce"><div style="font-size:1.5em"><span class="icon">💪</span></div><div style="width:100%"><strong>Things I love about work</strong><ul id="c6a76db9-88a9-40ae-8d3f-585355cfbad0" class="bulleted-list"><li style="list-style-type:disc">Work - I love working!</li></ul><ul id="637154bd-8be8-486c-96a3-f92f2aaa7411" class="bulleted-list"><li style="list-style-type:disc">People - I love international environments</li></ul></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="71c6f19d-5fa3-475a-812b-e9583be8b90f"><div style="font-size:1.5em"><span class="icon">🤩</span></div><div style="width:100%"><strong>Things I love about a job</strong><ul id="472cab5c-5d7f-42c9-8306-2c9beb32086f" class="bulleted-list"><li style="list-style-type:disc">Day off on your birthday</li></ul><ul id="57ec7cd4-bf7e-46ce-8c91-56c19a5632c8" class="bulleted-list"><li style="list-style-type:disc">Remote/hybrid</li></ul><ul id="b7c61ae7-8a62-4d03-9c0d-f9ef286e339a" class="bulleted-list"><li style="list-style-type:disc">Training budget to be used</li></ul><ul id="bfd64b92-9b8f-4fdd-a80a-23aab9c3101a" class="bulleted-list"><li style="list-style-type:disc">Transparency</li></ul><ul id="fbd72da7-7007-4b2e-b40e-4e214910e635" class="bulleted-list"><li style="list-style-type:disc">User-centric</li></ul><ul id="e335b14a-8917-48e4-bab9-27a33f73ec7a" class="bulleted-list"><li style="list-style-type:disc">Good vibes company culture</li></ul><ul id="500ffa59-ea79-4d8b-aec6-00c2c8c67bde" class="bulleted-list"><li style="list-style-type:disc">An agile environment</li></ul><ul id="c0ee9cbb-c8ed-4a97-ab02-e7e931dc5eee" class="bulleted-list"><li style="list-style-type:disc">No NFTs</li></ul></div></figure><p id="7d8bf62d-c84e-423d-ba6c-8e7835a89cff" class="">
+</p></div><div id="348dee13-1db8-4280-bd3f-5e404a956f75" style="width:56.25%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6ac72bb8-b990-4f50-aab0-24dbe67546d7"><div style="font-size:1.5em"><span class="icon">👉</span></div><div style="width:100%"><strong>Things I need to keep working on throughout my career</strong><ul id="f0ec5924-8187-42bf-ad08-abf18d42c215" class="bulleted-list"><li style="list-style-type:disc">Communication: make it clearer, concise, tailored to stakeholders</li></ul><ul id="5b179553-5e0a-453c-872e-a73d8e71e9e7" class="bulleted-list"><li style="list-style-type:disc">Negotiation</li></ul><ul id="a737cb79-9d30-46f6-95e5-36fdc24d954a" class="bulleted-list"><li style="list-style-type:disc">Never assume, always ask</li></ul></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f9f61e9a-2c4c-4d69-a747-f9ff26da2677"><div style="font-size:1.5em"><span class="icon">😔</span></div><div style="width:100%"><strong>Things that demotivate me</strong><ul id="a98befd9-6c2a-43f6-9879-f63b4f7f0f47" class="bulleted-list"><li style="list-style-type:disc">Empty promises</li></ul><ul id="455a1564-9759-4fb5-9fb4-4d5ce499e26a" class="bulleted-list"><li style="list-style-type:disc">No promotion salary increase</li></ul><ul id="a2d45441-7410-4c66-a5e8-d5da0ed21e4f" class="bulleted-list"><li style="list-style-type:disc">No company culture</li></ul><ul id="d6111427-f419-4a14-8e67-31d8216288b6" class="bulleted-list"><li style="list-style-type:disc">Too much corporate talk</li></ul><ul id="0c10560c-9fc8-4dc9-95b5-ec2ce0afad0a" class="bulleted-list"><li style="list-style-type:disc">Low employee retention</li></ul><ul id="242fda86-7c53-48fd-921c-765926d54fd7" class="bulleted-list"><li style="list-style-type:disc">Exploiting users</li></ul></div></figure></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="5322cfe4-1019-4292-9214-36786f699078"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><strong>Lessons I have learned at work:</strong><ul id="aafd4da5-f31e-471e-a83b-0e84f74b1759" class="bulleted-list"><li style="list-style-type:disc">Make sure to understand your contract, know exactly what your duties and rights are</li></ul><ul id="39e8e151-3481-4004-bef3-4c8444767c83" class="bulleted-list"><li style="list-style-type:disc">DO NOT WORK WITHOUT A CONTRACT. Because in the end if it’s not written, it does not exist and no one will care about it besides yourself</li></ul><ul id="316393ee-8080-464e-86be-51a8ce35c6fc" class="bulleted-list"><li style="list-style-type:disc">Be kind to people. Everyone has their own story and is going through something</li></ul><ul id="bdb0ff5c-eedf-4f20-abc8-077bff2e73c0" class="bulleted-list"><li style="list-style-type:disc">Be honest and transparent. If you’re the best match for the role, just go for it, if you aren’t, don’t be afraid to say it, and go on looking for a new adventure*</li></ul><ul id="8f911e35-1e3e-41de-ac00-8e663ef73837" class="bulleted-list"><li style="list-style-type:disc">*Keep working and saving, to have money for at least the next 6 months in case you become unemployed - bills won’t magically disappear</li></ul><ul id="26b1f645-bada-437d-989d-107a78867b4b" class="bulleted-list"><li style="list-style-type:disc">Avoid stagnation. Life’s too short, thrive for a new learning every day</li></ul><ul id="b72ebfc9-54a4-4291-afd0-0b5731249b4f" class="bulleted-list"><li style="list-style-type:disc">Don’t be afraid to fail or make mistakes - it’s the best way to learn</li></ul><ul id="677b5a9c-7d61-4631-867a-75ec60aed7ef" class="bulleted-list"><li style="list-style-type:disc">Something a manager once said: Learn from others’ mistakes - so you can avoid them for yourself</li></ul><ul id="04f1e856-8386-41a7-8e20-1e4ab1be6e55" class="bulleted-list"><li style="list-style-type:disc">Stick to your values as long as you can, prove them wrong</li></ul><ul id="8dc89504-b5e3-4019-9cbd-8e5a303c1e58" class="bulleted-list"><li style="list-style-type:disc">There’s no perfect job - learn to look at the bright side</li></ul><ul id="d4ac45da-4298-4416-80ea-0c16f5515a7e" class="bulleted-list"><li style="list-style-type:disc">Don’t get yourself involved with drama, nor talk behind someone’s back - if your co-workers are doing this, they’re also doing it with you. Aka a red flag</li></ul><ul id="3743b60b-9f82-41ae-9f81-b2bb274a0b27" class="bulleted-list"><li style="list-style-type:disc">Don’t overwork yourself and enjoy your breaks - I’m still working on this. As someone once said to me: “You’re working hard, don’t overwork yourself, take a break, you’ll still get your dollars at the end of the day”</li></ul><ul id="b135eb0a-0552-4468-bd46-d3d2acfae94c" class="bulleted-list"><li style="list-style-type:disc">Be grateful to be working! Someone out there right now is wishing to be in your shoes</li></ul></div></figure><h2 id="96cb53b1-78ff-423b-90f2-0b45bafd3658" class=""><span style="border-bottom:0.05em solid">Salary Transparency</span></h2><p id="d787f833-99b7-4f3d-a273-383978346791" class="">I support salary transparency because I don’t see any reason why not to.</p><figure id="f24f66cb-2742-4ff3-8fee-62f265cba144" class="image"><a href="Career%2003ae9c4115bb4b49a6d76aeb1bbc5125/Untitled.png"><img style="width:613px" src="Career%2003ae9c4115bb4b49a6d76aeb1bbc5125/Untitled.png"/></a><figcaption>[Ongoing] My gross hourly earnings in euros since starting to work. From Kitchen Porter and Student Ambassador (2017-2019)🇬🇧, to Junior SEO (2019)🇬🇧, to Junior SEO and Content Marketing Specialist (2020-2022)🇳🇱, to Junior SEO Content Manager (2022)🇳🇱.</figcaption></figure><p id="3dd5841c-aecf-4ccb-bee1-a4c3b60188d0" class="">
+</p><h2 id="72da89a3-c7f0-4270-8ca5-181bb0869d7e" class=""><span style="border-bottom:0.05em solid"><strong>To Commute or Not To Commute</strong></span></h2><p id="ca6d99d9-5c83-4082-9ee4-dadcfcd083f7" class="">WIP</p><p id="be246441-fbab-4eda-ae6f-a93763879a5a" class="">
+</p><h2 id="10c2b276-a9e5-459a-bcb8-9846d0932194" class=""><span style="border-bottom:0.05em solid">How to not give up when you’re unemployed</span></h2><p id="46eaa498-e96e-48b9-af93-30b6e09748bc" class="">wip</p></div></article></body></html>
