@@ -43,7 +43,15 @@ body {
 	line-height: 1.5;
 	white-space: pre-wrap;
 }
-
+	
+p {
+  color: #000;
+  @media screen and (prefers-color-scheme: dark) {
+    color: #fff;
+  }
+}
+	
+	
 a,
 a.visited {
 	color: inherit;
