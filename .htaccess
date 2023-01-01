@@ -1,11 +1,16 @@
-DirectoryIndex index.html
-RewriteEngine on
+RewriteEngine On
+RewriteBase /
+# %{ENV:BASE} is now subdirectory, ex. /folder/subfolder/
+RewriteCond %{REQUEST_URI}::$1 ^(.*?/)(.*)::\2$
+RewriteRule ^(.*)$ - [E=BASE:%1] 
 
-# redirect file.html to /file/
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html\s [NC]
-RewriteRule ^ /%1/ [R=302,NE,L]
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{THE_REQUEST} /(.+?)\.html[\s?] [NC]
+RewriteRule ^ %1 [R=302,L,NE]
 
-# added .html extension to /file by checking presence of file.html
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
+# rewrite index to /
+RewriteRule ^(.*)index$ %{ENV:BASE} [R=301,NC,L]
+
+# To internally forward /dir/file to /dir/file.html
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}\.html -f [NC]
+RewriteRule ^(.+?)/?$ %{ENV:BASE}$1.html [L]
