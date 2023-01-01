@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /seo/
+RewriteBase /p/
 
 RewriteCond %{DOCUMENT_ROOT}/p/$1\.html -f [NC]
 RewriteRule ^(.+?)/?$ $1.html [L]
