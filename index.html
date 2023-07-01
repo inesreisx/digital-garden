@@ -35,6 +35,7 @@ decoration: none;
 /* mouse over link */
 a:hover {
 color: #11A797;
+text-decoration: underline;
 
 }
 
@@ -66,7 +67,7 @@ color: #2F4562;
       font-size: 2rem;
       text-align: center;
       transition: transform 0.3s ease;
-      background-color: #3a3a3e;
+      background-color: #091b33;
       color: #bdbdbd;
       padding-bottom: 30px;
     }
@@ -236,6 +237,40 @@ color: #2F4562;
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
   
+  @keyframes bang {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.hoverme {
+  width: 240px;
+  margin: 72px auto 0;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  background-color: #bdbdbd;
+  border-radius: 3rem;
+}
+
+.hoverme span {
+  color: #333;
+  font-size: .9em;
+}
+
+.hoverme i {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 0;
+  width: 6px;
+  height: 20px;
+  background: red;
+  opacity: 0;
+}
+  
 		</style>
 	</head>
 	<body>
@@ -260,6 +295,11 @@ color: #2F4562;
 					<a href="#volunteer">Volunteer</a>,<br>
 					<a href="#hobbies">Hobbyist</a>, and
 					<a href="#content">Content</a> geek.</p>
+        <button class="hoverme">
+  <span>
+    Click for confetti.
+  </span>
+</button>
 			</div>
 		</div>
     <!------------------PROJECTS------------------>
@@ -339,7 +379,8 @@ color: #2F4562;
 				<div class="section" id="volunteer">
 					<h1>Volunteering</h1>
 				</div>
-				<p>I love volunteering and meeting new people!</p>
+				<p>I love volunteering and meeting new people!
+        WIP</p>
 				<div class="image-grid">
 					<div class="image-container">
 						<img class="image" src="media/Projects/lista-u.png" alt="Image" onclick="toggleDescription('2')">
@@ -444,6 +485,26 @@ color: #2F4562;
     }
 
     window.addEventListener("scroll", handleScroll);
+      
+      document.querySelector('.hoverme').addEventListener('click', function() {
+  function random(max) {
+    return Math.random() * (max - 0) + 0;
+  }
+
+  var c = document.createDocumentFragment();
+  for (var i = 0; i < 100; i++) {
+    var styles = 'transform: translate3d(' + (random(500) - 250) + 'px, ' + (random(200) - 150) + 'px, 0) rotate(' + random(360) + 'deg);' +
+      'background: hsla(' + random(360) + ', 100%, 50%, 1);' +
+      'animation: bang 700ms ease-out forwards;' +
+      'opacity: 0;';
+
+    var e = document.createElement('i');
+    e.style.cssText = styles;
+    c.appendChild(e);
+  }
+
+  this.appendChild(c);
+});
   
 		</script>
 	</body>
