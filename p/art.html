@@ -78,17 +78,6 @@ p {
    
 }
 
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.image-container img {
-  margin: 10px;
-}
-
 
 a {
     color: white;
@@ -281,21 +270,33 @@ body.scroll-down #upButton {
   }
 }
   
-  .image-container {
+.image-container {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .image-container img {
-  margin-right: 10px;
+  flex: 1;
+  margin: 0 5px;
+  max-width: calc(25% - 10px); /* Divide the available width equally among the four images */
+  height: auto;
 }
-In the above example, the image-container div acts as a flex container, and the img elements inside it will be aligned in a row. The margin-right: 10px; adds some spacing between the images.
 
-You can adjust the margin-right value to increase or decrease the spacing between the images as desired.
+@media only screen and (max-width: 768px) {
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-
-
-
-
+  .image-container img {
+    flex: 1;
+    margin: 10px 0;
+    max-width: 100%; /* Adjust the width of images on smaller screens */
+  }
+}
 
 
 </style>
