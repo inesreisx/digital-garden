@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GTLQ4VKFB1');
+	
+</script>
+
+<style>
+  
+    /* unvisited link */
+a:link {
+color: #11A797;
+text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+color: #11A797;
+decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+color: #11A797;
+text-decoration: underline;
+
+}
+
+/* selected link */
+a:active {
+color: #11A797;
+
+}
+   
+*{
+	box-sizing: border-box;
+}
+body, html {
+    width: 100%;
+	overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    background-color: #091b33;
+    color: #fff;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+  
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #091b33;
+  color: #fff;
+  font-family: Calibri, sans-serif;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+  
+  h1, h2 {
+  font-family: Calibri, sans-serif;
+  font-size: 2em;
+}
+
+p {
+  font-size: 16px;
+   
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+
+   /* CSS for the sticky header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #091b33;
+  height: 70px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 100;
+}
+
+
+.social-icons {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 38px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+/* CSS for the "Up" button */
+#upButton {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+
+#upButton:hover {
+    background-color: #555;
+}
+
+#upButton span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    margin-left: 4px;
+}
+
+/* Show the "Up" button when scrolling down */
+body.scroll-down #upButton {
+    opacity: 1;
+}
+
+	
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.Content {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 3.5rem 0rem 0rem;
+  max-width: 120rem;
+}
+
+  .Content article {
+    margin: auto;
+    width: 70%;
+    padding: 0px 2.5rem;
+    border-radius: 1rem;
+    margin-bottom: 5rem;
+}
+  
+.Content p {
+    text-align: left;
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 1rem;
+    line-height: 2.3rem;
+    font-family: Calibri, sans-serif;
+    text-align: justify;
+    position: relative; /* Add this line */
+}
+
+.Content p img {
+    display: block;
+    margin: 0 auto;
+    width: 100%; /* Adjusted the width */
+    height: auto;
+    max-width: 100%; /* Added this line */
+}
+
+.Content p footer {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+    line-height: 2.3rem;
+}
+
+
+.footer {
+    color: white;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+@media only screen and (max-width: 768px){
+    html,
+    body
+    {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    html,
+    body
+    {
+        font-size: 9px;
+    }
+    .Content article
+    {
+        width: 90%;	
+    }
+}
+
+@media only screen and (max-width: 300px){
+    html,
+    body
+    {
+        font-size: 8px;
+    }
+}
+  
+  img {
+    text-align: center;
+  }
+ 
+  @media only screen and (max-width: 768px) {
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+  
+      table {
+      border-collapse: collapse;
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    th {
+      background-color: orange;
+      padding: 10px;
+      font-weight: bold;
+    }
+    
+    td {
+      padding: 10px;
+    }
+  
+      .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    
+    .table {
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+    }
+    
+    .table th {
+      background-color: orange;
+      padding: 10px;
+      font-weight: bold;
+    }
+    
+    .table td {
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    td:before {
+      content: "• ";
+    }
+  
+  td {
+    color: #cccccc;
+  }
+</style>
+</head>
+
+<body>
+  <button id="upButton" onclick="scrollToTop()">
+    <span></span>
+</button>
+<header>
+			<div class="social-icons">
+				<a href="https://inesreisx.medium.com/" target="_blank">
+					<i class="fab fa-medium"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/inesreisx/" target="_blank">
+					<i class="fab fa-linkedin"></i>
+				</a>
+				<a href="https://github.com/inesreisx/" target="_blank">
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+		</header>
+
+    <div class="Content">
+        <article>
+            <br>
+            <br>
+            <br>
+            <label class="container"><h2>
+              <a href="https://inesreisx.com/">👩‍💻</a> Career
+              </h2></label>
+         
+          
+    <h3>Humble Beginnings</h3>
+<p>"When I grow up I want to wear a gabardine and be able to support myself." When younger, independency and wearing a gabardine was my definition of what a successful person was in what it seemed to be still a far far away future. Time flew by and 18 years later, I've become independent, but I should tell my younger self, I ended up not enjoying gabardines as much.
+  
+          <p>I come from a low/middle class family. My mother was the first in the family to obtain an university degree, my grandfather worked in the merchant marine, and my grandmother still had more than one job after she retired. Hard work and dreams have always been present throughout life. My sister has also worked throughout her bachelor and master studies.</p>
+
+<p>At age 9, I started selling small handmade clay decorations and scoobies strings to my friends at school and at church. 18 euros was my biggest gain! And I remember being extremely happy.</p>
+
+
+<p>"If you can dream it, you can do it".
+For the years to follow after the 2008 crisis, finances became tighter. When the time to apply for uni arrived, I didn't know exactly what to do nor who “I wanted to be”. I tried Management and Accounting but didn’t enjoyed nor performed well. Alongside, job search in Portugal for someone without qualifications was (and unfortunately still is) tough.
+  
+          <p>In 2016, I got the opportunity to moved to the UK, and enrolled in Marketing Management under a student finance loan.
+          </p>
+
+<p>In August 2017 at age 20, I started working as a Kitchen Porter at different venues, and as a Student Ambassador at uni in Manchester, UK. Although the dishwasher roles were tough and I didn’t have holidays nor weekends for almost two years, I loved both of these experiences, mainly because I met a lot of hardworking people from many different backgrounds, and learned many lessons.
+  
+          </p>
+
+<p>By December 2019, I had finished uni, left the kitchens, and got my first Junior role in SEO at an eCommerce agency in Bolton, UK. I was then laid off in March 2020 during the pandemic.
+  
+          </p>
+
+<p>I went back to Portugal and spent a couple of months applying for jobs. I also had my first experience as a freelancer link-builder working from my laptop. And I got this domain!
+
+  
+          </p>
+<p>By June 2020, I got a job as a Junior SEO Specialist and moved countries again, now to Amsterdam, The Netherlands. After one year there and reflecting back on my previous different experiences, I realized this: “Life’s too short to not follow your dreams”
+After two years and even being promoted to Content Marketing Specialist, I quit in April 2022 and went on to look for something different. I quickly got a role as a Junior SEO Content Manager in May, but it wasn’t a match and left in July. 
+
+  
+          </p>
+
+
+<p>By August, I decided to let myself relax to re-orientate my life, my goals, to cultivate myself more, to be with my family. I hadn’t been to the beach for the past two years, nor really had a summer holiday since 2017.
+
+  
+          </p>
+<h3>
+  It’s ok not to have one true calling
+          </h3>
+<p>One of the best email feedbacks I’ve ever received from a job application, came from the US: “Focus on making sure that you get your narrative crystal clear.”
+  
+          </p>
+
+<p>I have dreamed of being a doctor, a scientist, an architect, a writer, a journalist, or just a woman working in an office doing any office work. Although I enjoy learning about Sciences and Arts in my spare time, these areas never sparked anything professionally-driven in me. I remember coming across a leaflet on a 12th grade job fair about Product Design and keep reading about it. I still remember it because it makes sense for me now. For more than 20 years I have been “forcing” myself to get on the “right path” because I like to learn and do a bit of everything. But, is there really a “right path”? Nope. 
+  
+          </p>
+
+<p>When I came across the term “multipotentialite” it just hit me. I don’t have nor feel (until now at least) to have one true calling, and that’s totally fine.
+  
+          </p>
+
+<p>Yet, I did notice a pattern across all my journey and projects and works so far: I truly love to create. Create to solve problems. Create for people. Create to get feedback. Create to make whatever it is, to come to life and grow. Create great things together with great people!
+
+  
+          </p>
+<h3>YOLO, do what makes you happy
+  
+          </h3>
+<p>Super clichê but true. You’re not coming back to this life ever again (maybe in another form for the believers like me), so why not trying to live your best life and doing what makes you happy? “That only happens to others”, “I keep trying but nothing happens” are total excuses (what are the others doing that you aren’t? Are you truly trying or just saying you are?). And as my mother says: “Don’t you dare saying I can’t”. Saying I can’t immediately builds a mental barrier. As Gandhi said:
+
+  
+          </p>
+<p>
+  “Your beliefs become your thoughts,<br>
+Your thoughts become your words,<br>
+Your words become your actions,<br>
+Your actions become your habits,<br>
+Your habits become your values,<br>
+Your values become your destiny.”<br>
+  
+<p>For a long time I believed I couldn’t do certain things. I couldn’t play chess - I learned. I couldn’t ride a bike - I learned. I couldn’t speak to others without blushing - now I even moved countries.
+
+  
+          </p>
+<p>If there’s one quote I could reference it as my favorite, it is: “If you can dream it, you can do it”. 
+  
+          </p>
+
+<p>My radical honest thoughts on career and future plans    
+  
+          </p>
+          
+            <table>
+    <tr>
+      <th colspan="2">📌 As of 2022, my future 5-year-plan career goals are:</th>
+    </tr>
+    <tr>
+      <td>To become a Content Strategist, Head of Content, or Product Owner</td>
+    </tr>
+    <tr>
+      <td>To work 4 days a week (or one day per week on a side project)</td>
+    </tr>
+    <tr>
+      <td>Be able to professionally work in Dutch</td>
+    </tr>
+  </table>
+          
+            <div class="container">
+    <table class="table">
+      <tr>
+        <th colspan="2">💪 Things I love about work</th>
+      </tr>
+      <tr>
+        <td>Work - I love working!</td>
+      </tr>
+      <tr>
+        <td>People - I love international environments</td>
+      </tr>
+    </table>
+    <table class="table">
+      <tr>
+        <th colspan="2">👉 Things to keep working on throughout my career</th>
+      </tr>
+      <tr>
+        <td>Communication: make it clearer, concise, tailored to stakeholders</td>
+      </tr>
+      <tr>
+        <td>Negotiation</td>
+      </tr>
+      <tr>
+        <td>Never assume, always ask</td>
+      </tr>
+    </table>
+       
+            
+              </div>
+          
+            <div class="container">
+    <table class="table">
+      <tr>
+        <th colspan="2">🤩 Things I love about a job</th>
+      </tr>
+      <tr>
+        <td>Day off on your birthday</td>
+      </tr>
+      <tr>
+        <td>Remote/hybrid</td>
+      </tr>
+      <tr>
+        <td>Training budget to be used</td>
+      </tr>
+      <tr>
+        <td>Transparency</td>
+      </tr>
+      <tr>
+        <td>User-centric</td>
+      </tr>
+      <tr>
+        <td>Good vibes company culture</td>
+      </tr>
+      <tr>
+        <td>An agile environment</td>
+      </tr>
+      <tr>
+        <td>No NFTs</td>
+      </tr>
+    </table>
+    <table class="table">
+      <tr>
+        <th colspan="2">😔 Things that demotivate me</th>
+      </tr>
+      <tr>
+        <td>Empty promises</td>
+      </tr>
+      <tr>
+        <td>No promotion salary increase</td>
+      </tr>
+      <tr>
+        <td>No company culture</td>
+      </tr>
+      <tr>
+        <td>Too much corporate talk</td>
+      </tr>
+      <tr>
+        <td>Low employee retention</td>
+      </tr>
+      <tr>
+        <td>Exploiting users</td>
+      </tr>
+    </table>
+          </div>
+          
+            <table>
+    <tr>
+      <th colspan="2">⚠️ Lessons I have learned at work:</th>
+    </tr>
+    <tr>
+      <td>Make sure to understand your contract, know exactly what your duties and rights are</td>
+    </tr>
+    <tr>
+      <td>DO NOT WORK WITHOUT A CONTRACT. Because in the end if it’s not written, it does not exist and no one will care about it besides yourself</td>
+    </tr>
+    <tr>
+      <td>Be kind to people. Everyone has their own story and is going through something</td>
+    </tr>
+    <tr>
+      <td>Be honest and transparent. If you’re the best match for the role, just go for it, if you aren’t, don’t be afraid to say it, and go on looking for a new adventure*</td>
+    </tr>
+    <tr>
+      <td>Keep working and saving, to have money for at least the next 6 months in case you become unemployed - bills won’t magically disappear</td>
+    </tr>
+    <tr>
+      <td>Avoid stagnation. Life’s too short, thrive for a new learning every day</td>
+    </tr>
+    <tr>
+      <td>Don’t be afraid to fail or make mistakes - it’s the best way to learn</td>
+    </tr>
+    <tr>
+      <td>Something a manager once said: Learn from others’ mistakes - so you can avoid them for yourself</td>
+    </tr>
+    <tr>
+      <td>Stick to your values as long as you can, prove them wrong</td>
+    </tr>
+    <tr>
+      <td>There’s no perfect job - learn to look at the bright side</td>
+    </tr>
+    <tr>
+      <td>Don’t get yourself involved with drama, nor talk behind someone’s back - if your co-workers are doing this, they’re also doing it with you. Aka a red flag</td>
+    </tr>
+    <tr>
+      <td>Don’t overwork yourself and enjoy your breaks - I’m still working on this. As someone once said to me: “You’re working hard, don’t overwork yourself, take a break, you’ll still get your dollars at the end of the day”</td>
+    </tr>
+    <tr>
+      <td>Be grateful to be working! Someone out there right now is wishing to be in your shoes</td>
+    </tr>
+  </table>
+          
+          <br>
+          
+          <h3>
+            How to not give up when you’re unemployed
+          </h3>
+          <p>
+            WIP
+          </p>
+          
+          
+          
+            <br>
+            <div class="footer">
+                <br>
+                <ul class="links">
+                    <li class="link-item"><a href="https://inesreisx.com/">🏠 Home</a></li>
+                </ul>
+                <br>
+            </div>
+        </article>
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.body.classList.add("scroll-down");
+            } else {
+                document.body.classList.remove("scroll-down");
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
+
