@@ -73,10 +73,15 @@ color: #2F4562;
     }
 
     
-    .story:nth-child(even) {
-      background-color: #071d48;
-    }
+ .career-container, {
+  margin: 90px;
+  text-align: justify;
+}
 
+  p {
+    margin: 90px;
+  }
+  
     /* CSS for the sticky header */
     header {
       position: sticky;
@@ -290,6 +295,11 @@ color: #2F4562;
       bottom: 10px;
       right: 10px;
     }
+  }
+  
+  .story:nth-child(4) p {
+    margin: 0;
+    margin-bottom: 10px;
   }
 
   .image-grid {
@@ -606,21 +616,26 @@ color: #2F4562;
 			</div>
 		</div>
     
-    <!------------------CAREER------------------>
-		<div class="story">
-			<div class="story-container">
-				<div class="section" id="content">
-					<h1>Career</h1>
-				</div>
-				<p>WIP</p>
-        <p>My goal is to work towards holistic product solutions bringing users joy while creating long-term business value.</p>
-        <p>Following my passion for online gaming communities, I got into Content through SEO and research. Finding gaps for development is the core that drives me forward be either at tech or writing. I find happiness in improving processes and building opportunities for growth.</p>
-        <div class="awards">
+<!------------------CAREER------------------>
+<div class="story">
+  <div class="story-container">
+    <div class="section" id="content">
+      <h1>Career</h1>
+    </div>
+    <div class="career-container"> <!-- Add a container around the content -->
+      <p>WIP</p>
+      <center><p>My goal is to work towards holistic product solutions bringing users joy while creating long-term business value.</p></center>
+      <p>Following my passion for online gaming communities, I got into Content through SEO and research. Finding gaps for development is the core that drives me forward, be it at tech or writing. I find happiness in improving processes and building opportunities for growth.</p>
+      <div class="awards">
         <p>🏆 Awards and Recognitions</p>
         <p>DigitalKoda - 1st Place Winner of the DSMMCM1819 SEO CUP (May 2019). <a href="https://digitalkoda.wordpress.com/2019/06/21/how-did-we-do-it/">Read more here.</a></p>
-			</div>
       </div>
-		</div>
+    </div>
+  </div>
+</div>
+    
+    
+    
 		<button id="upButton" onclick="scrollToTop()">
 			<span></span>
 		</button>
