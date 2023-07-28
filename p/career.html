@@ -167,6 +167,11 @@ body.scroll-down #upButton {
     opacity: 1;
 }
 
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
 	
 /* The container */
 .container {
@@ -180,6 +185,10 @@ body.scroll-down #upButton {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+  
+  table {
+  font-size: 18px;
 }
 
 .Content {
@@ -278,24 +287,45 @@ body.scroll-down #upButton {
   }
 }
   
-      table {
-      border-collapse: collapse;
-      margin: 20px;
-      font-family: Arial, sans-serif;
-       table-layout: fixed;
-    width: 100%;
-    overflow-x: auto;
-    }
-    
-    th {
-      background-color: orange;
-      padding: 10px;
-      font-weight: bold;
-    }
-    
-    td {
-      padding: 10px;
-    }
+
+Apologies for the misunderstanding. If you want the <td> text to wrap when it reaches the same width as the <th> on both desktop and mobile, you can remove the white-space: nowrap; property from the <td> style. Additionally, you can use media queries to adjust the width of the <th> and <td> elements on different screen sizes.
+
+Here's the updated CSS:
+
+css
+Copy code
+table {
+  font-size: 18px;
+  border-collapse: collapse;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  table-layout: fixed;
+  width: 100%;
+  overflow-x: auto;
+}
+
+th {
+  background-color: orange;
+  padding: 10px;
+  font-weight: bold;
+  width: 50%; /* Set a specific width for the th elements */
+}
+
+td {
+  padding: 10px;
+  width: 50%; /* Match the width of the th elements */
+}
+
+/* Adjust the width on smaller screens (e.g., mobile) */
+@media only screen and (max-width: 768px) {
+  th, td {
+    width: 100%; /* Set full width for both th and td elements on smaller screens */
+  }
+}
+  
+    .table td[colspan] {
+    white-space: nowrap;
+  }
   
       .container {
       display: flex;
@@ -334,17 +364,8 @@ body.scroll-down #upButton {
     overflow-x: auto;
   }
 
-  th,
-  td {
-    white-space: nowrap;
-  }
-}
-td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
+
+
 </style>
 </head>
 
@@ -376,7 +397,7 @@ td {
               </h2></label>
          
           
-    <h3>Humble Beginnings</h3>
+    <h2>Humble Beginnings</h2>
           <p>"When I grow up I want to wear a gabardine and be able to support myself." When younger, independency and wearing a gabardine was my definition of what a successful person was in what it seemed to be still a far far away future. Time flew by and decades later, I've become independent, but I should tell my younger self, I ended up not enjoying gabardines as much.</p>
   
           <p>I come from a low/middle class family. My mother was the first in the family to obtain an university degree, my grandfather worked in the merchant marine, and my grandmother still had more than one job after she retired. Hard work and dreams have always been present throughout life. My sister has also worked throughout her bachelor and master studies.</p>
@@ -384,8 +405,8 @@ td {
 <p>At age 9, I started selling small handmade clay decorations and scoobies strings to my friends at school and at church. 18 euros was my biggest gain! And I remember being extremely happy.</p>
 
 
-<p>"If you can dream it, you can do it".
-  For the years to follow after the 2008 crisis, finances became tighter. When the time to apply for uni arrived, I didn't know exactly what to do nor who “I wanted to be”. I tried Management and Accounting but didn’t enjoyed nor performed well. Alongside, job search in Portugal for someone without qualifications was (and unfortunately still is) tough.</p>
+          <p><i>"If you can dream it, you can do it".</i></p>
+  <p>For the years to follow after the 2008 crisis, finances became tighter. When the time to apply for uni arrived, I didn't know exactly what to do nor who “I wanted to be”. I tried Management and Accounting but didn’t enjoyed nor performed well. Alongside, job search in Portugal for someone without qualifications was (and unfortunately still is) tough.</p>
   
           <p>In 2016, I got the opportunity to moved to the UK, and enrolled in Marketing Management under a student finance loan.
           </p>
@@ -409,9 +430,7 @@ After two years and even being promoted to Content Marketing Specialist, I quit 
 
 <p>By August, I decided to let myself relax to re-orientate my life, my goals, to cultivate myself more, to be with my family. I hadn’t been to the beach for the past two years, nor really had a summer holiday since 2017.
           </p>
-<h3>
-  It’s ok not to have one true calling
-          </h3>
+<h2>It’s ok not to have one true calling</h2>
 <p>One of the best email feedbacks I’ve ever received from a job application, came from the US: “Focus on making sure that you get your narrative crystal clear.”
   
           </p>
@@ -428,41 +447,24 @@ After two years and even being promoted to Content Marketing Specialist, I quit 
 
   
           </p>
-<h3>YOLO, do what makes you happy
-  
-          </h3>
-<p>Super clichê but true. You’re not coming back to this life ever again (maybe in another form for the believers like me), so why not trying to live your best life and doing what makes you happy? “That only happens to others”, “I keep trying but nothing happens” are total excuses (what are the others doing that you aren’t? Are you truly trying or just saying you are?). And as my mother says: “Don’t you dare saying I can’t”. Saying I can’t immediately builds a mental barrier. As the quote says:
+<h2>YOLO, do what makes you happy</h2>
+          <p>Super clichê but true. You’re not coming back to this life ever again (maybe in another form for the believers like me), so why not trying to live your best life and doing what makes you happy? “That only happens to others”, “I keep trying but nothing happens” are total excuses (what are the others doing that you aren’t? Are you truly trying or just saying you are?). And as my mother says: “Don’t you dare saying I can’t”. Saying I can’t immediately builds a mental barrier.</p>
+<p>If there’s one quote I could reference it as my favorite, it is: <i>“If you can dream it, you can do it”.</i></p>
 
-  
-          </p>
-<p>
-  “Your beliefs become your thoughts,<br>
-Your thoughts become your words,<br>
-Your words become your actions,<br>
-Your actions become your habits,<br>
-Your habits become your values,<br>
-Your values become your destiny.”<br>
-  
-<p>If there’s one quote I could reference it as my favorite, it is: “If you can dream it, you can do it”. 
-  
-          </p>
-
-<h3>My radical honest thoughts on career and future plans    
-  
-          </h3>
+<h2>My honest thoughts on career and future plans</h2>
           
             <table>
     <tr>
       <th colspan="2">📌 As of 2022, my future 5-year-plan career goals are:</th>
     </tr>
     <tr>
-      <td>To become a Content Strategist, Head of Content, or Product Owner</td>
+      <td>Work towards Content Strategist, Head of Content, or Product Owner</td>
     </tr>
     <tr>
       <td>To work 4 days a week (or one day per week on a side project)</td>
     </tr>
     <tr>
-      <td>Be able to professionally work in Dutch</td>
+      <td>Professional fluency in Dutch</td>
     </tr>
   </table>
           
