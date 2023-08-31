@@ -82,6 +82,27 @@ ul {
 }
 
 /* hover */
+
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+  decoration: underline;
+}
+
+/* selected link */
+a:active {
+  color: #f2f2f2;
+}  
+
 .image-gallery li:hover .overlay {
     transform: scale(1);
 }
