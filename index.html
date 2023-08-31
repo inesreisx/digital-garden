@@ -7,6 +7,7 @@
 <meta property="og:description" content="An online collection of thoughts, ideas, and learnings by @inesreisx." />
 <meta property="og:title" content="digital garden of Inês"/>
 <meta property="og:description" content="An online collection of thoughts, ideas, and learnings by @inesreisx." />
+<link rel="stylesheet"  type="text/css" href="../style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
@@ -17,699 +18,115 @@
 
   gtag('config', 'G-GTLQ4VKFB1');
 	
-</script>	
-
-<style>
-  /* unvisited link */
-a:link {
-color: #11A797;
-text-decoration: none;
-}
-
-/* visited link */
-a:visited {
-color: #11A797;
-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-color: #11A797;
-text-decoration: underline;
-
-}
-
-/* selected link */
-a:active {
-color: #2F4562;
-
-}
-      
-      
-      /* CSS for mobile responsiveness and page transitions */
-    body {
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      position: relative;
-    }
-
+</script>
+</head>
+<body>
     
-    .story {
-      width: 100vw;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      text-align: center;
-      transition: transform 0.3s ease;
-      background-color: #091b33;
-      color: #bdbdbd;
-      padding-bottom: 30px;
-    }
-
-    
- .career-container, {
-  margin: 90px;
-  text-align: justify;
-}
 
   
-
-    /* CSS for the sticky header */
-    header {
-      position: sticky;
-      top: 0;
-      background-color: #091b33;
-      height: 70px;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      z-index: 100;
-    }
-
-    .social-icons {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .social-icons a {
-      color: #fff;
-      margin-left: 10px;
-      text-decoration: none;
-      font-size: 38px;
-      height: 30px;
-      line-height: 30px;
-      margin-right: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      transform: rotate(-10deg) scale(1.1);
-    }
-
-    /* CSS for the "Up" button */
-    #upButton {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #000;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    #upButton:hover {
-      background-color: #555;
-    }
-
-    #upButton span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      border-top: 2px solid #fff;
-      border-right: 2px solid #fff;
-      transform: rotate(-45deg);
-      margin-left: 4px;
-    }
-
-  
-  /* Set the background color for odd-numbered sections */
-.story:nth-child(odd) {
-  background-color: #091b33; /* Blue color code */
-}
-
-/* Set the background color for even-numbered sections */
-.story:nth-child(even) {
-  background-color: #071d48; /* Purple color code */
-}
-  
-
-    /* Show the "Up" button when scrolling down */
-    body.scroll-down #upButton {
-      opacity: 1;
-    }
-
-       .image-grid {
-      text-align: center;
-    }
-    
-    .image-container {
-        display: inline-block;
-      position: relative;
-      width: 250px;
-      height: 250px;
-    }
-    
-    .image {
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      border-radius: 1rem;
-    }
-    
-    .description {
-      display: none;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-color: white;
-      color: black;
-      padding: 10px;
-      text-align: center;
-      font-size: 18px;
-    }
-    
-    .show {
-      display: block;
-    }
-
- .hobbies {
-  display: inline-block;
-}
-
-.hobbies > * {
-  display: inline-block;
-}
-
       
-      .hobbies1:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
-      }
+      <div class="navbar">
+        <a href="https://inesreisx.com/p/career">Career</a>
+        <a href="https://muckrack.com/inesreisx">Articles</a>
+        <a href="https://inesreisx.com/p/bucketlist">Bucketlist</a>
+
+</div>
       
-       .hobbies2:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
-      }
-      
-        .hobbies3:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
-      }
-      
-        .hobbies4:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
-      }
-      
-        .hobbies5:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
-      }
-      
-        .hobbies6:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
-      }
-      
-        .hobbies7:hover {
-        animation: shake 0.5s;
-        animation-iteration-count: infinite;
-      }
-      
-      @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-  
-  @keyframes bang {
-  from {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
+        <section class="content-section">
+            <div class="section-content">
+                <div class="section-left">
+                    <h1>Hi! I'm Inês</h1>
+                    <p style="font-size:24px;">Welcome to my digital garden</p><br>
+                   <p style="font-size:20px;">I'm a Content geek, passionate Volunteer, Hobbyist, and Projects enthusiast.</p>
 
-.hoverme {
-  width: 240px;
-  margin: 72px auto 0;
-  text-align: center;
-  padding: 10px 0;
-  cursor: pointer;
-  position: relative;
-  background-color: #bdbdbd;
-  border-radius: 3rem;
-}
 
-.hoverme span {
-  color: #333;
-  font-size: .9em;
-}
-
-.hoverme i {
-  position: absolute;
-  display: block;
-  left: 50%;
-  top: 0;
-  width: 6px;
-  height: 20px;
-  background: red;
-  opacity: 0;
-}
-  
-.story {
-      font-size: 1.5rem;
-      padding-bottom: 10px;
-    }
-
-    .image-container {
-      width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
-    .description {
-      font-size: 14px;
-    }
-
-    #upButton {
-      bottom: 10px;
-      right: 10px;
-    }
-  }
-  
-  .story:nth-child(4) p {
-    margin: 0;
-    margin-bottom: 10px;
-  }
-
-  .image-grid {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .image-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    margin: 10px;
-  }
-
-  .image {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    border-radius: 1rem;
-  }
-
-  .description {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    font-size: 18px;
-  }
-
-  .show {
-    display: block;
-  }
-
-  @media (max-width: 767px) {
-    .image-grid {
-      display: block;
-    }
-
-    .image-container {
-      margin: 10px auto;
-    }
-  }
-
-    .story {
-    /* Other styles... */
-    overflow-x: hidden;
-  }
-
-  .awards {
-    text-align: justify;
-  }
-    /* Add the following CSS code for mobile responsiveness */
-    @media (max-width: 767px) {
-    .awards {
-      text-align: center;
-    }
-  }
-		</style>
-	</head>
-	<body>
-		<header>
-			<div class="social-icons">
-				<a href="https://inesreisx.medium.com/" target="_blank">
-					<i class="fab fa-medium"></i>
-				</a>
-				<a href="https://www.linkedin.com/in/inesreisx/" target="_blank">
-					<i class="fab fa-linkedin"></i>
-				</a>
-				<a href="https://github.com/inesreisx/" target="_blank">
+                    <div class="social-icons">
+                        <a href="https://github.com/inesreisx/" target="_blank">
 					<i class="fab fa-github"></i>
 				</a>
-			</div>
-		</header>
-		<div class="story">
-			<div class="story-container">
-				<h2>Hi! I'm Inês</h2>
-				<p>I'm a
-					<a href="#projects">Projects</a> enthusiast, passionate
-					<a href="#volunteer">Volunteer</a>,<br>
-					<a href="#hobbies">Hobbyist</a>, and
-					<a href="#content">Content</a> geek.</p>
-          <br>
-        <button class="hoverme">
-  <span>
-    Click for confetti
-  </span>
-</button>
-			</div>
-		</div>
-    <!------------------PROJECTS------------------>
-		<div class="story">
-			<div class="story-container">
-				<div class="section" id="projects">
-					<h1>Projects</h1>
-				</div>
-				<p style="margin: 90px;">I'm a projects enthusiast. Click to find out more.</p>
-				<div class="image-container">
-					<img class="image" src="media/Projects/lista-u.png" alt="Lista U" onclick="toggleDescription('1')" >
-					<div class="description" id="1">
-						<p>2012 - Led the creation of a Students’ Union party with classmates. I was the one responsible for creating the flyer, the <a href="https://www.facebook.com/listauniao.u" target="_blank">Facebook page</a>, and getting us a campaign stand.</p>
-					</div>
-				</div>
-				<div class="image-container">
-					<img class="image" src="media/Projects/the-execs.png" alt="Image" onclick="toggleDescription('2')">
-					<div class="description" id="2">
-						<p>2017/2018 - A student-led agency promoting a shower toilet. I created <a href="https://theexecs.wordpress.com/" target="_blank">The Execs Wordpress</a>, and produced the final video (both storyline and editing).</p>
-					</div>
-				</div>
-				<div class="image-container">
-					<img class="image" src="media/Projects/love-costa.png" alt="Image" onclick="toggleDescription('3')" >
-					<div class="description" id="3">
-						<p>2018 - <a href="https://www.youtube.com/watch?v=LD-nH-2RRow&ab_channel=In%C3%AAsReis" target="_blank">Love Coffee Love Costa</a>: An independent video for a friend’s assignment. Created the storyline, recorded, and edited.</p>
-					</div>
-				</div>
-				<div class="image-container">
-					<img class="image" src="media/Projects/manchester.png" alt="Image" onclick="toggleDescription('4')">
-					<div class="description" id="4">
-						<p>2018 - <a href="https://www.youtube.com/watch?v=wycLZ9cnufE&ab_channel=In%C3%AAsReis" target="_blank">Video Poem</a>: MMU Arts Festival: submitted an independent video-poem showcased at uni’s Students Union.</p>
-					</div>
-				</div>
-				<div class="image-container">
-					<img class="image" src="media/Projects/digitalkoda.png" alt="Image" onclick="toggleDescription('5')">
-					<div class="description" id="5">
-						<p>2018/2019 - <a href="https://digitalkoda.wordpress.com/" target="_blank">DigitalKoda</a>: A student-led agency 1st place winner in the DSMMCM1819 SEO Cup. I was the one managing the team, created all the social accounts, and wrote all the blog posts.</p>
-					</div>
-				</div>
-				<div class="image-container">
-					<img class="image" src="media/Projects/cafe-pixelado.png" alt="Image" onclick="toggleDescription('6')">
-					<div class="description" id="6">
-						<p>2019 - <a href="https://twitter.com/search?q=cafepixelado_&src=typed_query" target="_blank">Café Pixelado</a>: A gaming fansite aimed at teens within a community.</p>
-					</div>
-				</div>
-				<div class="image-container">
-					<img class="image" src="media/Projects/bobbacast.png" alt="Image" onclick="toggleDescription('7')" onmouseover="toggleDescription('7')" onmouseout="toggleDescription('7')">
-					<div class="description" id="7">
-						<p>2020 - Bobbacast: A podcast aimed at exploring the impact of videogames on players’ lives. I was the one who wrote the content for the landing page now <a href="https://web.archive.org/web/20201124233811/https://bobbacast.com/" target="_blank">only available on Wayback Machine</a>.</p>
-					</div>
-				</div>
-				<div class="image-container">
-					<img class="image" src="media/Projects/GameFinder.png" alt="Image" onclick="toggleDescription('8')">
-					<div class="description" id="8">
-						<p>2022 - <a href="https://minigamesfinder.000webhostapp.com/" target="_blank">GameFinder</a>: An online free web browser games aggregator. Just type any game name or game genre and play. (ideally)</p>
-					</div>
-				</div>
-				<div class="image-container">
-					<img class="image" src="media/Projects/play-for-Ukraine.png" alt="Image" onclick="toggleDescription('9')">
-					<div class="description" id="9">
-						<p>2022 - <a href="https://inesreisx.github.io/play-for-ukraine/" target="_blank">Play For Ukraine</a>: A website that aggregates games promoting peace in Ukraine, raising awareness of the war and supporting Ukrainian indie developers.</p>
-					</div>
-				</div>
-        <div class="image-container">
-          <img class="image" src="media/Projects/Island-Bender.png" alt="Image" onclick="toggleDescription('10')">
-            <div class="description" id="10">
-              <p>2022/2023 - MarketingOps for <a href="https://store.steampowered.com/app/2224760/Island_Bender/" target="_blank">Island Bender</a>: Island Bender is a physics-based couch-fighting game with up to 6 players. Throw rocks at each other, collect power-ups and master your bending style to beat your opponents.</p>
+                        		<a href="https://www.linkedin.com/in/inesreisx/" target="_blank">
+					<i class="fab fa-linkedin"></i>
+				</a>
+                      <a href="https://www.goodreads.com/user/show/103411221-in-s-reis/" target="_blank">
+					<i class="fab fa-goodreads"></i>
+				</a>
+                        <a href="https://www.instagram.com/byines/" target="_blank">
+					<i class="fab fa-instagram"></i>
+				</a>
+                    
+                    </div>
+                </div>
+              
+              
+              <!-- <div class="section-right">
+                    <img src="https://creativedesignsguru.com/demo/astro-boilerplate/assets/images/avatar.svg" alt="Avatar">
+                </div> --> 
             </div>
-          </div>
-				<div class="image-container">
-				<img class="image" src="/media/Projects/by-ines.jpg" alt="Image" onclick="toggleDescription('11')">
-					<div class="description" id="11">
-						<p>2023 - <a href="https://www.instagram.com/byines/" target="_blank">by Inês</a>: my Photography portfolio.</p>
-					</div>
-				</div>
-        <div class="image-container">
-          <img class="image" src="media/Projects/ines-finds-stickers-inesreisx.jpg" alt="Image" onclick="toggleDescription('12')">
-            <div class="description" id="12">
-              <p>2023 - <a href="https://www.instagram.com/inesfindstickers/" target="_blank">Inês finds stickers</a>: Photographing stickers since 2017.</p>
-            </div>
-          </div>
-				<div class="image-container">
-          <img class="image" src="media/Projects/inesreisx-ai.png" alt="Image" onclick="toggleDescription('13')">
-            <div class="description" id="13">
-              <p>2023 - Webpages creation <a href="https://inesreisx.github.io/ai/" target="_blank">made with AI</a> just for fun.</p>
-            </div>
-          </div>
-          <div class="image-container">
-            <img class="image" src="media/Projects/canvas-by-ineseisx.jpeg" alt="Image" onclick="toggleDescription('14')">
-              <div class="description" id="14">
-                <p>2023 - <a href="https://www.instagram.com/byinesreis/" target="_blank">by Inês Reis</a>: acrylics on canvas</p>
-              </div>
-            </div>
-			</div>
-    </div>
-    
-      <!------------------VOLUNTEERING------------------>
-      <div class="story">
-        <div class="story-container">
-          <div class="section" id="volunteer">
-            <h1>Volunteering</h1>
-          </div>
-          <p style="margin: 90px;"></p>I love volunteering and meeting new people!</p>
-          <div class="image-grid">
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/scouts-inesreisx.png" alt="Image" onclick="toggleDescription('v1')" onmouseover="toggleDescription('v1')" onmouseout="toggleDescription('v1')">
-              <div class="description" id="v1">
-                <p>2007/2009 - Scouts’ member. Was a secretary for some months, also sold Christmas raffles. Setúbal, Portugal</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/manchester-day-parade-inesreisx.jpg" alt="Image" onclick="toggleDescription('v2')" onmouseover="toggleDescription('v2')" onmouseout="toggleDescription('v2')">
-              <div class="description" id="v2">
-                <p>2017 - Artist Assistant at Manchester Day Parade. I was <a href="https://confidentials.com/manchester/manchester-day-2017-volunteering-capturing-magic" target="_blank">interviewed for Manchester Confidential</a>. Manchester, UK</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/manchester-international-festival-inesreisx.jpg" alt="Image" onclick="toggleDescription('v3')" onmouseover="toggleDescription('v3')" onmouseout="toggleDescription('v3')">
-              <div class="description" id="v3">
-                <p>2017 - Festival Fronteer at Manchester International Festival. Manchester, UK</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/manchester-comicon-inesreisx.jpg" alt="Image" onclick="toggleDescription('v4')" onmouseover="toggleDescription('v4')" onmouseout="toggleDescription('v4')">
-              <div class="description" id="v4">
-                <p>2019 - Manchester Comic Con Steward. Manchester, UK</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/pilpresso-inesreisx.png" alt="Image" onclick="toggleDescription('v5')" onmouseover="toggleDescription('v5')" onmouseout="toggleDescription('v5')">
-              <div class="description" id="v5">
-                <p>2019 - Exhibition Assistant for the NHS Expo. Manchester, UK</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/groene-buurten-inesreisx.png" alt="Image" onclick="toggleDescription('v6')" onmouseover="toggleDescription('v6')" onmouseout="toggleDescription('v6')">
-              <div class="description" id="v6">
-                <p>2020 - Removing tiles at Groene Buurten. Amsterdam, The Netherlands</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/orange-theatre-company-inesreisx.png" alt="Image" onclick="toggleDescription('v7')" onmouseover="toggleDescription('v7')" onmouseout="toggleDescription('v7')">
-              <div class="description" id="v7">
-                <p>2021 - SEO Consultant for Orange Theatre Company. Featured on <a href="https://www.instagram.com/p/CRJFDnUFq4G/" target="_blank">"Meet OTC’s Volunteers"</a> on Instagram. Online, based in Amsterdam, The Netherlands</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/amsterdam-art-week-inesreisx.png" alt="Image" onclick="toggleDescription('v8')" onmouseover="toggleDescription('v8')" onmouseout="toggleDescription('v8')">
-              <div class="description" id="v8">
-                <p>2021 - Volunteer at Amsterdam Art Week. Amsterdam, The Netherlands</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/amsterdam-roots-festival-inesreisx.png" alt="Image" onclick="toggleDescription('v9')" onmouseover="toggleDescription('v9')" onmouseout="toggleDescription('v9')">
-              <div class="description" id="v9">
-                <p>2021 - Volunteer at Amsterdam Roots Festival. Amsterdam, The Netherlands</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/amsterdam-roots-festival-2nd-year-inesreisx.png" alt="Image" onclick="toggleDescription('v10')" onmouseover="toggleDescription('v10')" onmouseout="toggleDescription('v10')">
-              <div class="description" id="v10">
-                <p>2022 - Volunteer at Amsterdam Roots Festival one more year! Amsterdam, The Netherlands</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/devcom-2022-inesreisx.png" alt="Image" onclick="toggleDescription('v11')" onmouseover="toggleDescription('v11')" onmouseout="toggleDescription('v11')">
-              <div class="description" id="v11">
-                <p>2022 - On-site Volunteer at devcom. Köln, Germany</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/web-summit-inesreisx.png" alt="Image" onclick="toggleDescription('v12')" onmouseover="toggleDescription('v12')" onmouseout="toggleDescription('v12')">
-              <div class="description" id="v12">
-                <p>2022 - Volunteer at Web Summit. Lisbon, Portugal</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/lisboa-games-week-inesreisx.png" alt="Image" onclick="toggleDescription('v13')" onmouseover="toggleDescription('v13')" onmouseout="toggleDescription('v13')">
-              <div class="description" id="v13">
-                <p>2022 - Volunteer at Lisboa Games Week, Portugal</p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/ocean-alive-inesreisx.png" alt="Image" onclick="toggleDescription('v14')" onmouseover="toggleDescription('v14')" onmouseout="toggleDescription('v14')">
-              <div class="description" id="v14">
-                <p>2023 - Volunteer Ocean Alive. Picking up plastic and rubbish from marine grasslands from Sado estuary in Setúbal on March 26th as part of the campaign 'Mariscar Sem Lixo'. Learn more at: <a href="https://www.ocean-alive.org/pradarias-marinhas" target="_blank">https://www.ocean-alive.org/pradarias-marinhas</a></p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/aplm-2023-inesreisx.png" alt="Image" onclick="toggleDescription('v15')" onmouseover="toggleDescription('v15')" onmouseout="toggleDescription('v15')">
-              <div class="description" id="v15">
-                <p>2023 - Volunteer APLM. Picking up plastic for a monitoring/beach clean-up volunteering campaign at Praia de Albarquel in Setúbal. Learn more at: <a href="https://www.aplixomarinho.org/" target="_blank">https://www.aplixomarinho.org/</a></p>
-              </div>
-            </div>
-            <div class="image-container">
-              <img class="image" src="media/Volunteering/aplm-2023-2nd-inesreisx.png" alt="Image" onclick="toggleDescription('v16')" onmouseover="toggleDescription('v16')" onmouseout="toggleDescription('v16')">
-              <div class="description" id="v16">
-                <p>2023 - Volunteer APLM. Picking up plastic for a monitoring/beach clean-up volunteering campaign at Praia de Albarquel in Setúbal. Learn more at: <a href="https://www.aplixomarinho.org/" target="_blank">https://www.aplixomarinho.org/</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <!------------------HOBBIES------------------>
-		<div class="story">
-			<div class="story-container">
-				<div class="section" id="hobbies">
-					<h1>Hobbies</h1>
-				</div>
-				<p style="margin: 90px;">I enjoy exploring new activities from time to time. Click to read more.</p><br>
-        <h2>
-          
-            <div class="hobbies">
-          <div class="hobbies1"><a href="https://inesreisx.com/p/writing">✍️</a></div>
-          <div class="hobbies2"><a href="https://inesreisx.com/p/art">🎨</a></div>
-          <div class="hobbies3"><a href="https://inesreisx.com/p/games">🎮</a></div>
-          <div class="hobbies4"><a href="https://www.instagram.com/byines/">📸</a></div>
-          <div class="hobbies5"><a href="https://inesreisx.com/p/bloom">🪴</a></div>
-          <div class="hobbies6"><a href="https://www.goodreads.com/user/show/103411221-in-s-reis">📚</a></div>
-          <div class="hobbies7"><a href="https://inesreisx.com/p/bucketlist">🪣</a></div>
-          
-            
-        </h2>
-      </div>
-			</div>
-		</div>
-    
-<!------------------CAREER------------------>
-<div class="story">
-  <div class="story-container">
-    <div class="section" id="content">
+        </section>
+        
+
       
-    </div>
-    <div class="career-container"> <!-- Add a container around the content -->
-       <blockquote cite style="margin: 90px;">
-         <h1>Career</h1>
-      <p style="font-size: 2.5em;"><a href="https://inesreisx.com/p/career">👩‍💻</a></p>
-      
-      <center><p><i>My goal is to work towards holistic product solutions bringing users joy while creating long-term business value.</i></p></center>
-      <p style="text-align: justify;">Following my passion for online gaming communities, I got into Content through SEO and research. Finding gaps for Content development is the core that drives me forward, be it at tech or writing. I find happiness in improving processes and building opportunities for growth.</p>
-      <br>
-      <div class="awards">
-        <p><u>🏆 Awards and Recognitions</u></p>
-        <p>DigitalKoda - 1st Place Winner of the DSMMCM1819 SEO CUP (May 2019). <a href="https://digitalkoda.wordpress.com/2019/06/21/how-did-we-do-it/">Read more here.</a></p>
-        <br>
-        <p><u>⚙️ Tools I'm familiar with (SEO, Content, IT, Team management)</u></p>
-         <p cite style="margin: 90px;">Word, WordPress, Blogger, Notion, Strapi, Umbraco, Sitecore, internal CMS’s, Discord, Facebook Business Manager, Screaming Frog, Google Analytics, Search Console, Excel, Google Sheets, Ahrefs, SEMRush, Accuranker, Supermetrics, Slack, Teamwork, ClickUp, Microsoft Teams, Sitebulb, DeepCrawl, Excel, Google Suite, Google Keyword Planner (Ads), Google Trends, Looker, Tableau, Headerlift, Canva, Google Webmaster Tools (Google Search Console, Google Analytics), GitHub, HTML5, CSS, Jira, Confluence, Azure DevOps, Microsoft Azure Explorer, .json, copy.AI,...</p>
-      </div>
-    </div>
-  </div>
+          
+                   <div class="container">
+     <div class="heading-with-link">
+    <h2 class="heading-text">Projects</h2><a href="" class="view-more">View more</a>
 </div>
-    
-    
-    
-		<button id="upButton" onclick="scrollToTop()">
-			<span></span>
-		</button>
-		<script>
-    // Function to show the image description on click
-      function toggleDescription(id) {
-      var description = document.getElementById(id);
-      description.classList.toggle("show");
-    }
-
-    // Function to scroll to the top of the page
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-
-    // Function to show/hide the "Up" button based on scroll position
-    function handleScroll() {
-      const upButton = document.getElementById("upButton");
-      if (window.pageYOffset > 500) {
-        document.body.classList.add("scroll-down");
-      } else {
-        document.body.classList.remove("scroll-down");
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll);
+                
+      <ul class="image-gallery">
+        <li>
+          <img src="/media/Projects/love-costa.png" alt="" width="350" height="227.5" />
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="/media/Projects/inesreisx-ai.png" alt="" width="350" height="227.5" />
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="/media/Projects/digitalkoda.png" alt="" width="350" height="227.5" />
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        </div>
+                     
+                     
+                     
+                            <div class="container">
+          <div class="heading-with-link">
+    <h2 class="heading-text">Volunteering</h2><a href="" class="view-more">View more</a>
+</div>
+      <ul class="image-gallery">
+        <li>
+          <img src="/media/Volunteering/aplm-2023-inesreisx.png" alt="" width="350" height="227.5"/>
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="/media/Volunteering/amsterdam-roots-festival-inesreisx.png" alt="" />
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="/media/Volunteering/orange-theatre-company-inesreisx.png" alt="" width="350" height="227.5" />
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        </div>
+                              
+                              
+                            <div class="container">
+      <h2 class="heading-text">Hobbies</h2>
+      <ul class="image-gallery">
+        <li>
+          <img src="/media/Writing/writings-by-inesreisx.png" alt="" width="350" height="227.5" />
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="/media/Art/paintings-by-inesreisx.png" alt="" width="350" height="227.5" />
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        <li>
+          <img src="https://source.unsplash.com/klCiPmzUw0Y/640x416" alt="" />
+          <div class="overlay"><span>Image title</span></div>
+        </li>
+        </div>
       
-      document.querySelector('.hoverme').addEventListener('click', function() {
-  function random(max) {
-    return Math.random() * (max - 0) + 0;
-  }
-
-  var c = document.createDocumentFragment();
-  for (var i = 0; i < 100; i++) {
-    var styles = 'transform: translate3d(' + (random(500) - 250) + 'px, ' + (random(200) - 150) + 'px, 0) rotate(' + random(360) + 'deg);' +
-      'background: hsla(' + random(360) + ', 100%, 50%, 1);' +
-      'animation: bang 700ms ease-out forwards;' +
-      'opacity: 0;';
-
-    var e = document.createElement('i');
-    e.style.cssText = styles;
-    c.appendChild(e);
-  }
-
-  this.appendChild(c);
-});
-  
-    function toggleDescription(id) {
-      var description = document.getElementById(id);
-      description.classList.toggle("show");
-    }
-		</script>
-	</body>
+      
+   
+</body>
 </html>
