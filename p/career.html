@@ -287,13 +287,6 @@ body.scroll-down #upButton {
   }
 }
   
-
-Apologies for the misunderstanding. If you want the <td> text to wrap when it reaches the same width as the <th> on both desktop and mobile, you can remove the white-space: nowrap; property from the <td> style. Additionally, you can use media queries to adjust the width of the <th> and <td> elements on different screen sizes.
-
-Here's the updated CSS:
-
-css
-Copy code
 table {
   font-size: 18px;
   border-collapse: collapse;
@@ -373,19 +366,13 @@ td {
   <button id="upButton" onclick="scrollToTop()">
     <span></span>
 </button>
-<header>
-			<div class="social-icons">
-				<a href="https://inesreisx.medium.com/" target="_blank">
-					<i class="fab fa-medium"></i>
-				</a>
-				<a href="https://www.linkedin.com/in/inesreisx/" target="_blank">
-					<i class="fab fa-linkedin"></i>
-				</a>
-				<a href="https://github.com/inesreisx/" target="_blank">
-					<i class="fab fa-github"></i>
-				</a>
-			</div>
-		</header>
+
+<div class="navbar">
+        <a href="#career">Career</a>
+        <a href="https://muckrack.com/inesreisx">Articles</a>
+        <a href="https://inesreisx.com/p/bucketlist">Bucketlist</a>
+
+</div>
 
     <div class="Content">
         <article>
@@ -393,7 +380,7 @@ td {
             <br>
             <br>
             <label class="container"><h2>
-              <a href="https://inesreisx.com/">👩‍💻</a> Career
+              <a href="https://inesreisx.com/">Career</a>
               </h2></label>
          
           
@@ -602,7 +589,7 @@ After two years and even being promoted to Content Marketing Specialist, I quit 
             <div class="footer">
                 <br>
                 <ul class="links">
-                    <li class="link-item"><a href="https://inesreisx.com/">🏠 Home</a></li>
+                    <li class="link-item"><a href="https://inesreisx.com/">Home</a></li>
                 </ul>
                 <br>
             </div>
