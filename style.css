@@ -96,6 +96,7 @@ a:visited {
 a:hover {
   color: white;
   decoration: underline;
+  box-shadow: 0 5px 15px #afe0f5;
 }
 
 /* selected link */
