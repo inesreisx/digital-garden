@@ -95,7 +95,6 @@ a:visited {
 /* mouse over link */
 a:hover {
   color: white;
-  decoration: underline;
 }
 
 /* selected link */
