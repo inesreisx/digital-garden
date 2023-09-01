@@ -81,6 +81,10 @@ ul {
     justify-content: center;
 }
 
+h2.heading-text a {
+    text-decoration: none;
+  }
+  
 /* hover */
 
 a:link {
