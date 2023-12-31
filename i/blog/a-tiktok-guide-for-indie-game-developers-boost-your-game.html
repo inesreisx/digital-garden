@@ -38,6 +38,7 @@ body, html {
     box-sizing: border-box;
 }
   
+  
 .navbar {
     overflow: hidden;
     background-color: #10172a;
@@ -62,6 +63,11 @@ body, html {
     color: black;
 }
 
+      @media only screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+      }
+    }
   
   h1, h2 {
   font-family: Calibri, sans-serif;
@@ -77,8 +83,10 @@ p {
 }
 
 img {
-  display: block;
-  margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
   text-align: center;
 }
 
@@ -192,6 +200,34 @@ header {
     }
 }
   
+   @media only screen and (max-width: 768px) {
+      body, html {
+        width: 100%;
+      }
+
+        .navbar {
+        padding-top: 20px; /* Adjust the space between navbar and content */
+      }
+     
+      .Content {
+        padding: 0 1rem;
+      }
+
+      .Content article {
+        width: 100%; /* Make text content full width */
+        padding: 0; /* Remove padding for full width */
+      }
+    }
+
+        .Content p,
+      .Content ul,
+     .Content li {
+        margin-bottom: 1.3em; /* Adjust the space between paragraphs and lists */
+      }
+    }
+  
+  
+  
   img {
     text-align: center;
   }
@@ -207,6 +243,30 @@ header {
 
 
 /* Adjust the width on smaller screens (e.g., mobile) */
+@media only screen and (max-width: 768px) {
+  th, td {
+    width: 100%; /* Set full width for both th and td elements on smaller screens */
+  }
+}
+  
+    .table td[colspan] {
+   
+  }
+  
+      .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    
+  
+  @media only screen and (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  }
 
   @media only screen and (max-width: 768px) {
     p[cite] {
@@ -304,7 +364,28 @@ header {
 </div>
 
 
-                
+ <script>
+    // Get the navbar element
+    const navbar = document.querySelector('.navbar');
+    let prevScrollPos = window.pageYOffset;
+
+    // Function to handle scroll event
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      
+      // Toggle navbar visibility based on scroll direction
+      if (prevScrollPos > currentScrollPos) {
+        navbar.style.display = 'block'; // Show navbar when scrolling up
+      } else {
+        navbar.style.display = 'none'; // Hide navbar when scrolling down
+      }
+      
+      prevScrollPos = currentScrollPos;
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+  </script>               
           
 
 </body>
