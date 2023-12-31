@@ -7,7 +7,6 @@
 <meta property="og:description" content="Game Devs, it’s time to go on TikTok. Especially you, Indie Devs. TikTok allows you to reach new audiences without limits and helps you survive through Indiepocalypse." />
 <meta property="og:title" content="Career of Inês"/>
 <meta property="og:description" content="Game Devs, it’s time to go on TikTok. Especially you, Indie Devs. TikTok allows you to reach new audiences without limits and helps you survive through Indiepocalypse." />
-<link rel="stylesheet" href="../style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
@@ -29,7 +28,7 @@
 }
 body, html {
     width: 90%;
-	 overflow-x: hidden;
+	  overflow-x: hidden;
     margin: 0 auto;
     padding: 0px;
     background-color: white;
@@ -39,6 +38,29 @@ body, html {
     box-sizing: border-box;
 }
   
+.navbar {
+    overflow: hidden;
+    background-color: #10172a;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+  
+}
+
+.navbar a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
 
   
   h1, h2 {
@@ -182,30 +204,7 @@ header {
   }
 }
   
-table {
-  font-size: 20px;
-  border-collapse: collapse;
-  margin: 20px;
-  font-family: Arial, sans-serif;
-  table-layout: fixed;
-  width: 100%;
-  overflow-x: auto;
- 
-}
 
-th {
-  background-color: orange;
-  padding: 10px;
-  font-weight: bold;
-  width: 50%; /* Set a specific width for the th elements */
-  
-}
-
-td {
-  padding: 20px;
-  width: 50%; /* Match the width of the th elements */
- 
-}
 
 /* Adjust the width on smaller screens (e.g., mobile) */
 @media only screen and (max-width: 768px) {
@@ -224,31 +223,6 @@ td {
       margin: 20px;
     }
     
-    .table {
-      border-collapse: collapse;
-      font-family: Arial, sans-serif;
-  
-    }
-    
-    .table th {
-      background-color: orange;
-      padding: 10px;
-      font-weight: bold;
-    }
-    
-    .table td {
-      padding: 10px;
-      font-size: 20px;
-     
-    }
-  
-    td:before {
-      content: "• ";
-    }
-  
-  td {
-    color: #cccccc;
-  }
   
   @media only screen and (max-width: 768px) {
   table {
@@ -287,8 +261,8 @@ td {
               <h1>A TikTok Guide for Indie Game Developers — Boost Your Game</h1>
 <p>Game Devs, it’s time to go on TikTok. Especially you, Indie Devs.</p>
 
-<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PXATd2YndoF3UMUd4S9XZA.jpeg">
-<caption>TikTok at Gamescom 2022. <a href="https://twitter.com/wayne_emanuel/status/1562799064680263680">Photo by Wayne Emanuel</a></caption>
+<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PXATd2YndoF3UMUd4S9XZA.jpeg" style="width: 680px; height: 306px";>
+<center><caption>TikTok at Gamescom 2022. <a href="https://twitter.com/wayne_emanuel/status/1562799064680263680">Photo by Wayne Emanuel</a></caption></center>
 <p>TikTok, known as Douyin in China, is owned by the Beijing-based company ByteDance, recently valued at $300 billion according to Reuters. The app was initially launched in 2016 and is known for its short-form videos, allowing you to easily create and share content that reaches billions of views. Available in over 150 countries with more than 1 billion monthly active users whose majority are aged between 20 and 29, TikTok’s unique algorithm is changing the way social media works, it has become a powerful marketing tool for businesses, and will soon innovate the way we play games.</p>
 <p>So why should you care as an Indie dev?</p>
 <p>Because “more than half of TikTok users watch gaming-related short video content daily” (TikTok internal data, 2022), and the way the For You Feed works allows you to reach new audiences without limits. In fact, you don’t need a pre-existing audience, which makes TikTok a great place to grow.</p>
