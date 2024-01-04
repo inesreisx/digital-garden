@@ -384,35 +384,40 @@ header {
 </div>
 
 
- <button onclick="scrollToTop()" id="scrollToTopButton">
-    <span style="font-size: 20px;">&#8593;</span>
-  </button>
+<button onclick="scrollToTop()" id="scrollToTopButton">
+  <span style="font-size: 20px;">&#8593;</span>
+</button>
 
-  <script>
-    window.onscroll = function() {
-      var button = document.getElementById("scrollToTopButton");
-      var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      var windowHeight = window.innerHeight;
-      var documentHeight = Math.max(
-        document.body.scrollHeight, document.documentElement.scrollHeight,
-        document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight, document.documentElement.clientHeight
-      );
+<script>
+  window.onscroll = function() {
+    var button = document.getElementById("scrollToTopButton");
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var documentHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
 
-      if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
-        button.classList.add("show");
-      } else {
-        button.classList.remove("show");
-      }
-    };
-
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+    if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
     }
-  </script>
+  };
+
+  var button = document.getElementById("scrollToTopButton");
+  button.addEventListener("click", scrollToTop);
+  button.addEventListener("touchstart", scrollToTop);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
 
 
 
