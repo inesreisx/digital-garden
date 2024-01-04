@@ -39,35 +39,30 @@
   
   
 .navbar {
-    overflow-x: hidden;
-    background-color: #10172a;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-  
+  position: fixed;
+  top: 0;
+  left: 0; /* Set the navbar to start from the left */
+  width: 100%;
+  background-color: #10172a;
+  z-index: 100;
+  text-align: center;
+ 
 }
 
-  
-.navbar a {
-    float: right;
-    display: block;
-    color: #f1f1f1;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
 
-.navbar a:hover {
-    background: #f1f1f1;
-    color: black;
-}
-
-      @media only screen and (max-width: 768px) {
-      .navbar {
-        display: none;
-      }
+ .navbar a {
+      display: inline-block;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
     }
+
+    .navbar a:hover {
+      background: #f1f1f1;
+      color: black;
+    }
+ 
   
   h1, h2 {
   font-family: Calibri, sans-serif;
@@ -109,7 +104,6 @@ header {
 }
 
 
-	
 /* The container */
 .container {
     display: block;
@@ -224,9 +218,17 @@ header {
       body, html {
         width: 100%;
       }
+      
+      .navbar {
+        text-align: center; /* Center-align for mobile */
+        padding: 0px 18px;
+      }
+    
 
-        .navbar {
-        padding-top: 20px; /* Adjust the space between navbar and content */
+      .navbar a {
+        padding: 10px 10px; /* Adjust padding for navbar links */
+        font-size: 14px; /* Decrease font size for navbar links */
+        wdith: 100%;
       }
      
       .Content {
@@ -302,14 +304,13 @@ header {
 </head>
 
 <body>
-<div class="navbar">
-        <a href="https://inesreisx.com/blog/">Blog</a>
-        <a href="https://inesreisx.com/">Home</a>
 
-</div>
-
-
-
+  <div class="navbar">
+    <div class="navbar-items">
+      <a href="https://inesreisx.com/blog">Blog</a>
+      <a href="https://inesreisx.com/">Home</a>
+    </div>
+  </div>
     <div class="Content">
         <article>
            
