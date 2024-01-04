@@ -145,7 +145,6 @@ a:active {
 
 .section-content {
     display: flex;
-    max-width: 80%; /* Ensure content doesn't exceed viewport width */
     justify-content: space-between;
     align-items: center;
     background-color: #10172a;
