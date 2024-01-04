@@ -376,28 +376,25 @@ header {
 </div>
 
 
- <script>
-    // Get the navbar element
-    const navbar = document.querySelector('.navbar');
-    let prevScrollPos = window.pageYOffset;
+<script>
+  const navbar = document.querySelector('.navbar');
+  let prevScrollPos = window.pageYOffset;
 
-    // Function to handle scroll event
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      
-      // Toggle navbar visibility based on scroll direction
-      if (prevScrollPos > currentScrollPos) {
-        navbar.style.display = 'block'; // Show navbar when scrolling up
-      } else {
-        navbar.style.display = 'none'; // Hide navbar when scrolling down
-      }
-      
-      prevScrollPos = currentScrollPos;
-    };
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
 
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-  </script>               
+    if (prevScrollPos > currentScrollPos) {
+      navbar.style.top = '0'; // Show navbar by positioning it at the top
+    } else {
+      navbar.style.top = '-70px'; // Hide navbar by moving it out of the viewport
+    }
+
+    prevScrollPos = currentScrollPos;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+</script>
+             
           
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7773778866708742"
           crossorigin="anonymous"></script>
