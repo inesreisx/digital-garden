@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do you read long articles? — A quick look into 3 gaming fansites worlds | by Inês | Indie Gaming | </title>
+<meta name="description" content="In an industry with almost 3 billion gamers and counting, games have been conquering the hearts of writers and reading lovers. Updates, community engagement or article critiques encourage gamers to…">
+<meta property="og:description" content="In an industry with almost 3 billion gamers and counting, games have been conquering the hearts of writers and reading lovers. Updates, community engagement or article critiques encourage gamers to…" />
+<meta property="og:title" content="Do you read long articles? — A quick look into 3 gaming fansites worlds | by Inês | Indie Gaming | "/>
+<meta property="og:description" content="In an industry with almost 3 billion gamers and counting, games have been conquering the hearts of writers and reading lovers. Updates, community engagement or article critiques encourage gamers to…" />
+<meta name="google-adsense-account" content="ca-pub-7773778866708742">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GTLQ4VKFB1');
+	
+</script>
+<style>
+
+   
+*{
+	box-sizing: border-box;
+}
+
+  body, html {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0px;
+    background-color: #f1f1f1;
+    color: black;
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+  
+  
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0; /* Set the navbar to start from the left */
+  width: 100%;
+  background-color: #10172a;
+  z-index: 100;
+  text-align: center;
+ 
+}
+
+
+ .navbar a {
+      display: inline-block;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background: #f1f1f1;
+      color: black;
+    }
+ 
+  
+  h1, h2 {
+  font-family: Calibri, sans-serif;
+  font-size: 2em;
+  text-decoration: none; /* Add this line to remove the underline */
+  color: black;
+}
+
+p {
+  font-size: 16px;
+  color: #424242;
+   
+}
+
+img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+  text-align: center;
+}
+
+
+
+
+   /* CSS for the sticky header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  height: 70px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 100;
+}
+
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+
+.Content {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 3.5rem 0rem 0rem;
+  max-width: 120rem;
+}
+
+  .Content article {
+    margin: auto;
+    width: 70%;
+    padding: 0px 2.5rem;
+    border-radius: 1rem;
+    margin-bottom: 5rem;
+}
+  
+.Content p, ul {
+    text-align: left;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 1rem;
+    line-height: 2.3rem;
+    font-family: Calibri, sans-serif;
+    text-align: justify;
+    position: relative; /* Add this line */
+
+}
+
+.Content p img {
+    display: block;
+    margin: 0 auto;
+    width: 100%; /* Adjusted the width */
+    height: auto;
+    max-width: 100%; /* Added this line */
+}
+
+.Content p footer {
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    color: black;
+    margin-bottom: 1rem;
+    line-height: 2.3rem;
+}
+
+ #scrollToTopButton {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #10172a;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    #scrollToTopButton.show {
+      display: block;
+      opacity: 1;
+    }
+
+@media only screen and (max-width: 768px){
+    html,
+    body
+    {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    html,
+    body
+    {
+        font-size: 9px;
+    }
+    .Content article
+    {
+        width: 90%;	
+    }
+}
+
+@media only screen and (max-width: 300px){
+    html,
+    body
+    {
+        font-size: 8px;
+    }
+}
+  
+   @media only screen and (max-width: 768px) {
+      body, html {
+        width: 100%;
+      }
+      
+      .navbar {
+        text-align: center; /* Center-align for mobile */
+        padding: 0px 18px;
+      }
+    
+
+      .navbar a {
+        padding: 10px 10px; /* Adjust padding for navbar links */
+        font-size: 14px; /* Decrease font size for navbar links */
+        wdith: 100%;
+      }
+     
+      .Content {
+        padding: 0 3rem;
+        margin-top: 63px;
+      }
+
+      .Content article {
+        width: 100%; /* Make text content full width */
+        padding: 0; /* Remove padding for full width */
+      }
+    }
+
+        .Content p,
+      .Content ul,
+     .Content li {
+        margin-bottom: 1.3em; /* Adjust the space between paragraphs and lists */
+      }
+    }
+  
+  
+  
+  img {
+    text-align: center;
+  }
+ 
+  @media only screen and (max-width: 768px) {
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+  
+
+
+/* Adjust the width on smaller screens (e.g., mobile) */
+@media only screen and (max-width: 768px) {
+  th, td {
+    width: 100%; /* Set full width for both th and td elements on smaller screens */
+  }
+}
+  
+    .table td[colspan] {
+   
+  }
+  
+      .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    
+  
+  @media only screen and (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  }
+
+  @media only screen and (max-width: 768px) {
+    p[cite] {
+      margin: 0; /* Remove margin for mobile */
+      padding: 0; /* Remove padding for mobile */
+      font-size: 16px; /* Adjust font size for mobile */
+    }
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="navbar-items">
+      <a href="https://inesreisx.com/blog">Blog</a>
+      <a href="https://inesreisx.com/">Home</a>
+    </div>
+  </div>
+    <div class="Content">
+        <article>
+
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;">
+                <div>
+                    <div>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">In an industry with almost 3 billion gamers and counting, games have been conquering the hearts of writers and reading lovers. Updates, community engagement or article critiques encourage gamers to express themselves through words.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;"><br></div>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;">
+                <div>
+                    <div>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">Did you know there&rsquo;s a study stating that &ldquo;72% of people get creative ideas while in the shower&rdquo;? One of these days after a periodical evaluation at work I was saying how I&rsquo;d like to learn more about content strategies and how it&rsquo;s exciting to find gaps on how to encourage players to for instance, read a text about gaming updates. After, I went for a shower and got myself thinking on how players from a specific gaming community I used to belong to, got used to reading full articles with over a thousand words in 2020 when the average of an article written three years before was much less, with few exceptions.</p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">Digging into Google, questions as &ldquo;Are gamers readers?&rdquo; or &ldquo;Do gamers read?&rdquo; appear in forums with interesting answers but not supporting my argument. Nevertheless, science fiction and fantasy seem to be the most popular genres mentioned. I don&rsquo;t think it&rsquo;s possible to get a generalized answer unless doing a specific research on the matter with a large sample of gamers. It&rsquo;s worth notice as well that the &ldquo;being a gamer&rdquo; stereotype has been dissolving itself, allowing the existence of a non &ldquo;I play games&rdquo; and &ldquo;I like to read&rdquo; intersection and that people have their own individual tastes.</p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">My experience with gaming fansites started in 2017 when I searched for ways to improve my writing skills within the Habbo Hotel community. I got mentored by two friends who already had years of writing experience in fansites at first, and got different teachers along the way. You&rsquo;d be surprised by the amount of rules and guidelines fansites&rsquo; dashboards have put together to help and train upcoming journalists. You&rsquo;d also be surprised by the lack of female writers.</p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">But it didn&rsquo;t take long to spot the lack of different content, and meet the finest names of investigative journalism who were doing things differently. When I had the opportunity to publish, my personal strategy was to revive old research, backing it up with interviews or comments from players and specialists, and try to present a critical perspective. I ended up writing articles with an estimated reading time of 5 to 10 minutes which were easily shared and (thankfully) read. You can check <u><a href="https://inesreis.medium.com/interview-knowing-when-to-buy-sell-virtual-furniture-on-habbo-using-real-time-game-data-collected-930f5045b1df" rel="noopener" style="color: inherit;">one here</a></u> and <u><a href="https://inesreis.medium.com/habbo-hotel-its-rebranding-into-a-social-world-building-game-c09e2a0e5035" rel="noopener" style="color: inherit;">another here</a></u>. Fast forwarding 3 years, emerging writers have been paving the way for more detailed and creative lengthy articles, which are now considered the norm.</p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">But, what happened during this time? Had players started to love the game so much at the point they wanted to read more about it? Was there a learning process of reading longer texts? Or a change in the reading behavior?</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;"><br></div>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;">
+                <div>
+                    <div>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">According to <u><a href="https://www.theatlantic.com/technology/archive/2016/05/oh-internet-you-wonderful-newsy-readable-lovely-internet/481500/" rel="noopener ugc nofollow" target="_blank" style="color: inherit;">The Atlantic</a></u>, which cites a study from <u><a href="https://www.journalism.org/2016/05/05/long-form-reading-shows-signs-of-life-in-our-mobile-news-world/" rel="noopener ugc nofollow" target="_blank" style="color: inherit;">Pew Research Center</a></u>, &ldquo;<em><em>long-form journalism does have a place in today&rsquo;s mobile-centric society</em></em>&rdquo; and &ldquo;<em><em>Small screens don&rsquo;t deter readers &mdash; even from longer articles</em></em>&rdquo;. Interestingly, the majority of the fansites offers a well-designed mobile version, attractive to users and promoting longer texts. Contrastively according to Nielsen Norman Group, an American user experience consulting firm, the long vs short article isn&rsquo;t a one way route. It <u><a href="https://www.nngroup.com/articles/content-strategy-long-vs-short/" rel="noopener ugc nofollow" target="_blank" style="color: inherit;">depends on your communication goals</a></u> and &ldquo;<em><em>a mixed diet that combines brief overviews and comprehensive coverage is often best</em></em>&rdquo;.</p>
+                    </div>
+                </div>
+            </div>
+
+            <img src="https://www.pewresearch.org/journalism/wp-content/uploads/sites/8/2016/04/PJ_2016.05.05_long-form-01.png">
+            <center><caption><a href="https://www.journalism.org/2016/05/05/long-form-reading-shows-signs-of-life-in-our-mobile-news-world/pj_2016-05-05_long-form-01/" rel="noopener ugc nofollow" target="_blank">Source:Journalism.org</a></caption></center>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;">
+                <div>
+                    <div>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">At this point, finding out answers to these questions wouldn&rsquo;t be so simple as it could have sounded in the beginning. After all, being all games different, it means each one has their own ecosystem and engaging behavior. My initial idea was to compare an already known community to completely different games such as League of Legends and Roblox. By getting in touch with a couple of players from these games, I got immediate feedback.</p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">League of Legends is radically different &mdash; a fantasy adventure, action, MMO and RPG game -, presenting distinct approaches to its structure, so fansites work in different ways. They offer updates, sketches, etc, but Riot Games themselves already do that job by producing and publishing content for its community across their social channels. Adding up, according to a staff member from the Brazilian fansite LegendsBR, &ldquo;<em><em>We used to write articles. The strategy ones are not that popular but still offer a great value in the long-term. The gossip ones are viral and the news ones are instantaneous too but don&rsquo;t work as well outside of social media</em></em>&rdquo;. Neopets was also not an option, still <u><a href="http://www.neopetshive.com/" rel="noopener ugc nofollow" target="_blank" style="color: inherit;">Neopets Hive</a></u> looks to have been a cool place.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;"><br></div>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;">
+                <div>
+                    <div>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">In the need of remaking my choices (which to tell you the truth, surprised me in the end), I ended up finding another two well-known worldwide communities, which had hardcore fanbases and long articles.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;"><br></div>
+            <div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;">
+                <div>
+                    <div>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;"><strong><strong>Habbo Hotel</strong></strong></p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">Once one of the biggest social networking gaming platforms bringing together millions of users from all over the world since 2001, this nostalgic pixel game born even before Facebook counts with almost (active and inactive) 200 fansites in more than 10 languages. The ones still active, create some of the most engaging content you can read. I went back to get some answers.</p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">From x@=camile=@x, the first female Investigative Journalist and previous Administrator of the huge (now inactive) HabboColor fansite.</p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">-Your articles were exceptions besides their length. People wanted to read more every time. Why was that?, I asked her.</p>
+                        <blockquote><em>
+                                <p style="color: rgb(36, 36, 36);font-size: 20px;">&ldquo;Most of the times, the shortest news would be the most read. We need to understand that Journalism inside Habbo Hotel passed through different stages. People always try to minimize the most amount of text possible, like Puhekupla which makes use of images and short sentences to create viral call of actions. But my articles were longer because they would serve a different purpose: reporting and investigation, and most of the readers were the ones who would be interested in knowing polemics or understanding social issues.</p>
+                            </em><em>
+                                <p style="color: rgb(36, 36, 36);font-size: 20px;">Nowadays, fansites use social media like Twitter to quickly make their news viral. Fansites like Fuusio, Puhekupla or PixelsEmotion are able to communicate with users without them having to navigate to their websites, and as Twitter has limited characters, both fansites and users got used to simpler and fastest ways to express their ideas, and only the essential is read. However, the special reports are still exceptions, and fansites like HabboNews are capable of awakening their followers&rsquo; interest into reading the full text and making them open the website link.&rdquo;</p>
+                            </em></blockquote>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">From Leo, aka <u><a href="https://twitter.com/LeotoddyHabbo" rel="noopener ugc nofollow" target="_blank" style="color: inherit;">LeoToddy</a></u>, aspiring student within the Data world, a great data analyst having helped fansites getting data through API&rsquo;s, and International Reporter within this social game.</p>
+                        <p style="color: rgb(36, 36, 36);font-size: 20px;">-Players have become more interested in numbers and game data. Can this be a factor to awaken curiosity and encourage reading?</p>
+                        <blockquote><em>
+                                <p style="color: rgb(36, 36, 36);font-size: 20px;">&ldquo;I believe players are willing to read more, especially data-rich and very well-written articles, in such a way that I am able to trust what I read. Still, this also requires some strategy in the text presented so that the reader doesn&rsquo;t get tired of reading or gives up on reading the article just because it&rsquo;s long.&rdquo;</p>
+                            </em></blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  <strong><strong>Club Penguin</strong></strong>
+</p>
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  Who doesn&rsquo;t remember Club Penguin? The massive multiplayer online game
+  filled with games, activities and of course, penguins, opened in 2005 and
+  closed its doors 12 years after, breaking the hearts of the most loyal
+  players. According to its
+  <u
+    ><a
+      href="https://clubpenguin.fandom.com/wiki/Club_Penguin"
+      rel="noopener ugc nofollow"
+      target="_blank"
+      style="color: inherit"
+      >Fandom wiki</a
+    ></u
+  >, more than 300 million penguins were alive in more than 190 countries and
+  similarly to many other social chatting games, there were concerns about
+  children&rsquo;s online safety.
+</p>
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  <u
+    ><a
+      href="https://clubpenguinmountains.com/"
+      rel="noopener ugc nofollow"
+      target="_blank"
+      style="color: inherit"
+      >Club Penguin Mountains</a
+    ></u
+  >
+  is an incredible fansite for Club Penguin Rewritten, &ldquo;<em
+    ><em>a free virtual world based on Disney&rsquo;s Club Penguin</em></em
+  >&rdquo; which has tons of articles related to the game as it puts players
+  up-to-date with the gaming world as well as gaming updates which can impact
+  user experience like the end of Flash. And guess what, offers long articles.
+  The website makes it easy to navigate and find the information you need. It
+  opened in 2013 and has more than 12 million visits.
+</p>
+
+<img src="inesreisx/digital-garden/media/Blog/club-penguin-mountains-inesreisx-interview.jpg">
+<caption>Screenshot from clubpenguinmountains.com</caption>
+
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  So I needed to get some insight into it. I was lucky to speak with Torres,
+  also known as penguin Torres126, who promptly provided in-depth information in
+  such a clear way I thought to just transcribe it down below:
+</p>
+<blockquote
+  style="
+    text-align: start;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+  "
+>
+  <em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      &ldquo;The tradition for blogs in the Club Penguin community is to provide
+      &ldquo;news&rdquo; and guides about in-game updates, typically through
+      collecting information from around the Internet (such as on social media
+      or in-game messages by staff) and presenting it in a single place for
+      viewers to read. These sorts of news blogs date back well over a decade,
+      as there&rsquo;s always been a sustained interest about
+      &ldquo;what&rsquo;s next&rdquo; for the game. The length of these articles
+      tends to be quite short, but that&rsquo;s adequate enough to convey the
+      necessary information, and it&rsquo;s compensated for with the frequency
+      of news stories which can appear.
+    </p> </em
+  ><em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      It&rsquo;s also true that on many Club Penguin blogs, you&rsquo;ll find
+      lengthier articles that explore a topic more heavily. Back when classic
+      Club Penguin was around (2005&ndash;2017), lengthier articles particularly
+      tended to convey a desire for something to change, especially since blogs
+      were a way of attracting the attention of higher-ups at the game.
+      There&rsquo;s a couple of examples which come to mind &mdash; for example,
+      <u
+        ><a
+          href="https://clubpenguinmemories.com/2015/03/club-penguin-is-falling-apart-nothing-is-being-done-to-fix-it-and-im-getting-fed-up/"
+          rel="noopener ugc nofollow"
+          target="_blank"
+          style="color: inherit"
+          >this one</a
+        ></u
+      >
+      notably attracted a response from Club Penguin&rsquo;s General Manager.
+    </p> </em
+  ><em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      The other form of lengthier articles, which remains common today, are
+      interviews &mdash; I&rsquo;ve found that a lot of people are always
+      fascinated by the &ldquo;behind-the-scenes&rdquo; aspect of games which
+      they care about, and I agree with you that it&rsquo;s a reflection of the
+      attachment between players and the franchise. It&rsquo;s difficult to
+      convey much depth within a couple of paragraphs, and so people will be
+      willing to dedicate the time in reading these articles irrespective of
+      length. For example,<u
+        ><a
+          href="https://clubpenguinmountains.com/2020/08/24/nathan-sawatzky-on-club-penguins-community-support/"
+          rel="noopener ugc nofollow"
+          target="_blank"
+          style="color: inherit"
+          >&nbsp;this one</a
+        ></u
+      >
+      attracted much interest.&rdquo;
+    </p>
+  </em>
+</blockquote>
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  I couldn&rsquo;t avoid being particularly drawn to the passion put both in the
+  last article and the featured
+  <u
+    ><a
+      href="https://www.youtube.com/watch?time_continue=968&v=UtGC-kcrq2s&feature=emb_logo"
+      rel="noopener ugc nofollow"
+      target="_blank"
+      style="color: inherit"
+      >TEDTalk</a
+    ></u
+  >. I&rsquo;d recommend it for everyone who likes to meet new people,
+  isn&rsquo;t afraid to take risks, and loves games above all.
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UtGC-kcrq2s?si=bWoc1OsYwBg8Sh7y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p style="text-align: start;color: rgb(36, 36, 36);background-color: rgb(255, 255, 255);font-size: 20px;"><strong><strong>Zelda Universe and Zelda Dungeon</strong></strong></p>
+<p style="text-align: start;color: rgb(36, 36, 36);background-color: rgb(255, 255, 255);font-size: 20px;">Let me start by saying (and you might judge me) but I only tried Zelda once. My roommate loves the game and the legendary actor Robin Williams even gave his daughter the name of Zelda, so this last but not least fansite had to be an awesome one. Zelda is a fantasy adventure and exploration game being the first game of The Legend of Zelda series released in 1986.</p>
+<p style="text-align: start;color: rgb(36, 36, 36);background-color: rgb(255, 255, 255);font-size: 20px;">It conquered the admiration and love of generations of players, has beautiful designs, connects people from all over the world and has sold millions of copies. And, has an incredible amount of user-generated-content in all shapes and sizes.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rzldGMzGaz8?si=GbjaSznQAwB_Jqc_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  As I&rsquo;m an undecided person, I chose two.
+  <u
+    ><a
+      href="https://zeldauniverse.net/"
+      rel="noopener ugc nofollow"
+      target="_blank"
+      style="color: inherit"
+      >Zelda Universe</a
+    ></u
+  >
+  and
+  <u
+    ><a
+      href="https://www.zeldadungeon.net/"
+      rel="noopener ugc nofollow"
+      target="_blank"
+      style="color: inherit"
+      >Zelda Dungeon</a
+    ></u
+  >
+  both opened in 2001, both provide literally tons of information about the
+  game, both offer a forum function within their websites via Disqus and both
+  encourage the writing of creative and dissected articles.
+</p>
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  Additionally, both have built
+  <em
+    ><em
+      >&ldquo;a healthy relationship beneficial for the teams who work more
+      closely&rdquo;</em
+    ></em
+  >, said
+  <u
+    ><a
+      href="https://twitter.com/thelostdeku"
+      rel="noopener ugc nofollow"
+      target="_blank"
+      style="color: inherit"
+      >Jaimie Ditchfield</a
+    ></u
+  >
+  from Zelda Universe with whom I had the luck to speak with. He is a Games
+  Journalist and writing enthusiast who finds the Gaming industry fascinating.
+  He has written for BackToTheGaming, Nowtendo and is currently contributing
+  features to NintendoEnthusiast.
+</p>
+<blockquote
+  style="
+    text-align: start;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+  "
+>
+  <em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      &ldquo;The difference between these sites is that Zelda Universe gets more
+      engagement from a hardcore fan perspective while those other sites tend to
+      focus more on the facts. NintendoEnthusiast is close to ZU in terms of
+      that, with me offering my perspective on different topics.&rdquo;
+    </p>
+  </em>
+</blockquote>
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  Having the answers surpassed my expectations, once again I decided to simply
+  transcribe them.
+</p>
+<blockquote
+  style="
+    text-align: start;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+  "
+>
+  <em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      &ldquo;I don&rsquo;t believe that longer articles are enjoyed more per se,
+      but they do offer a way for us to interact with our audience and impose
+      questions. Our community is very much engaged with these pieces as seen
+      with the columns such as Medli&rsquo;s Melodies where we dissect Zelda
+      music. Shorter articles are also effective as well, especially in regards
+      to news. Most of my time at ZU has been focused on the News side of
+      things, with me contributing features to other websites such as Nintendo
+      Enthusiast. Shorter articles are digestible and I believe that they also
+      engage fans, especially on social media. For instance when we reported on
+      Hyrule Warriors: Age of Calamity, the responses were passionate and in
+      turn produced online discussion. I also like it when we offer the
+      spotlight to creators, often related to Zelda through fan projects and
+      mods. So I believe that any length of article can offer different types of
+      engagement. I do agree about the community wanting to dive deeper though,
+      but the length tends to be unimportant sometimes. It all depends on the
+      context.&rdquo;
+    </p>
+  </em>
+</blockquote>
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  On different people with views and experiences,
+</p>
+<blockquote
+  style="
+    text-align: start;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+  "
+>
+  <em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      &ldquo;The best part about ZU I&rsquo;d say would be the variety of
+      people. In the staff team, we have people from all over the globe
+      including myself from the UK with others being located in Australia, the
+      Netherlands and USA. Each of us has our own story to tell I&rsquo;d say,
+      the forums are evidence enough for when we introduce ourselves. We have
+      people of different ages too, with me being probably one of the youngest
+      at the age of 21 (nearly 22). It allows us to be diverse in our content.
+      In regards to its importance, I believe that it teaches people about
+      different perspectives and allows us to feel more like a community.&rdquo;
+    </p>
+  </em>
+</blockquote>
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  And are gamers producing more content?
+</p>
+<blockquote
+  style="
+    text-align: start;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+  "
+>
+  <em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      &ldquo;I&rsquo;d say so yes. They&rsquo;re wanting to share their love of
+      the medium, as seen with the popularity of eSports. I think that gaming
+      companies enjoy this, Zelda Universe works with Nintendo on occasions.
+      (Just recently we got sent early review codes of Hyrule Warriors: Age of
+      Calamity). Being closely affiliated with Nintendo is a positive for both
+      parties, as it provides them with free marketing and engages other Zelda
+      fans as well. In regards to us stealing the show, I&rsquo;d say no not
+      really because we&rsquo;re creating a conversation and in turn expressing
+      our adoration for video-games.&rdquo;
+    </p>
+  </em>
+</blockquote>
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  Not forgetting about interviews, which are quite long articles,
+</p>
+<blockquote
+  style="
+    text-align: start;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+  "
+>
+  <em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      &ldquo;Interview pieces are a strange one. They can either be successful
+      or a complete failure depending on the angle. Luckily the video-game
+      industry is a lot more interesting than the likes of film and TV
+      journalism because there are more stories to tell. Our video producer,
+      Alex Trevino released an interview with Patricia Summerset (Zelda&rsquo;s
+      Voice Actress) and that got a lot of views on YouTube. That kind of thing
+      is always interesting because we get an insight into voice acting and the
+      process of getting into it.&rdquo;
+    </p>
+  </em>
+</blockquote>
+<figure
+  style="
+    text-align: start;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+  "
+>
+  <div tabindex="0"><br /></div>
+</figure>
+
+<img src="inesreisx/digital-garden/media/Blog/zeldauniverse.net-inesreisx-interview.jpg">
+
+<p
+  style="
+    text-align: start;
+    color: rgb(36, 36, 36);
+    background-color: rgb(255, 255, 255);
+    font-size: 20px;
+  "
+>
+  And last but definitely not least,
+  <u
+    ><a
+      href="https://twitter.com/DJYuurei"
+      rel="noopener ugc nofollow"
+      target="_blank"
+      style="color: inherit"
+      >Emily Curtis</a
+    ></u
+  >
+  from Zelda Dungeon who besides a great writer is also a freelance artist and
+  programmer, quickly put herself available to help complementing this article
+  by explaining how important it is to pay attention to mixed content and its
+  communication goals.
+</p>
+<blockquote
+  style="
+    text-align: start;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+  "
+>
+  <em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      &ldquo;With Zelda Dungeon, we actually try to cater particularly to both
+      ends of that spectrum. We have a decent number of long form editorial and
+      serials we publish, for example my personal series, Randomizer Thoughts
+      which are lengthy bi-weekly pieces on the nuances of the Randomizer genre
+      of Rom hacks, but we also have very short and direct news pieces and our
+      Daily Debate article which usually only cap out at 3&ndash;4 paragraphs.
+    </p> </em
+  ><em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      It&rsquo;s our intent that we can capture very casual fans with the
+      smaller pieces and let them get their engagement with very little
+      commitment, while our longer editorials are intended for those you
+      mentioned who want lengthier, more intensive pieces that really dissect
+      the deeper elements of the Zelda series. Primarily, we focus on deep
+      integrity in our writing, and that&rsquo;s primarily what I believe drives
+      our strong viewership. We are encouraged to thoroughly research our work,
+      reach out to those involved for direct source statements, and pursue our
+      own passions within the Zelda community, and that shows in our writing
+      quite often. I recall recently I wrote a news piece on Miis and while it
+      was a news story covered by many video game media outlets, my article was
+      one of the few that mentioned the primary individual&rsquo;s actual
+      project that led to this news coming up in the first place.
+    </p> </em
+  ><em>
+    <p style="color: rgb(36, 36, 36); font-size: 20px">
+      We take a lot of pride in the quality of what we write about and will
+      reject and delay articles if they don&rsquo;t meet those levels of
+      integrity we set for ourselves and I think that goes into why we are
+      beloved as a news base and editorial service.&rdquo;
+    </p>
+  </em>
+</blockquote>
+
+<img src="../media/Blog/zeldadungeon.net-inesreisx-interview.jpg">
+
+<div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;">
+    <div>
+        <div>
+            <p style="color: rgb(36, 36, 36);font-size: 20px;">As a female writer, I asked her if she felt there was any gap regarding genders.</p>
+            <blockquote><em>
+                    <p style="color: rgb(36, 36, 36);font-size: 20px;">&ldquo;This is a bit of a tricky spot. I absolutely believe there should be a strong number of female writers on a staff, but it should be something that happens naturally and is not forced. We have a fairly strong community of female writers on our staff at Zelda Dungeon, many of which are actually on our management staff. There are definitely more men than women I&rsquo;m quite certain, but there are many fan news sites I&rsquo;ve seen with only one or no females at all on staff.</p>
+                </em><em>
+                    <p style="color: rgb(36, 36, 36);font-size: 20px;">I think in many ways it is important to have a large variety of demographics given that video games are inherently a form of culture that we view through the lens of our own cultures and we inherently can&rsquo;t capture all those perspectives when those cultures aren&rsquo;t represented in our writing staff. Speaking as a woman, I have an inherently different perspective on who say, Link is compared to my male friends. While many of them can claim Link represents them, there&rsquo;s a disconnect for me in some versions of him and this is common among other women.</p>
+                </em><em>
+                    <p style="color: rgb(36, 36, 36);font-size: 20px;">These viewpoints make interesting insights that male viewers may not even stop to consider and it&rsquo;s through this meshing of cultures that we can share that and this is inherently why I find it important to have those present.&rdquo;</p>
+                </em></blockquote>
+        </div>
+    </div>
+</div>
+<div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;"><br></div>
+<div style="text-align: start;color: rgba(0, 0, 0, 0.8);background-color: rgb(255, 255, 255);font-size: medium;">
+    <div>
+        <div>
+            <p style="color: rgb(36, 36, 36);font-size: 20px;">While doing this research, I also came across the argument &ldquo;fansites are dead&rdquo; since almost every gamer uses some kind of social media channel to stay in touch with its friends, and the rise of aggregated websites like forums provide an easy access to helpful and quick information about any kind of game.</p>
+            <p style="color: rgb(36, 36, 36);font-size: 20px;">Nevertheless, fansites are ideas put into the digital world by gamers for gamers, encouraging the development of skills and shaping a continuous desire for innovation. From radios, to podcasts, art and let&rsquo;s not forget writing, maybe length isn&rsquo;t the most important factor for a healthy reading. I hope not.</p>
+            <p style="color: rgb(36, 36, 36);font-size: 20px;">I feel to have barely scratched the surface on this one but still one of the most exciting articles I&rsquo;ve ever wanted to write. Special thanks to everyone who helped and gave a piece of their time, Leo, Camile, Torres, Jaimie and Emily.</p>
+            <p style="color: rgb(36, 36, 36);font-size: 20px;"><em><em>Disclaimer: All collected statements belong to each interviewed and don&rsquo;t necessarily reflect the official stance of the respective fansites.</em></em></p>
+            <p style="color: rgb(36, 36, 36);font-size: 20px;">Thanks for reading this far.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<button onclick="scrollToTop()" id="scrollToTopButton">
+  <span style="font-size: 20px;">&#8593;</span>
+</button>
+
+<script>
+  window.onscroll = function() {
+    var button = document.getElementById("scrollToTopButton");
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var documentHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+
+    if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
+    }
+  };
+
+  var button = document.getElementById("scrollToTopButton");
+  button.addEventListener("click", scrollToTop);
+  button.addEventListener("touchstart", scrollToTop);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+
+
+
+<script>
+  const navbar = document.querySelector('.navbar');
+  let prevScrollPos = window.pageYOffset;
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+      navbar.style.top = '0'; // Show navbar by positioning it at the top
+    } else {
+      navbar.style.top = '-70px'; // Hide navbar by moving it out of the viewport
+    }
+
+    prevScrollPos = currentScrollPos;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+</script>
+             
+          
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7773778866708742"
+          crossorigin="anonymous"></script>
+     <!-- Ads -->
+     <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7773778866708742"
+          data-ad-slot="9804412218"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+     <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+     </script>
+</body>
+</html>
