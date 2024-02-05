@@ -1,10 +1,16 @@
-<html>
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Art</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+<title>A TikTok Guide for Indie Game Developers — Boost Your Ga</title>
+<meta name="description" content="e.">
+<meta property="og:description" content=" s you survive through Indiepocalypse." />
+<meta property="og:title" content="Career of Inês"/>
+<meta property="og:description" content="gh Indiepocalypse." />
+<meta name="google-adsense-account" content="ca-pub-7773778866708742">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -13,77 +19,74 @@
   gtag('config', 'G-GTLQ4VKFB1');
 	
 </script>
-
 <style>
-  
-    /* unvisited link */
-a:link {
-color: #11A797;
-text-decoration: none;
-}
 
-/* visited link */
-a:visited {
-color: #11A797;
-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-color: #11A797;
-text-decoration: underline;
-
-}
-
-/* selected link */
-a:active {
-color: #11A797;
-
-}
    
 *{
 	box-sizing: border-box;
 }
-body, html {
-    width: 100%;
-	overflow-x: hidden;
-    margin: 0px;
+
+  body, html {
+    width: 90%;
+    margin: 0 auto;
     padding: 0px;
-    background-color: #091b33;
-    color: #fff;
-    font-family: Calibri, sans-serif;
-    font-size: 18px;
+    background-color: #f1f1f1;
+    color: black;
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 20px;
     box-sizing: border-box;
 }
   
-  body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #091b33;
-  color: #fff;
-  font-family: Calibri, sans-serif;
-  font-size: 18px;
-  box-sizing: border-box;
+  
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0; /* Set the navbar to start from the left */
+  width: 100%;
+  background-color: #10172a;
+  z-index: 100;
+  text-align: center;
+ 
 }
+
+
+ .navbar a {
+      display: inline-block;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background: #f1f1f1;
+      color: black;
+    }
+ 
   
   h1, h2 {
   font-family: Calibri, sans-serif;
   font-size: 2em;
+  text-decoration: none; /* Add this line to remove the underline */
+  color: black;
 }
 
 p {
   font-size: 16px;
+  color: #424242;
    
 }
 
-
-a {
-    color: white;
-    text-decoration: none;
-    margin-left: 1.5rem;
+img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+  text-align: center;
 }
+
+
+
 
    /* CSS for the sticky header */
 header {
@@ -91,7 +94,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #091b33;
+  background-color: white;
   height: 70px;
   padding: 10px 20px;
   display: flex;
@@ -101,65 +104,6 @@ header {
 }
 
 
-.social-icons {
-    display: flex;
-    align-items: right;
-    justify-content: flex-end;
-}
-
-.social-icons a {
-    color: #fff;
-    margin-left: 10px;
-    text-decoration: none;
-    font-size: 38px;
-    height: 30px;
-    line-height: 30px;
-    margin-right: 15px;
-    transition: transform 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: rotate(-10deg) scale(1.1);
-}
-
-/* CSS for the "Up" button */
-#upButton {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-
-#upButton:hover {
-    background-color: #555;
-}
-
-#upButton span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-top: 2px solid #fff;
-    border-right: 2px solid #fff;
-    transform: rotate(-45deg);
-    margin-left: 4px;
-}
-
-/* Show the "Up" button when scrolling down */
-body.scroll-down #upButton {
-    opacity: 1;
-}
-
-	
 /* The container */
 .container {
     display: block;
@@ -173,6 +117,7 @@ body.scroll-down #upButton {
     -ms-user-select: none;
     user-select: none;
 }
+  
 
 .Content {
   width: 100%;
@@ -190,15 +135,16 @@ body.scroll-down #upButton {
     margin-bottom: 5rem;
 }
   
-.Content p {
+.Content p, ul {
     text-align: left;
-    font-size: 20px;
-    color: #ccc;
+    font-size: 16px;
+    color: black;
     margin-bottom: 1rem;
     line-height: 2.3rem;
     font-family: Calibri, sans-serif;
     text-align: justify;
     position: relative; /* Add this line */
+
 }
 
 .Content p img {
@@ -213,28 +159,38 @@ body.scroll-down #upButton {
     width: 100%;
     text-align: center;
     font-size: 1.6rem;
-    color: #ccc;
+    color: black;
     margin-bottom: 1rem;
     line-height: 2.3rem;
 }
 
-
-.footer {
-    color: white;
-    text-align: center;
-    position: sticky;
-    bottom: 0;
-}
-
-.footer ul {
-    list-style: none;
-}
+ #scrollToTopButton {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #10172a;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    #scrollToTopButton.show {
+      display: block;
+      opacity: 1;
+    }
 
 @media only screen and (max-width: 768px){
     html,
     body
     {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
@@ -258,6 +214,43 @@ body.scroll-down #upButton {
     }
 }
   
+   @media only screen and (max-width: 768px) {
+      body, html {
+        width: 100%;
+      }
+      
+      .navbar {
+        text-align: center; /* Center-align for mobile */
+        padding: 0px 18px;
+      }
+    
+
+      .navbar a {
+        padding: 10px 10px; /* Adjust padding for navbar links */
+        font-size: 14px; /* Decrease font size for navbar links */
+        wdith: 100%;
+      }
+     
+      .Content {
+        padding: 0 3rem;
+        margin-top: 63px;
+      }
+
+      .Content article {
+        width: 100%; /* Make text content full width */
+        padding: 0; /* Remove padding for full width */
+      }
+    }
+
+        .Content p,
+      .Content ul,
+     .Content li {
+        margin-bottom: 1.3em; /* Adjust the space between paragraphs and lists */
+      }
+    }
+  
+  
+  
   img {
     text-align: center;
   }
@@ -270,126 +263,160 @@ body.scroll-down #upButton {
   }
 }
   
-.image-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-}
 
-.image-container img {
-  flex: 1;
-  margin: 0 5px;
-  max-width: calc(25% - 10px); /* Divide the available width equally among the four images */
-  height: auto;
-}
 
+/* Adjust the width on smaller screens (e.g., mobile) */
 @media only screen and (max-width: 768px) {
-  .image-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-container img {
-    flex: 1;
-    margin: 10px 0;
-    max-width: 100%; /* Adjust the width of images on smaller screens */
+  th, td {
+    width: 100%; /* Set full width for both th and td elements on smaller screens */
   }
 }
+  
+    .table td[colspan] {
+   
+  }
+  
+      .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+    
+  
+  @media only screen and (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  }
+
+  @media only screen and (max-width: 768px) {
+    p[cite] {
+      margin: 0; /* Remove margin for mobile */
+      padding: 0; /* Remove padding for mobile */
+      font-size: 16px; /* Adjust font size for mobile */
+    }
+}
+
 
 
 </style>
 </head>
 
 <body>
-  <button id="upButton" onclick="scrollToTop()">
-    <span></span>
-</button>
-<header>
-			<div class="social-icons">
-				<a href="https://inesreisx.medium.com/" target="_blank">
-					<i class="fab fa-medium"></i>
-				</a>
-				<a href="https://www.linkedin.com/in/inesreisx/" target="_blank">
-					<i class="fab fa-linkedin"></i>
-				</a>
-				<a href="https://github.com/inesreisx/" target="_blank">
-					<i class="fab fa-github"></i>
-				</a>
-			</div>
-		</header>
 
+  <div class="navbar">
+    <div class="navbar-items">
+      <a href="https://inesreisx.com/blog">Blog</a>
+      <a href="https://inesreisx.com/">Home</a>
+    </div>
+  </div>
     <div class="Content">
         <article>
-            <br>
-            <br>
-            <br>
-            <label class="container"><h2>
-              <a href="https://inesreisx.com/"></a>🎨</a> Art
-              </h2></label>
-        <div class="image-container">
-          <img src="/media/Art/inesreisx-young-drawing.png">
-          <img src="/media/Art/inesreisx-summer-atelier-painting.jpg">
-          <img src="/media/Art/inesreisx-summer-atelier-arts.jpg">
-          <img src="/media/Art/inesreisx-paintings.jpg">
-          </div>
-                <p>
-                  Alongside writing, my interest for art or “starting to create art” came from a feeling of need. A need to entertain myself, to relax, to expel visual ideas, to have fun. My preferences within rely on drawing, painting (acrylics), collages, clay, and carpentry (limited).
-          </p>
-        
-          
-          <img src ="/media/Art/grandfather-did-it.png">
-          
-                    <p>
-            One of my vivid memories is an afternoon spent with my grandfather. He was in a wheelchair and as going out would be complicated, we’d spent a lot of time together at home, either he watching political debates while I was learning to write my first words on those magnetic drawing boards, or drawing. This was the only drawing from him I kept across time; here he was teaching me about perspectives, hence the house. The flower is also his.
-          </p>
-          
-          <p>
-            I used to keep all my drawings in those accordion folders but I ended up tossing away my kindergarten ones. As for the rest, I kept them saved and in 2016 created my first blog hosting them at lethebirdfly.blogspot.com.
-          </p>
-          
-          <p>
-            In 2017 I started painting on canvas, only in 2019 have I discovered DeviantArt (which is my favorite art platform), and in 2020 I started to learn about human proportions.
-          </p>
-          
-          <p>
-            The love for creation influenced 99% of my family, Christmas, or birthday gifts. It also helped me make my first humble first earnings of 19€ by the age of 10 selling clay pieces to friends at school.
-          </p>
-          
-          <p>
-            As for artists, there’s not just one I specifically adore, rather loads. But Leonardo Da Vinci and Tamara de Lempicka have a special place in my heart. Other of my favorites include Dimitra Milan, Humid Peach, GustavoReiPanda, ryodrigo, Kobra, flowsofly, Mad Dog Jones, Ana Ventura, Alexisrakun, Loish, Donutinha, AngelGanev, Claire Basl, Carolina Bonani, OSGEMEOS, and the Portuguese collective Explicit Citizens. 
-          </p>
-          
-            <br>
-            <div class="footer">
-                <br>
-                <ul class="links">
-                    <li class="link-item"><a href="https://inesreisx.com/">🏠 Home</a></li>
-                </ul>
-                <br>
-            </div>
-        </article>
-    </div>
 
-    <script>
-        window.onscroll = function() {
-            scrollFunction();
-        };
+<h1></h1>
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.body.classList.add("scroll-down");
-            } else {
-                document.body.classList.remove("scroll-down");
-            }
-        }
+<a href="https://inesreisx.com/"></a>🎨</a> Art
+</h2></label>
+<div class="image-container">
+<img src="/media/Art/inesreisx-young-drawing.png">
+<img src="/media/Art/inesreisx-summer-atelier-painting.jpg">
+<img src="/media/Art/inesreisx-summer-atelier-arts.jpg">
+<img src="/media/Art/inesreisx-paintings.jpg">
+</div>
+  <p>
+    Alongside writing, my interest for art or “starting to create art” came from a feeling of need. A need to entertain myself, to relax, to expel visual ideas, to have fun. My preferences within rely on drawing, painting (acrylics), collages, clay, and carpentry (limited).
+</p>
 
-        function scrollToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
+
+<img src ="/media/Art/grandfather-did-it.png">
+
+      <p>
+One of my vivid memories is an afternoon spent with my grandfather. He was in a wheelchair and as going out would be complicated, we’d spent a lot of time together at home, either he watching political debates while I was learning to write my first words on those magnetic drawing boards, or drawing. This was the only drawing from him I kept across time; here he was teaching me about perspectives, hence the house. The flower is also his.
+</p>
+
+<p>
+I used to keep all my drawings in those accordion folders but I ended up tossing away my kindergarten ones. As for the rest, I kept them saved and in 2016 created my first blog hosting them at lethebirdfly.blogspot.com.
+</p>
+
+<p>
+In 2017 I started painting on canvas, only in 2019 have I discovered DeviantArt (which is my favorite art platform), and in 2020 I started to learn about human proportions.
+</p>
+
+<p>
+The love for creation influenced 99% of my family, Christmas, or birthday gifts. It also helped me make my first humble first earnings of 19€ by the age of 10 selling clay pieces to friends at school.
+</p>
+
+<p>
+As for artists, there’s not just one I specifically adore, rather loads. But Leonardo Da Vinci and Tamara de Lempicka have a special place in my heart. Other of my favorites include Dimitra Milan, Humid Peach, GustavoReiPanda, ryodrigo, Kobra, flowsofly, Mad Dog Jones, Ana Ventura, Alexisrakun, Loish, Donutinha, AngelGanev, Claire Basl, Carolina Bonani, OSGEMEOS, and the Portuguese collective Explicit Citizens. 
+</p>
+
+
+            
+
+
+
+
+
+
+
+<button onclick="scrollToTop()" id="scrollToTopButton">
+  <span style="font-size: 20px;">&#8593;</span>
+</button>
+
+<script>
+  window.onscroll = function() {
+    var button = document.getElementById("scrollToTopButton");
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var documentHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+
+    if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
+    }
+  };
+
+  var button = document.getElementById("scrollToTopButton");
+  button.addEventListener("click", scrollToTop);
+  button.addEventListener("touchstart", scrollToTop);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+
+
+
+<script>
+  const navbar = document.querySelector('.navbar');
+  let prevScrollPos = window.pageYOffset;
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+      navbar.style.top = '0'; // Show navbar by positioning it at the top
+    } else {
+      navbar.style.top = '-70px'; // Hide navbar by moving it out of the viewport
+    }
+
+    prevScrollPos = currentScrollPos;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+</script>
+             
+          
 </body>
-
 </html>
