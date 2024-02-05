@@ -2,14 +2,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A TikTok Guide for Indie Game Developers — Boost Your Ga</title>
-<meta name="description" content="e.">
-<meta property="og:description" content=" s you survive through Indiepocalypse." />
-<meta property="og:title" content="Career of Inês"/>
-<meta property="og:description" content="gh Indiepocalypse." />
-<meta name="google-adsense-account" content="ca-pub-7773778866708742">
+<title>Writing</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- Google tag (gtag.js) -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -20,73 +15,81 @@
 	
 </script>
 <style>
+  
+    /* unvisited link */
+a:link {
+color: #11A797;
+text-decoration: none;
+}
 
+/* visited link */
+a:visited {
+color: #11A797;
+decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+color: #11A797;
+text-decoration: underline;
+
+}
+
+/* selected link */
+a:active {
+color: #11A797;
+
+}
    
 *{
 	box-sizing: border-box;
 }
-
-  body, html {
-    width: 90%;
-    margin: 0 auto;
+body, html {
+    width: 100%;
+	overflow-x: hidden;
+    margin: 0px;
     padding: 0px;
-    background-color: #f1f1f1;
-    color: black;
-    font-family: Helvetica, arial, sans-serif;
-    font-size: 20px;
+    background-color: #091b33;
+    color: #fff;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
     box-sizing: border-box;
 }
   
-  
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0; /* Set the navbar to start from the left */
-  width: 100%;
-  background-color: #10172a;
-  z-index: 100;
-  text-align: center;
- 
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #091b33;
+  color: #fff;
+  font-family: Calibri, sans-serif;
+  font-size: 18px;
+  box-sizing: border-box;
 }
-
-
- .navbar a {
-      display: inline-block;
-      color: #f2f2f2;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    .navbar a:hover {
-      background: #f1f1f1;
-      color: black;
-    }
- 
   
   h1, h2 {
   font-family: Calibri, sans-serif;
   font-size: 2em;
-  text-decoration: none; /* Add this line to remove the underline */
-  color: black;
 }
 
 p {
   font-size: 16px;
-  color: #424242;
    
 }
 
 img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+  display: block;
+  margin: 0 auto;
   text-align: center;
 }
 
 
-
+a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
 
    /* CSS for the sticky header */
 header {
@@ -94,7 +97,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: #091b33;
   height: 70px;
   padding: 10px 20px;
   display: flex;
@@ -104,6 +107,65 @@ header {
 }
 
 
+.social-icons {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 38px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+/* CSS for the "Up" button */
+#upButton {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+
+#upButton:hover {
+    background-color: #555;
+}
+
+#upButton span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    margin-left: 4px;
+}
+
+/* Show the "Up" button when scrolling down */
+body.scroll-down #upButton {
+    opacity: 1;
+}
+
+	
 /* The container */
 .container {
     display: block;
@@ -117,7 +179,6 @@ header {
     -ms-user-select: none;
     user-select: none;
 }
-  
 
 .Content {
   width: 100%;
@@ -135,16 +196,15 @@ header {
     margin-bottom: 5rem;
 }
   
-.Content p, ul {
+.Content p {
     text-align: left;
-    font-size: 16px;
-    color: black;
+    font-size: 20px;
+    color: #ccc;
     margin-bottom: 1rem;
     line-height: 2.3rem;
     font-family: Calibri, sans-serif;
     text-align: justify;
     position: relative; /* Add this line */
-
 }
 
 .Content p img {
@@ -159,38 +219,28 @@ header {
     width: 100%;
     text-align: center;
     font-size: 1.6rem;
-    color: black;
+    color: #ccc;
     margin-bottom: 1rem;
     line-height: 2.3rem;
 }
 
- #scrollToTopButton {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #10172a;
-      color: #fff;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-    
-    #scrollToTopButton.show {
-      display: block;
-      opacity: 1;
-    }
+
+.footer {
+    color: white;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+}
+
+.footer ul {
+    list-style: none;
+}
 
 @media only screen and (max-width: 768px){
     html,
     body
     {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
@@ -214,43 +264,6 @@ header {
     }
 }
   
-   @media only screen and (max-width: 768px) {
-      body, html {
-        width: 100%;
-      }
-      
-      .navbar {
-        text-align: center; /* Center-align for mobile */
-        padding: 0px 18px;
-      }
-    
-
-      .navbar a {
-        padding: 10px 10px; /* Adjust padding for navbar links */
-        font-size: 14px; /* Decrease font size for navbar links */
-        wdith: 100%;
-      }
-     
-      .Content {
-        padding: 0 3rem;
-        margin-top: 63px;
-      }
-
-      .Content article {
-        width: 100%; /* Make text content full width */
-        padding: 0; /* Remove padding for full width */
-      }
-    }
-
-        .Content p,
-      .Content ul,
-     .Content li {
-        margin-bottom: 1.3em; /* Adjust the space between paragraphs and lists */
-      }
-    }
-  
-  
-  
   img {
     text-align: center;
   }
@@ -262,63 +275,34 @@ header {
     height: auto;
   }
 }
-  
-
-
-/* Adjust the width on smaller screens (e.g., mobile) */
-@media only screen and (max-width: 768px) {
-  th, td {
-    width: 100%; /* Set full width for both th and td elements on smaller screens */
-  }
-}
-  
-    .table td[colspan] {
-   
-  }
-  
-      .container {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px;
-    }
-    
-  
-  @media only screen and (max-width: 768px) {
-  table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-  }
-  }
-
-  @media only screen and (max-width: 768px) {
-    p[cite] {
-      margin: 0; /* Remove margin for mobile */
-      padding: 0; /* Remove padding for mobile */
-      font-size: 16px; /* Adjust font size for mobile */
-    }
-}
-
-
-
 </style>
 </head>
 
 <body>
+  <button id="upButton" onclick="scrollToTop()">
+    <span></span>
+</button>
+<header>
+			<div class="social-icons">
+				<a href="https://inesreisx.medium.com/" target="_blank">
+					<i class="fab fa-medium"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/inesreisx/" target="_blank">
+					<i class="fab fa-linkedin"></i>
+				</a>
+				<a href="https://github.com/inesreisx/" target="_blank">
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+		</header>
 
-  <div class="navbar">
-    <div class="navbar-items">
-      <a href="https://inesreisx.com/blog">Blog</a>
-      <a href="https://inesreisx.com/">Home</a>
-    </div>
-  </div>
     <div class="Content">
         <article>
-
-<h1></h1>
-
-
-<a href="https://inesreisx.com/">✍️</a> Writing
+            <br>
+            <br>
+            <br>
+            <label class="container"><h2>
+              <a href="https://inesreisx.com/">✍️</a> Writing
               </h2></label>
             <h3>A Childhood Dream: How I Started Writing</h3>
                     <img src="/media/Writing/inesreisx-young-writing.png"><p>
@@ -388,71 +372,35 @@ header {
  <li>Antologia de Literatura Portuguesa “Fragmentos de Saudade - Vol.1”, June 2023 with "Saudade" <a href="https://href.li/?https://www.deviantart.com/inesreis/art/Uma-Colecao-de-Poemas-por-Ines-Reis-861367394">in Uma Coleção de Poemas</a>
             </li>
           </ol>
-            
+            <br>
+            <div class="footer">
+                <br>
+                <ul class="links">
+                    <li class="link-item"><a href="https://inesreisx.com/">🏠 Home</a></li>
+                </ul>
+                <br>
+            </div>
+        </article>
+    </div>
 
-            
+    <script>
+        window.onscroll = function() {
+            scrollFunction();
+        };
 
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.body.classList.add("scroll-down");
+            } else {
+                document.body.classList.remove("scroll-down");
+            }
+        }
 
-
-
-
-
-<button onclick="scrollToTop()" id="scrollToTopButton">
-  <span style="font-size: 20px;">&#8593;</span>
-</button>
-
-<script>
-  window.onscroll = function() {
-    var button = document.getElementById("scrollToTopButton");
-    var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    var documentHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    );
-
-    if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
-      button.classList.add("show");
-    } else {
-      button.classList.remove("show");
-    }
-  };
-
-  var button = document.getElementById("scrollToTopButton");
-  button.addEventListener("click", scrollToTop);
-  button.addEventListener("touchstart", scrollToTop);
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-</script>
-
-
-
-
-<script>
-  const navbar = document.querySelector('.navbar');
-  let prevScrollPos = window.pageYOffset;
-
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-
-    if (prevScrollPos > currentScrollPos) {
-      navbar.style.top = '0'; // Show navbar by positioning it at the top
-    } else {
-      navbar.style.top = '-70px'; // Hide navbar by moving it out of the viewport
-    }
-
-    prevScrollPos = currentScrollPos;
-  };
-
-  window.addEventListener('scroll', handleScroll);
-</script>
-             
-          
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
+
 </html>
