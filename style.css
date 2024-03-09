@@ -123,19 +123,22 @@ a:active {
     background-color: black;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1;
-    margin-right: 50px;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center-align items vertically */
+    padding: 13px; /* Add padding for space at the top */
 }
 
 .navbar a {
-    float: right;
-    display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    margin: 0 10px;
 }
 
 .navbar a:hover {
