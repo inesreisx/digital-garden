@@ -18,6 +18,35 @@
 </script>
 
 <style>
+
+.navbar {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center-align items vertically */
+    padding: 13px; /* Add padding for space at the top */
+}
+
+.navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    background: #f1f1f1;
+    color: black;
+}
+
     h1, h2{
     font-family: Calibri, sans-serif;
     font-size: 4.8rem;
@@ -250,6 +279,15 @@ h1{
     </head>
     
 <body>
+  <div class="navbar">
+    <div class="navbar-items">
+      <a href="https://inesreisx.com/">Home</a>
+      <a href="https://inesreisx.com/blog/">Blog</a>
+      <a href="https://inesreisx.com/i/career">Art</a>
+      <a href="https://inesreisx.com/i/bucketlist">Bucketlist</a>
+    </div>
+  </div>
+
 	    <nav>
             <h1>Before I die, I want to...</h1>
         </div>
@@ -499,13 +537,7 @@ h1{
 			
 
 <br>
-                <div class="footer">
-                    <br>
-                    <ul class="links">
-                      <li class="link-item"><a href="https://inesreisx.com/">🏠 Home</a></li>
-                      </ul>
-                      <br>
-                    </div>
+    
                   
             </div>
         </article>
