@@ -869,20 +869,29 @@ function nextImage() {
 let initialDistance = 0;
 
 modalImage.addEventListener('touchstart', (e) => {
-    if (e.touches.length === 2) {
-        initialDistance = Math.hypot(
-            e.touches[0].clientX - e.touches[1].clientX,
-            e.touches[0].clientY - e.touches[1].clientY
-        );
+    if (e.touches.length === 1) {
+        initialX = e.touches[0].clientX;
     }
 });
 
 modalImage.addEventListener('touchmove', (e) => {
-    if (e.touches.length === 2) {
-        const currentDistance = Math.hypot(
-            e.touches[0].clientX - e.touches[1].clientX,
-            e.touches[0].clientY - e.touches[1].clientY
-        );
+    if (e.touches.length === 1) {
+        const currentX = e.touches[0].clientX;
+        const deltaX = currentX - initialX;
+
+        if (deltaX > 50) {
+            prevImage();
+            initialX = currentX;
+        } else if (deltaX < -50) {
+            nextImage();
+            initialX = currentX;
+        }
+    }
+});
+
+modalImage.addEventListener('touchend', () => {
+    initialX = 0;
+});
 
         const delta = currentDistance - initialDistance;
 
