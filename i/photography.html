@@ -868,6 +868,8 @@ function nextImage() {
 
 let initialDistance = 0;
 
+let initialX = 0;
+
 modalImage.addEventListener('touchstart', (e) => {
     if (e.touches.length === 1) {
         initialX = e.touches[0].clientX;
@@ -891,19 +893,6 @@ modalImage.addEventListener('touchmove', (e) => {
 
 modalImage.addEventListener('touchend', () => {
     initialX = 0;
-});
-
-        const delta = currentDistance - initialDistance;
-
-        // Adjust the scaling factor based on your preference
-        const scale = 1 + delta / 100;
-
-        modalImage.style.transform = `scale(${scale})`;
-    }
-});
-
-modalImage.addEventListener('touchend', () => {
-    initialDistance = 0;
 });
 
 
