@@ -125,6 +125,24 @@
     align-items: center;
 }
 
+.user-info {
+  display: flex;
+  align-items: center; /* Keep items in line horizontally */
+  justify-content: space-between; /* Add space between items */
+}
+
+.profile-user-name {
+  margin-bottom: 0; /* Remove margin at the bottom */
+}
+
+.btn.profile-settings-btn {
+  margin-top: 0; /* Remove top margin to keep it in line with h1 */
+}
+
+.user-info p {
+  margin-top: 10px; /* Add top margin to the paragraph */
+}
+
 @media screen and (max-width: 40rem) {
     .profile-user-settings {
         margin-top: 2rem; 
@@ -480,6 +498,7 @@
         <div class="profile-user-settings">
           <div class="user-info">
             <h1 class="profile-user-name">byines</h1>
+            <p style="margin: 0;"><i>Credit © Inês Reis @inesreisx</i></p>
             <a class="btn profile-settings-btn" href="https://www.instagram.com/byines/" target="_blank" onclick="changeButton()" style="background-color: #0098fe; color: #ffffff; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;">Follow</a>
             <script>
               function changeButton() {
@@ -493,7 +512,7 @@
               }
             </script>
           </div>
-          <p style="margin: 0;"><i>Credit © Inês Reis @inesreisx</i></p>
+
         </div>
       </div>
     </div>
