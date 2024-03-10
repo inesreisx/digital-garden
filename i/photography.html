@@ -456,29 +456,23 @@
   <header>
     <div class="container">
       <div class="profile">
-        <!--<div class="profile-image">
-          <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt="">
-        </div>-->
         <div class="profile-user-settings">
-          <h1 class="profile-user-name">byines</h1><br>
-          <p><i>Credit © Inês Reis @inesreisx</i></p>
-          <a class="btn profile-settings-btn" href="https://www.instagram.com/byines/" target="_blank" onclick="changeButton()" style="background-color: #0098fe; color: #ffffff; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;">Follow</a>
-          <script>
-            function changeButton() {
-              var button = document.querySelector('.profile-settings-btn');
-          
-              // Change text
-              button.innerText = "Following";
-          
-              // Change color
-              button.style.backgroundColor = "#262626";
-          
-              // You can also remove the click event listener if you want to prevent further clicks
-              // button.removeEventListener("click", changeButton);
-            }
-          </script>
-        
-        </div>
+            <h1 class="profile-user-name">byines</h1>
+            <!-- Move the credit paragraph below the h1 -->
+            <p><i>Credit © Inês Reis @inesreisx</i></p>
+            <a class="btn profile-settings-btn" href="https://www.instagram.com/byines/" target="_blank" onclick="changeButton()" style="background-color: #0098fe; color: #ffffff; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;">Follow</a>
+            <script>
+              function changeButton() {
+                var button = document.querySelector('.profile-settings-btn');
+                // Change text
+                button.innerText = "Following";
+                // Change color
+                button.style.backgroundColor = "#262626";
+                // You can also remove the click event listener if you want to prevent further clicks
+                // button.removeEventListener("click", changeButton);
+              }
+            </script>
+          </div>
         <!--<div class="profile-bio">
           <p><span class="profile-real-name">Jane Doe</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️</p>
         </div>-->
