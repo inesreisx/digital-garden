@@ -461,8 +461,21 @@
         </div>-->
         <div class="profile-user-settings">
           <h1 class="profile-user-name">byines</h1>
-          <a class="btn profile-settings-btn" href="https://www.instagram.com/byines/" target="_blank" style="background-color: #0098fe; color: #ffffff; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;">Follow</a>
-
+          <a class="btn profile-settings-btn" href="https://www.instagram.com/byines/" target="_blank" onclick="changeButton()" style="background-color: #0098fe; color: #ffffff; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;">Follow</a>
+          <script>
+            function changeButton() {
+              var button = document.querySelector('.profile-settings-btn');
+          
+              // Change text
+              button.innerText = "Following";
+          
+              // Change color
+              button.style.backgroundColor = "#262626";
+          
+              // You can also remove the click event listener if you want to prevent further clicks
+              // button.removeEventListener("click", changeButton);
+            }
+          </script>
         
         </div>
         <!--<div class="profile-bio">
