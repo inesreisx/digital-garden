@@ -257,3 +257,12 @@ a:active {
 
     /* ... (other existing mobile styles) ... */
 }
+
+.navbar-items {
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar a {
+    margin: 5px 0; /* Adjust margin for navbar links */
+}
