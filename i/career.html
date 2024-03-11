@@ -6,7 +6,6 @@
 <meta name="description" content="An online collection of thoughts, ideas, and learnings by @inesreisx.">
 <meta property="og:description" content="An online collection of thoughts, ideas, and learnings by @inesreisx." />
 <meta property="og:title" content="Career of Inês"/>
-<link rel="stylesheet" href="../style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
@@ -19,10 +18,7 @@
 	
 </script>	
 
-<style>
-  
-
-   
+<style>  
 *{
 	box-sizing: border-box;
 }
@@ -38,6 +34,44 @@ body, html {
     box-sizing: border-box;
 }
   
+.navbar {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center-align items vertically */
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+
+.navbar a {
+    color: #fafafa;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    background: #fafafa;
+    color: black;
+}
+    
+    :root {
+        font-size: 10px;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
   
   h1, h2 {
@@ -57,9 +91,6 @@ img {
   margin: 0 auto;
   text-align: center;
 }
-
-
-
 
    /* CSS for the sticky header */
 header {
@@ -273,11 +304,14 @@ td {
 </head>
 
 <body>
-<div class="navbar">
-        <a href="https://inesreisx.com/blog/">Blog</a>
-        <a href="https://inesreisx.com/">Home</a>
-
-</div>
+  <div class="navbar">
+    <div class="navbar-items">
+      <a href="https://inesreisx.com/">Home</a>
+      <a href="https://inesreisx.com/blog/">Blog</a>
+      <a href="https://inesreisx.com/i/art">Art</a>
+      <a href="https://inesreisx.com/i/writing">Writing</a>
+    </div>
+  </div>
 
 
 

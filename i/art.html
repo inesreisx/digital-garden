@@ -38,30 +38,43 @@
   
   
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0; /* Set the navbar to start from the left */
-  width: 100%;
-  background-color: #10172a;
-  z-index: 100;
-  text-align: center;
- 
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center-align items vertically */
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
 }
 
+.navbar a {
+    color: #fafafa;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+}
 
- .navbar a {
-      display: inline-block;
-      color: #f2f2f2;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
+.navbar a:hover {
+    background: #fafafa;
+    color: black;
+}
+    
+    :root {
+        font-size: 10px;
     }
 
-    .navbar a:hover {
-      background: #f1f1f1;
-      color: black;
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
     }
- 
   
   h1, h2 {
   font-family: Calibri, sans-serif;
