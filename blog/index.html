@@ -47,26 +47,42 @@
 }
     
 .navbar {
-  overflow: hidden;
-  background-color: #10172a;
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  z-index: 1;
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center-align items vertically */
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
 }
 
-    .navbar a {
-      display: inline-block;
-      color: #f2f2f2;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
+.navbar a {
+    color: #fafafa;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    background: #fafafa;
+    color: black;
+}
+    
+    :root {
+        font-size: 10px;
     }
 
-    .navbar a:hover {
-      background: #f1f1f1;
-      color: black;
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
     }
 
     #container {
@@ -135,10 +151,15 @@
 </head>
 <body>
   <div class="navbar">
-    <a href="https://inesreisx.com/blog">Blog</a>
-    <a href="https://inesreisx.com/">Home</a>
-    <a href="https://inesreisx.com/i/writing">Writing</a>
+    <div class="navbar-items">
+      <a href="https://inesreisx.com/">Home</a>
+      <a href="https://inesreisx.com/blog/">Blog</a>
+      <a href="https://inesreisx.com/i/career">Art</a>
+      <a href="https://inesreisx.com/i/photography">Photography</a>
+    </div>
   </div>
+
+
   <div id="container">
     <div class="post">
       <div class="year">2022</div>
@@ -183,5 +204,9 @@
       <div class="year">Product Reviews</div>
       <div class="title"><a href="">Soon</a></div>
   </div>
+  <div class="post">
+    <div class="year">Career</div>
+    <div class="title"><a href="">Soon</a></div>
+</div>
 </body>
 </html>
