@@ -258,17 +258,12 @@ a:active {
     /* ... (other existing mobile styles) ... */
 }
 
-.navbar-items a {
-    display: none; /* Hide all items by default */
-  }
   
-  /* Styles for screens 600 pixels and narrower */
-  @media only screen and (max-width: 812px) {
-    .navbar-items a:nth-child(1),
-    .navbar-items a:nth-child(2),
-    .navbar-items a:nth-child(4),
-    .navbar-items a:nth-child(5) {
-      display: inline-block; /* Display the first four items on mobile */
-      margin-right: 20px; /* Add any other styles you want for spacing */
-    }
+  .navbar-items a:nth-child(1),
+  .navbar-items a:nth-child(2),
+  .navbar-items a:nth-child(4),
+  .navbar-items a:nth-child(5) {
+    display: inline-block; /* Display the first four items on mobile */
+    margin-right: 20px; /* Add any other styles you want for spacing */
   }
+
