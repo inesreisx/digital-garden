@@ -226,7 +226,7 @@ a:active {
 }
 
 /* Mobile styles */
-@media (max-width: 767px) {
+@media (max-width: 812px) {
 
     .heading-text {
         font-size: 1.5rem; /* Decrease font size for headings on smaller screens */
