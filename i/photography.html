@@ -89,7 +89,7 @@
     /* Profile Section */
 
     .profile {
-        padding: 5rem 0;
+    padding-top: 50px;
     }
 
     .profile::after {
@@ -135,6 +135,11 @@
   margin-bottom: 0; /* Remove margin at the bottom */
 }
 
+    .credits {
+  margin: 0; /* Remove margin at the bottom */
+      padding-bottom: 5rem;
+}
+    
 @media screen and (max-width: 40rem) {
     .profile-user-name {
         margin-bottom: 1rem; /* Add more margin as needed */
@@ -504,7 +509,8 @@
         <div class="profile-user-settings">
           <div class="user-info">
             <h1 class="profile-user-name">byines</h1>
-            <p style="margin: 0;"><i>Credit © Inês Reis @inesreisx</i></p>
+          </div>
+           
             <a class="btn profile-settings-btn" href="https://www.instagram.com/byines/" target="_blank" onclick="changeButton()" style="background-color: #0098fe; color: #ffffff; padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block;">Follow</a>
             <script>
               function changeButton() {
@@ -518,9 +524,11 @@
               }
             </script>
           </div>
-
-        </div>
       </div>
+      <div>
+       <p class="credits"><i>Credit © Inês Reis @inesreisx</i></p>
+    </div>
+    
     </div>
   </header>
 
