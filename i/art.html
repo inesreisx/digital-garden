@@ -233,13 +233,12 @@ header {
       
       .navbar {
         text-align: center; /* Center-align for mobile */
-        padding: 0px 18px;
       }
     
 
       .navbar a {
         padding: 10px 10px; /* Adjust padding for navbar links */
-        font-size: 14px; /* Decrease font size for navbar links */
+        font-size: 17px; /* Decrease font size for navbar links */
         wdith: 100%;
       }
      
@@ -276,40 +275,6 @@ header {
 }
   
 
-
-/* Adjust the width on smaller screens (e.g., mobile) */
-@media only screen and (max-width: 768px) {
-  th, td {
-    width: 100%; /* Set full width for both th and td elements on smaller screens */
-  }
-}
-  
-    .table td[colspan] {
-   
-  }
-  
-      .container {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px;
-    }
-    
-  
-  @media only screen and (max-width: 768px) {
-  table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-  }
-  }
-
-  @media only screen and (max-width: 768px) {
-    p[cite] {
-      margin: 0; /* Remove margin for mobile */
-      padding: 0; /* Remove padding for mobile */
-      font-size: 16px; /* Adjust font size for mobile */
-    }
-}
 
 
 
@@ -409,12 +374,8 @@ As for artists, there’s not just one I specifically adore, rather loads. But L
       behavior: "smooth"
     });
   }
-</script>
 
 
-
-
-<script>
   const navbar = document.querySelector('.navbar');
   let prevScrollPos = window.pageYOffset;
 
@@ -423,8 +384,6 @@ As for artists, there’s not just one I specifically adore, rather loads. But L
 
     if (prevScrollPos > currentScrollPos) {
       navbar.style.top = '0'; // Show navbar by positioning it at the top
-    } else {
-      navbar.style.top = '-70px'; // Hide navbar by moving it out of the viewport
     }
 
     prevScrollPos = currentScrollPos;
