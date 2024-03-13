@@ -235,6 +235,7 @@ header {
         padding-top: 1.3rem; /* Add padding top */
         padding-bottom: 1.3rem; /* Add padding bottom */
         position: fixed; /* Keep the navbar fixed */
+        font-size: 17px;
     }
 
     .navbar a {
@@ -276,23 +277,6 @@ header {
 }
   
 
-
-/* Adjust the width on smaller screens (e.g., mobile) */
-@media only screen and (max-width: 768px) {
-  th, td {
-    width: 100%; /* Set full width for both th and td elements on smaller screens */
-  }
-}
-  
-    .table td[colspan] {
-   
-  }
-  
-      .container {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px;
-    }
     
   
   @media only screen and (max-width: 768px) {
@@ -412,9 +396,9 @@ header {
 
 
 
-<button onclick="scrollToTop()" id="scrollToTopButton">
-  <span style="font-size: 20px;">&#8593;</span>
-</button>
+  <button onclick="scrollToTop()" id="scrollToTopButton">
+    <span style="font-size: 20px;">&#8593;</span>
+  </button>
 
 <script>
   window.onscroll = function() {
@@ -445,7 +429,7 @@ header {
     });
   }
 
- <script>
+
   const navbar = document.querySelector('.navbar');
   let prevScrollPos = window.pageYOffset;
 
