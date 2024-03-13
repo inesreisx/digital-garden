@@ -400,56 +400,52 @@ header {
     <span style="font-size: 20px;">&#8593;</span>
   </button>
 
-<script>
-  window.onscroll = function() {
+  <script>
+    window.onscroll = function() {
+      var button = document.getElementById("scrollToTopButton");
+      var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      var documentHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+      );
+  
+      if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+        button.classList.add("show");
+      } else {
+        button.classList.remove("show");
+      }
+    };
+  
     var button = document.getElementById("scrollToTopButton");
-    var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    var documentHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    );
-
-    if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
-      button.classList.add("show");
-    } else {
-      button.classList.remove("show");
+    button.addEventListener("click", scrollToTop);
+    button.addEventListener("touchstart", scrollToTop);
+  
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
-  };
-
-  var button = document.getElementById("scrollToTopButton");
-  button.addEventListener("click", scrollToTop);
-  button.addEventListener("touchstart", scrollToTop);
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-
-
-  const navbar = document.querySelector('.navbar');
-  let prevScrollPos = window.pageYOffset;
-
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-
-    if (prevScrollPos > currentScrollPos || window.innerWidth <= 768) {
-      navbar.style.top = '0'; // Show navbar by positioning it at the top
-    } else {
-      navbar.style.top = '-70px'; // Hide navbar by moving it out of the viewport
-    }
-
-    prevScrollPos = currentScrollPos;
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  window.addEventListener('resize', handleScroll); // Add this to handle window resizing
-</script>
-
-</script>
+  
+  
+   const navbar = document.querySelector('.navbar');
+    let prevScrollPos = window.pageYOffset;
+  
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isMobile = window.innerWidth <= 768;
+  
+      if (!isMobile && prevScrollPos > currentScrollPos) {
+        navbar.style.top = '0'; // Show navbar by positioning it at the top
+      }
+  
+      prevScrollPos = currentScrollPos;
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+  </script>
              
           
 </body>
