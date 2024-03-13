@@ -76,6 +76,22 @@
         box-sizing: border-box;
     }
   
+  @media only screen and (max-width: 926px) {
+  .navbar {
+    text-align: center; /* Center-align for mobile */
+    flex-direction: column; /* Stack items vertically */
+    padding: 0; /* Remove padding */
+  }
+
+  .navbar a {
+    display: block; /* Display links as blocks to occupy full width */
+    padding: 10px 0; /* Adjust padding for navbar links */
+    font-size: 17px; /* Decrease font size for navbar links */
+    margin: 0; /* Remove margin */
+  }
+}
+  
+  
   h1, h2 {
   font-family: Calibri, sans-serif;
   font-size: 2em;
@@ -97,23 +113,6 @@ img {
       text-align: center;
 }
 
-
-
-
-   /* CSS for the sticky header */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  height: 70px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 100;
-}
 
 
 /* The container */
