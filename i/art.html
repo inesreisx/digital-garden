@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Art - Inês Reis</title>
-<meta name="description" content="e.">
-<meta property="og:description" content="Drawings and paintings by Inês Reis" />
-<meta property="og:title" content="Drawings and paintings by Inês Reis"/>
+<title>Art by Inês Reis</title>
+<meta name="description" content="An online collection of content, thoughts, and ideas by @inesreisx.">
+<meta property="og:description" content="An online collection of content, thoughts, and ideas by @inesreisx." />
+<meta property="og:title" content="Photography by Inês Reis"/>
+<meta property="og:description" content="An online collection of content, thoughts, and ideas by @inesreisx." />
 <meta name="google-adsense-account" content="ca-pub-7773778866708742">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
 <script>
@@ -19,25 +21,16 @@
 	
 </script>
 <style>
-
-   
-*{
-	box-sizing: border-box;
-}
-
-  body, html {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0px;
-    background-color: #f1f1f1;
-    color: black;
-    font-family: Helvetica, arial, sans-serif;
-    font-size: 20px;
-    box-sizing: border-box;
-}
+     body {
+        font-family: "Open Sans", Arial, sans-serif;
+        min-height: 100vh;
+        background-color: #fafafa;
+        color: #262626;
+        padding-bottom: 3rem;
+        cursor: zoom-in;
+    }
   
-  
-.navbar {
+    .navbar {
     overflow: hidden;
     background-color: black;
     position: fixed;
@@ -76,106 +69,132 @@
         box-sizing: border-box;
     }
   
-  @media only screen and (max-width: 926px) {
-  .navbar {
-    text-align: center; /* Center-align for mobile */
-    flex-direction: column; /* Stack items vertically */
-    padding: 0; /* Remove padding */
-  }
-
-  .navbar a {
-    display: block; /* Display links as blocks to occupy full width */
-    padding: 10px 0; /* Adjust padding for navbar links */
-    font-size: 17px; /* Decrease font size for navbar links */
-    margin: 0; /* Remove margin */
-  }
-}
-  
-  
-  h1, h2 {
-  font-family: Calibri, sans-serif;
-  font-size: 2em;
-  text-decoration: none; /* Add this line to remove the underline */
-  color: black;
-}
-
-p {
-  font-size: 16px;
-  color: #424242;
-   
-}
-
-img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-}
-
-
-
-/* The container */
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-  
-
-.Content {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  padding: 3.5rem 0rem 0rem;
-  max-width: 120rem;
-}
-
-  .Content article {
-    margin: auto;
-    width: 70%;
-    padding: 0px 2.5rem;
-    border-radius: 1rem;
-    margin-bottom: 5rem;
-}
-  
-.Content p, ul {
-    text-align: left;
-    font-size: 16px;
-    color: black;
-    margin-bottom: 1rem;
-    line-height: 2.3rem;
-    font-family: Calibri, sans-serif;
-    text-align: justify;
-    position: relative; /* Add this line */
-
-}
-
-.Content p img {
-    display: block;
-    margin: 0 auto;
-    width: 100%; /* Adjusted the width */
-    height: auto;
-    max-width: 100%; /* Added this line */
-}
-
-.Content p footer {
-    width: 100%;
+  @media (max-width: 926px) {
+  .navbar-items {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    font-size: 1.6rem;
-    color: black;
-    margin-bottom: 1rem;
-    line-height: 2.3rem;
+  }
+  .navbar a {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+}
+  
+/* Gallery layout */
+#images-wrapper {    
+   line-height: 0;       
+   -webkit-column-count: 5;    
+   -webkit-column-gap: 0px;    
+   -moz-column-count: 5;
+   -moz-column-gap: 0px;
+   column-count: 5;    
+   column-gap: 0px;  
+  margin-top: 5rem; /* Adjust the value as needed for the desired spacing */
+}  
+
+#images-wrapper img {    
+   width: 100% !important;    
+   height: auto !important;  
+}  
+
+#images-wrapper {    
+   display:inline-block;    
+   margin-right: auto;    
+   margin-left: auto;  
+}
+            
+@media (max-width: 1000px) {
+   #images-wrapper {
+   -moz-column-count:    3;
+   -webkit-column-count: 3;
+   column-count:         3;
+   }
 }
 
- #scrollToTopButton {
+@media (max-width: 800px) {
+   #images-wrapper {
+   -moz-column-count:    2;
+   -webkit-column-count: 2;
+   column-count:         2;
+   }
+}
+
+@media (max-width: 400px) {
+   #images-wrapper {
+   -moz-column-count:    1;
+   -webkit-column-count: 1;
+   column-count:        1;
+   }
+}
+
+/* Modal styles */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    z-index: 999;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow content when zoomed */
+}
+
+.modal-content img {
+    transition: transform 0.5s ease;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+  .modal-open {
+  overflow: hidden;
+}
+  
+.modal-content img.zoomed {
+    transform: scale(1.5); /* You can adjust the scale factor as needed */
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  padding: 2rem; /* Add padding */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 2rem; /* Add padding */
+}
+
+.arrow.left {
+    left: 10px;
+  
+}
+
+.arrow.right {
+    right: 10px;
+  
+}
+    #scrollToTopButton {
       display: none;
       position: fixed;
       bottom: 20px;
@@ -183,7 +202,7 @@ img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background-color: #10172a;
+      background-color: black;
       color: #fff;
       border: none;
       outline: none;
@@ -196,157 +215,205 @@ img {
       display: block;
       opacity: 1;
     }
-
-@media only screen and (max-width: 768px){
-    html,
-    body
-    {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 576px){
-    html,
-    body
-    {
-        font-size: 9px;
-    }
-    .Content article
-    {
-        width: 90%;	
-    }
-}
-
-@media only screen and (max-width: 300px){
-    html,
-    body
-    {
-        font-size: 8px;
-    }
-}
-  
-   @media only screen and (max-width: 926px) {
-      body, html {
-        width: 100%;
-      }
-      
-      .navbar {
-        text-align: center; /* Center-align for mobile */
-      }
-    
-
-      .navbar a {
-        padding: 10px 10px; /* Adjust padding for navbar links */
-        font-size: 17px; /* Decrease font size for navbar links */
-        wdith: 100%;
-      }
-     
-      .Content {
-        padding: 0 3rem;
-        margin-top: 63px;
-      }
-
-      .Content article {
-        width: 100%; /* Make text content full width */
-        padding: 0; /* Remove padding for full width */
-      }
-    }
-
-        .Content p,
-      .Content ul,
-     .Content li {
-        margin-bottom: 1.3em; /* Adjust the space between paragraphs and lists */
-      }
-    }
-  
-  
-  
-  img {
-    text-align: center;
-  }
- 
-  @media only screen and (max-width: 768px) {
-  img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-  }
-}
-  
-
-
-
-
 </style>
 </head>
-
 <body>
-
-  <div class="navbar">
-    <div class="navbar-items">
-      <a href="https://inesreisx.com/">Home</a>
-      <a href="https://inesreisx.com/blog/">Blog</a>
-      <a href="https://inesreisx.com/i/writing">Writing</a>
-      <a href="https://inesreisx.com/i/photography">Photography</a>
-    </div>
+  
+<div class="navbar">
+  <div class="navbar-items">
+    <a href="https://inesreisx.com/">Home</a>
+    <a href="#" onclick="filterImages('all')">All</a>
+    <a href="#" onclick="filterImages('canvas')">Drawings</a>
+    <a href="#" onclick="filterImages('collages')">Canvas</a>
+    <a href="#" onclick="filterImages('drawings')">Mixed Media</a>
   </div>
-
-
-    <div class="Content">
-        <article>
-
-<h1></h1>
-
-<a href="https://inesreisx.com/"></a>🎨</a> Art
-</h2></label>
-<div class="image-container">
-<img src="/media/Art/inesreisx-young-drawing.png">
-<img src="/media/Art/inesreisx-summer-atelier-painting.jpg">
-<img src="/media/Art/inesreisx-summer-atelier-arts.jpg">
-<img src="/media/Art/inesreisx-paintings.jpg">
 </div>
-  <p>
-    Alongside writing, my interest for art or “starting to create art” came from a feeling of need. A need to entertain myself, to relax, to expel visual ideas, to have fun. My preferences within rely on drawing, painting (acrylics), collages, clay, and carpentry (limited).
-</p>
+  
+  
+<div id="images-wrapper"> 
+   <!-- Gallery items will be dynamically added here -->
+</div>
 
+<!-- Image Modal -->
+<div class="gallery-modal" id="galleryModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <span class="arrow left" onclick="prevImage()">&#8249;</span>
+    <img src="" alt="" class="modal-image" id="modalImage">
+    <span class="arrow right" onclick="nextImage()">&#8250;</span>
+  </div>
+</div>
 
-<img src ="/media/Art/grandfather-did-it.png">
-
-      <p>
-One of my vivid memories is an afternoon spent with my grandfather. He was in a wheelchair and as going out would be complicated, we’d spent a lot of time together at home, either he watching political debates while I was learning to write my first words on those magnetic drawing boards, or drawing. This was the only drawing from him I kept across time; here he was teaching me about perspectives, hence the house. The flower is also his.
-</p>
-
-<p>
-I used to keep all my drawings in those accordion folders but I ended up tossing away my kindergarten ones. As for the rest, I kept them saved and in 2016 created my first blog hosting them at lethebirdfly.blogspot.com.
-</p>
-
-<p>
-In 2017 I started painting on canvas, only in 2019 have I discovered DeviantArt (which is my favorite art platform), and in 2020 I started to learn about human proportions.
-</p>
-
-<p>
-The love for creation influenced 99% of my family, Christmas, or birthday gifts. It also helped me make my first humble first earnings of 19€ by the age of 10 selling clay pieces to friends at school.
-</p>
-
-<p>
-As for artists, there’s not just one I specifically adore, rather loads. But Leonardo Da Vinci and Tamara de Lempicka have a special place in my heart. Other of my favorites include Dimitra Milan, Humid Peach, GustavoReiPanda, ryodrigo, Kobra, flowsofly, Mad Dog Jones, Ana Ventura, Alexisrakun, Loish, Donutinha, AngelGanev, Claire Basl, Carolina Bonani, OSGEMEOS, and the Portuguese collective Explicit Citizens. 
-</p>
-
-
-            
-
-
-
-
-
-
-
-<button onclick="scrollToTop()" id="scrollToTopButton">
-  <span style="font-size: 20px;">&#8593;</span>
-</button>
-
+  
+    <button onclick="scrollToTop()" id="scrollToTopButton">
+    <span style="font-size: 20px;">&#8593;</span>
+  </button>
+  
 <script>
-  window.onscroll = function() {
+// Array of image URLs or paths with labels
+const imageUrls = [
+    { url: 'https://photostorage.explorest.com/usa/hawaii/vlim-mai-poina-palmtree-feed.jpg', labels: ['All', 'canvas'] },
+    { url: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/1859-Martinique.web.jpg', labels: ['All', 'mixed media'] },
+    { url: 'https://www.shutterstock.com/image-vector/palm-tree-vector-silhouette-coconut-260nw-2280823531.jpg', labels: ['All', 'drawings'] },
+    { url: 'https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*', labels: ['All', 'canvas'] },
+    { url: 'path/to/your/img4.example', labels: ['collages'] },
+];
+
+function filterImages(label) {
+    // Select all gallery items
+    const galleryItems = document.querySelectorAll("#images-wrapper img");
+
+    // Loop through each gallery item
+    galleryItems.forEach(item => {
+        // Check if the provided label is included in the item's labels
+        if (item.dataset.label.includes(label) || label === 'all') {
+            // If it matches, show the item
+            item.style.display = 'block';
+        } else {
+            // If it doesn't match, hide the item
+            item.style.display = 'none';
+        }
+    });
+}
+  
+const galleryContainer = document.getElementById('images-wrapper');
+
+// Loop through the imageUrls array and dynamically create gallery items
+imageUrls.forEach((image, index) => {
+    const imageElement = document.createElement('img');
+    imageElement.classList.add('lazy-img');
+    imageElement.dataset.src = image.url;
+    imageElement.alt = `Picture ${index + 1}`;
+    imageElement.dataset.label = image.labels; // Store label as a dataset attribute
+    galleryContainer.appendChild(imageElement);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let lazyImages = [].slice.call(document.querySelectorAll(".lazy-img"));
+    let active = false;
+    let currentImageIndex = 0;
+
+    const lazyLoad = function() {
+        if (active === false) {
+            active = true;
+
+            setTimeout(function() {
+                lazyImages.forEach(function(lazyImage) {
+                    if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.classList.remove("lazy-img");
+
+                        lazyImages = lazyImages.filter(function(image) {
+                            return image !== lazyImage;
+                        });
+
+                        if (lazyImages.length === 0) {
+                            document.removeEventListener("scroll", lazyLoad);
+                            window.removeEventListener("resize", lazyLoad);
+                            window.removeEventListener("orientationchange", lazyLoad);
+                        }
+                    }
+                });
+
+                active = false;
+            }, 200);
+        }
+    };
+
+    lazyLoad();
+
+    document.addEventListener("scroll", lazyLoad);
+    window.addEventListener("resize", lazyLoad);
+    window.addEventListener("orientationchange", lazyLoad);
+    
+    // Selecting gallery items
+    const galleryItems = document.querySelectorAll("#images-wrapper img");
+
+// Function to open modal
+function openModal() {
+    galleryModal.style.display = 'flex';
+    document.body.classList.add('modal-open'); // Disable scrolling
+}
+
+// Function to close modal
+function closeModal() {
+    document.getElementById('galleryModal').style.display = 'none';
+    document.body.classList.remove('modal-open'); // Enable scrolling
+}
+
+    // Event listener for close button
+    document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+    // Function to navigate to the previous image
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+        const imageUrl = galleryItems[currentImageIndex].src;
+        modalImage.src = imageUrl;
+        modalImage.classList.remove('zoomed'); // Remove zoom class on image change
+    }
+
+    // Function to navigate to the next image
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+        const imageUrl = galleryItems[currentImageIndex].src;
+        modalImage.src = imageUrl;
+        modalImage.classList.remove('zoomed'); // Remove zoom class on image change
+    }
+
+    // Event listeners for gallery items
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentImageIndex = index;
+            const imageUrl = item.src;
+            modalImage.src = imageUrl;
+            modalImage.classList.add('zoomed'); // Add zoom class when clicked
+            openModal();
+        });
+
+        item.addEventListener('mouseover', () => {
+            document.body.style.cursor = 'zoom-in';
+        });
+
+        item.addEventListener('mouseout', () => {
+            document.body.style.cursor = 'auto';
+        });
+    });
+
+    // Event listener for previous arrow
+    document.querySelector('.arrow.left').addEventListener('click', prevImage);
+
+    // Event listener for next arrow
+    document.querySelector('.arrow.right').addEventListener('click', nextImage);
+
+    // Touch events for swiping images on mobile
+    let initialX = 0;
+
+    modalImage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+            initialX = e.touches[0].clientX;
+        }
+    });
+
+    modalImage.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 1) {
+            const currentX = e.touches[0].clientX;
+            const deltaX = currentX - initialX;
+
+            if (deltaX > 50) {
+                prevImage();
+                initialX = currentX;
+            } else if (deltaX < -50) {
+                nextImage();
+                initialX = currentX;
+            }
+        }
+    });
+
+    modalImage.addEventListener('touchend', () => {
+        initialX = 0;
+    });
+});
+    window.onscroll = function() {
     var button = document.getElementById("scrollToTopButton");
     var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -373,24 +440,7 @@ As for artists, there’s not just one I specifically adore, rather loads. But L
       behavior: "smooth"
     });
   }
-
-
-  const navbar = document.querySelector('.navbar');
-  let prevScrollPos = window.pageYOffset;
-
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-
-    if (prevScrollPos > currentScrollPos) {
-      navbar.style.top = '0'; // Show navbar by positioning it at the top
-    }
-
-    prevScrollPos = currentScrollPos;
-  };
-
-  window.addEventListener('scroll', handleScroll);
 </script>
-             
-          
+
 </body>
 </html>
