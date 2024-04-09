@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inês finds Stickers</title>
+<meta name="description" content="All drawings, canvas, mixed-media, and digital arts made by @inesreisx.">
+<meta property="og:description" content="All drawings, canvas, mixed-media, and digital arts made by @inesreisx." />
+<meta property="og:title" content="Photography by Inês Reis"/>
+<meta property="og:description" content="All drawings, canvas, mixed-media, and digital arts made by @inesreisx." />
+<meta name="google-adsense-account" content="ca-pub-7773778866708742">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GTLQ4VKFB1');
+	
+</script>
+<style>
+     body {
+        font-family: "Open Sans", Arial, sans-serif;
+        min-height: 100vh;
+        background-color: #fafafa;
+        color: #262626;
+        padding-bottom: 3rem;
+        cursor: zoom-in;
+    }
+  
+    .navbar {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center-align items vertically */
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+
+.navbar a {
+    color: #fafafa;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    background: #fafafa;
+    color: black;
+}
+    
+    :root {
+        font-size: 10px;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+  
+  @media (max-width: 926px) {
+  .navbar-items {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .navbar a {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+}
+  
+/* Gallery layout */
+#images-wrapper {    
+   line-height: 0;       
+   -webkit-column-count: 5;    
+   -webkit-column-gap: 0px;    
+   -moz-column-count: 5;
+   -moz-column-gap: 0px;
+   column-count: 5;    
+   column-gap: 0px;  
+  margin-top: 5rem; /* Adjust the value as needed for the desired spacing */
+}  
+
+#images-wrapper img {    
+   width: 100% !important;    
+   height: auto !important;  
+}  
+
+#images-wrapper {    
+   display:inline-block;    
+   margin-right: auto;    
+   margin-left: auto;  
+}
+            
+@media (max-width: 1000px) {
+   #images-wrapper {
+   -moz-column-count:    3;
+   -webkit-column-count: 3;
+   column-count:         3;
+   }
+}
+
+@media (max-width: 800px) {
+   #images-wrapper {
+   -moz-column-count:    2;
+   -webkit-column-count: 2;
+   column-count:         2;
+   }
+}
+
+@media (max-width: 400px) {
+   #images-wrapper {
+   -moz-column-count:    1;
+   -webkit-column-count: 1;
+   column-count:        1;
+   }
+}
+
+/* Modal styles */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    z-index: 999;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow content when zoomed */
+}
+
+.modal-content img {
+    transition: transform 0.5s ease;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+  .modal-open {
+  overflow: hidden;
+}
+  
+.modal-content img.zoomed {
+    transform: scale(1.5); /* You can adjust the scale factor as needed */
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  padding: 2rem; /* Add padding */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 2rem; /* Add padding */
+}
+
+.arrow.left {
+    left: 10px;
+  
+}
+
+.arrow.right {
+    right: 10px;
+  
+}
+    #scrollToTopButton {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: black;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    #scrollToTopButton.show {
+      display: block;
+      opacity: 1;
+    }
+</style>
+</head>
+<body>
+  
+    <div class="navbar">
+        <div class="navbar-items">
+          <a href="https://inesreisx.com/">Home</a>
+          <a href="https://inesreisx.com/i/art">Art</a>
+          <a href="https://inesreisx.com/i/photography">Photography</a>
+          <a href="https://inesreisx.com/i/writing">Blog</a>
+        </div>
+      </div>
+  
+  
+<div id="images-wrapper"> 
+   <!-- Gallery items will be dynamically added here -->
+</div>
+
+<!-- Image Modal -->
+<div class="gallery-modal" id="galleryModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <span class="arrow left" onclick="prevImage()">&#8249;</span>
+    <img src="" alt="" class="modal-image" id="modalImage">
+    <span class="arrow right" onclick="nextImage()">&#8250;</span>
+  </div>
+</div>
+
+  
+    <button onclick="scrollToTop()" id="scrollToTopButton">
+    <span style="font-size: 20px;">&#8593;</span>
+  </button>
+  
+<script>
+// Array of image URLs or paths with labels
+const imageUrls = [
+Certainly, here are all the lines from `'../media/Stickers/inesreisx-finds-sticker-art-147.jpeg'` to `'../media/Stickers/inesreisx-finds-sticker-art-2.jpeg'`:
+
+```javascript
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-147.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-146.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-145.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-144.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-143.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-142.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-141.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-140.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-139.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-138.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-137.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-136.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-135.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-134.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-133.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-132.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-131.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-130.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-129.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-128.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-127.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-126.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-125.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-124.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-123.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-122.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-121.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-120.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-119.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-118.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-117.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-116.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-115.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-114.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-113.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-112.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-111.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-110.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-109.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-108.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-107.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-106.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-105.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-104.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-103.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-102.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-101.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-100.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-99.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-98.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-97.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-96.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-95.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-94.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-93.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-92.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-91.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-90.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-89.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-88.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-87.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-86.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-85.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-84.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-83.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-82.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-81.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-80.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-79.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-78.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-77.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-76.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-75.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-74.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-73.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-72.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-71.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-70.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-69.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-68.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-67.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-66.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-65.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-64.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-63.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-62.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-61.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-60.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-59.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-58.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-57.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-56.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-55.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-54.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-53.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-52.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-51.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-50.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-49.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-48.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-47.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-46.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-45.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-44.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-43.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-42.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-41.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-40.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-39.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-38.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-37.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-36.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-35.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-34.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-33.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-32.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-31.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-30.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-29.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-28.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-27.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-26.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-25.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-24.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-23.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-22.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-21.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-20.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-19.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-18.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-17.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-16.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-15.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-14.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-13.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-12.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-11.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-10.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-9.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-8.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-7.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-6.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-5.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-4.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-3.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-2.jpeg', labels: ['All'] },
+{ url: '../media/Stickers/inesreisx-finds-sticker-art-1.jpeg', labels: ['All'] }
+];
+
+function filterImages(label) {
+    // Select all gallery items
+    const galleryItems = document.querySelectorAll("#images-wrapper img");
+
+    // Loop through each gallery item
+    galleryItems.forEach(item => {
+        // Check if the provided label is included in the item's labels
+        if (item.dataset.label.includes(label) || label === 'all') {
+            // If it matches, show the item
+            item.style.display = 'block';
+        } else {
+            // If it doesn't match, hide the item
+            item.style.display = 'none';
+        }
+    });
+}
+  
+const galleryContainer = document.getElementById('images-wrapper');
+
+// Loop through the imageUrls array and dynamically create gallery items
+imageUrls.forEach((image, index) => {
+    const imageElement = document.createElement('img');
+    imageElement.classList.add('lazy-img');
+    imageElement.dataset.src = image.url;
+    imageElement.alt = `Picture ${index + 1}`;
+    imageElement.dataset.label = image.labels; // Store label as a dataset attribute
+    galleryContainer.appendChild(imageElement);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let lazyImages = [].slice.call(document.querySelectorAll(".lazy-img"));
+    let active = false;
+    let currentImageIndex = 0;
+
+    const lazyLoad = function() {
+        if (active === false) {
+            active = true;
+
+            setTimeout(function() {
+                lazyImages.forEach(function(lazyImage) {
+                    if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.classList.remove("lazy-img");
+
+                        lazyImages = lazyImages.filter(function(image) {
+                            return image !== lazyImage;
+                        });
+
+                        if (lazyImages.length === 0) {
+                            document.removeEventListener("scroll", lazyLoad);
+                            window.removeEventListener("resize", lazyLoad);
+                            window.removeEventListener("orientationchange", lazyLoad);
+                        }
+                    }
+                });
+
+                active = false;
+            }, 200);
+        }
+    };
+
+    lazyLoad();
+
+    document.addEventListener("scroll", lazyLoad);
+    window.addEventListener("resize", lazyLoad);
+    window.addEventListener("orientationchange", lazyLoad);
+    
+    // Selecting gallery items
+    const galleryItems = document.querySelectorAll("#images-wrapper img");
+
+// Function to open modal
+function openModal() {
+    galleryModal.style.display = 'flex';
+    document.body.classList.add('modal-open'); // Disable scrolling
+}
+
+// Function to close modal
+function closeModal() {
+    document.getElementById('galleryModal').style.display = 'none';
+    document.body.classList.remove('modal-open'); // Enable scrolling
+}
+
+    // Event listener for close button
+    document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+    // Function to navigate to the previous image
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+        const imageUrl = galleryItems[currentImageIndex].src;
+        modalImage.src = imageUrl;
+        modalImage.classList.remove('zoomed'); // Remove zoom class on image change
+    }
+
+    // Function to navigate to the next image
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+        const imageUrl = galleryItems[currentImageIndex].src;
+        modalImage.src = imageUrl;
+        modalImage.classList.remove('zoomed'); // Remove zoom class on image change
+    }
+
+    // Event listeners for gallery items
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentImageIndex = index;
+            const imageUrl = item.src;
+            modalImage.src = imageUrl;
+            modalImage.classList.add('zoomed'); // Add zoom class when clicked
+            openModal();
+        });
+
+        item.addEventListener('mouseover', () => {
+            document.body.style.cursor = 'zoom-in';
+        });
+
+        item.addEventListener('mouseout', () => {
+            document.body.style.cursor = 'auto';
+        });
+    });
+
+    // Event listener for previous arrow
+    document.querySelector('.arrow.left').addEventListener('click', prevImage);
+
+    // Event listener for next arrow
+    document.querySelector('.arrow.right').addEventListener('click', nextImage);
+
+    // Touch events for swiping images on mobile
+    let initialX = 0;
+
+    modalImage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+            initialX = e.touches[0].clientX;
+        }
+    });
+
+    modalImage.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 1) {
+            const currentX = e.touches[0].clientX;
+            const deltaX = currentX - initialX;
+
+            if (deltaX > 50) {
+                prevImage();
+                initialX = currentX;
+            } else if (deltaX < -50) {
+                nextImage();
+                initialX = currentX;
+            }
+        }
+    });
+
+    modalImage.addEventListener('touchend', () => {
+        initialX = 0;
+    });
+});
+    window.onscroll = function() {
+    var button = document.getElementById("scrollToTopButton");
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var documentHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+
+    if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
+    }
+  };
+
+  var button = document.getElementById("scrollToTopButton");
+  button.addEventListener("click", scrollToTop);
+  button.addEventListener("touchstart", scrollToTop);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+</body>
+</html>
