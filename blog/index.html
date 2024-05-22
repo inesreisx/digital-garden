@@ -28,7 +28,6 @@
       align-items: center;
       height: auto !important;
       background-color: #ffffff; 
-      margin: 130px;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
     }
 
@@ -46,44 +45,83 @@
      text-decoration: underline;
 }
     
-.navbar {
+.mobile-menu {
+      display: none; /* Hide by default on larger screens */
+    }
+
+    /* Add a class for the navigation links in the mobile menu */
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 60px; /* Adjust the top position based on your design */
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      z-index: 1;
+      display: none; /* Hide by default */
+    }
+
+    .navbar {
     overflow: hidden;
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
+    position: relative;
     left: 0;
     right: 0;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center; /* Center-align items vertically */
-    padding-top: 1.3rem;
     padding-bottom: 1.3rem;
+    padding-top: 1.3rem;
 }
 
-.navbar a {
-    color: #20134d;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    margin: 0 10px;
-}
+    .navbar a {
+      color: #20124d;
+      text-align: center;
+      padding: 10px 8px;
+      text-decoration: none;
+      font-size: 17px;
+      margin: 0 10px;
+    }
+
+    .navbar a:hover {
+      background: #f1f1f1;
+      color: black;
+    }
+
+    @media (max-width: 812px) {
+      /* Hide the regular navbar links on smaller screens */
+      .navbar-items {
+        display: none;
+      }
+
+      /* Display the mobile menu icon */
+      .mobile-menu {
+        display: flex;
+        cursor: pointer;
+        font-size: 30px;
+        color: black;
+      }
+
+      /* Display the navigation links in the mobile menu */
+      .mobile-menu-links.show {
+        display: flex;
+      }
+
+      .navbar a {
+        padding: 10px 10px; /* Adjust padding for mobile navbar links */
+        font-size: 14px; /* Decrease font size for mobile navbar links */
+        text-align: center;
+        width: 100%; /* Make links take full width in mobile menu */
+      }
+    }
 
 .navbar a:hover {
-    background: #fafafa;
+    background: #f1f1f1;
     color: black;
 }
     
-    :root {
-        font-size: 10px;
-    }
-
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
 
 
     #container {
@@ -118,33 +156,27 @@
       display: inline-block; /* Display title inline */
       font-size: 16px;
     }
-
-
-@media (max-width: 926px) {
-  body {
-    margin: 50px;
-    padding: 18px;
-  }
-
-  .navbar {
-    text-align: center; /* Center-align for mobile */
-  }
-
-  .navbar a {
-    padding: 10px 0; /* Adjust padding for navbar links */
-    font-size: 14px; /* Decrease font size for navbar links */
-    display: block;
-    width: 100%;
-  }
-}
-    
-    
     
   </style>
 </head>
 <body>
+
+  
+       
   <div class="navbar">
+    <!-- Mobile menu icon -->
+    <div class="mobile-menu" onclick="toggleMobileMenu()">☰</div>
+    <!-- Navbar links for larger screens -->
     <div class="navbar-items">
+     <a href="https://inesreisx.com/">Home</a>
+      <a href="https://inesreisx.com/i/writing">Writing</a>
+      <a href="https://inesreisx.com/i/art">Art</a>
+      <a href="https://inesreisx.com/i/photography">Photography</a>
+    </div>
+    
+    
+    <!-- Mobile menu links -->
+    <div class="mobile-menu-links">
       <a href="https://inesreisx.com/">Home</a>
       <a href="https://inesreisx.com/i/writing">Writing</a>
       <a href="https://inesreisx.com/i/art">Art</a>
@@ -197,5 +229,15 @@
       <div class="year">Soon</div>
       <div class="title"><a href="">Soon</a></div>
   </div>
+    </div>
+    
+    
+  </div>
+      <script>
+        function toggleMobileMenu() {
+    const mobileMenuLinks = document.querySelector('.mobile-menu-links');
+    mobileMenuLinks.classList.toggle('show');
+  }
+      </script>
 </body>
 </html>
