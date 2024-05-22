@@ -187,9 +187,9 @@ a:active {
 
 .section-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 100px; 
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    margin: 100px 20px; /* Adjust margin as needed */
 }
 
 
@@ -212,7 +212,8 @@ a:active {
   .container {
       display: flex;
       justify-content: space-between;
-      max-width: 1200px;
+     max-width: 100%; /* Set maximum width to prevent overflow */
+    overflow: hidden; /* Hide overflow content */
       margin: 0 auto;
     }
     .carousel {
@@ -226,6 +227,18 @@ a:active {
       object-fit: cover;
       border-radius:5px;
     }
+  
+  
+
+.carousel {
+    width: 100%; /* Make carousel fill the container */
+}
+
+.carousel img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+  
     
     /* Custom styles for navigation dots */
     .slick-dots {
@@ -316,14 +329,14 @@ a:active {
       <div><img src="/media/Volunteering/orange-theatre-company-inesreisx.png" alt="" /></div>
     </div>
     <div class="carousel">
-      <div><img src="/media/Writing/writings-by-inesreisx.png" alt="Image 2"></div>
-      <div><img src="/media/Art/Drawing-inesreisx-600.jpg" alt="Image 2"></div>
+      <div><img src="/media/Writing/writings-by-inesreisx.png" alt=""></div>
+      <div><img src="/media/Art/Drawing-inesreisx-600.jpg" alt=""></div>
       
     </div>
     <div class="carousel">
-      <div><a href="https://www.youtube.com/watch?v=LD-nH-2RRow&ab_channel=In%C3%AAsReis"><img src="/media/Projects/love-costa.png" alt="Image 3"></a></div>
-      <div><a href="https://inesreisx.github.io/ai/"><img src="/media/Projects/inesreisx-ai.png" alt="Image 3"></a></div>
-      <div><a href="https://digitalkoda.wordpress.com/"><img src="/media/Projects/digitalkoda.png" alt="Image 3"></a></div>
+      <div><a href="https://www.youtube.com/watch?v=LD-nH-2RRow&ab_channel=In%C3%AAsReis"><img src="/media/Projects/love-costa.png" alt=""></a></div>
+      <div><a href="https://inesreisx.github.io/ai/"><img src="/media/Projects/inesreisx-ai.png" alt=""></a></div>
+      <div><a href="https://digitalkoda.wordpress.com/"><img src="/media/Projects/digitalkoda.png" alt=""></a></div>
     </div>
   </div>
   
