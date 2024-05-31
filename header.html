@@ -1,0 +1,108 @@
+<style>
+        .navbar {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center-align items vertically */
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+
+    .navbar a {
+      color: #20124d;
+      text-align: center;
+      padding: 10px 8px;
+      text-decoration: none;
+      font-size: 17px;
+      margin: 0 10px;
+    }
+
+    .navbar a:hover {
+      background: #f1f1f1;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .mobile-menu {
+      display: none; /* Hide by default on larger screens */
+    }
+
+    /* Add a class for the navigation links in the mobile menu */
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 60px; /* Adjust the top position based on your design */
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      z-index: 1;
+      display: none; /* Hide by default */
+    }
+
+
+
+    @media (max-width: 812px) {
+      /* Hide the regular navbar links on smaller screens */
+      .navbar-items {
+        display: none;
+      }
+
+      /* Display the mobile menu icon */
+      .mobile-menu {
+        display: flex;
+        cursor: pointer;
+        font-size: 30px;
+        color: black;
+      }
+
+      /* Display the navigation links in the mobile menu */
+      .mobile-menu-links.show {
+        display: flex;
+      }
+
+      .navbar a {
+        padding: 10px 10px; /* Adjust padding for mobile navbar links */
+        font-size: 14px; /* Decrease font size for mobile navbar links */
+        text-align: center;
+        width: 100%; /* Make links take full width in mobile menu */
+      }
+    }
+
+.navbar a:hover {
+    background: #f1f1f1;
+    color: black;
+}
+</style>
+
+
+<div class="navbar">
+    <!-- Mobile menu icon -->
+    <div class="mobile-menu" onclick="toggleMobileMenu()">☰</div>
+    <!-- Navbar links for larger screens -->
+    <div class="navbar-items">
+      <a href="https://inesreisx.com/i/bucketlist">Bucketlist</a>
+      <a href="https://inesreisx.com/blog">Blog</a>
+      <a href="https://inesreisx.com/i/volunteering">Volunteering</a>
+      <a href="https://inesreisx.com/i/career">Career</a>
+      <a href="https://inesreisx.com/i/art">Art</a>
+      <a href="https://inesreisx.com/i/photography">Photography</a>
+      <a href="https://inesreisx.com/i/projects">Projects</a>
+    </div>
+    <!-- Mobile menu links -->
+    <div class="mobile-menu-links">
+      <a href="https://inesreisx.com/i/bucketlist">Bucketlist</a>
+      <a href="https://inesreisx.com/blog">Blog</a>
+      <a href="https://inesreisx.com/i/volunteering">Volunteering</a>
+      <a href="https://inesreisx.com/i/career">Career</a>
+      <a href="https://inesreisx.com/i/art">Art</a>
+      <a href="https://inesreisx.com/i/photography">Photography</a>
+      <a href="https://inesreisx.com/i/projects">Projects</a>
+    </div>
+  </div>
