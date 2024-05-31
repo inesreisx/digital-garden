@@ -1,4 +1,3 @@
-<!-- include.js -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const elements = document.querySelectorAll('[data-include]');
