@@ -8,5 +8,5 @@
                     el.innerHTML = data;
                 });
         });
-    });
+    }
 </script>
