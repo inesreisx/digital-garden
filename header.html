@@ -45,8 +45,36 @@
       z-index: 1;
       display: none; /* Hide by default */
     }
+    .mobile-menu {
+      display: none; /* Hide by default on larger screens */
+    }
+
+    /* Add a class for the navigation links in the mobile menu */
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 60px; /* Adjust the top position based on your design */
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      z-index: 1;
+      display: none; /* Hide by default */
+    }
 
 
+    /* Mobile styles */
+@media (max-width: 812px) {
+
+
+.navbar a {
+    padding: 10px 10px; /* Adjust padding for navbar links */
+    font-size: 14px; /* Decrease font size for navbar links */
+}
+
+/* ... (other existing mobile styles) ... */
+}
 
     @media (max-width: 812px) {
       /* Hide the regular navbar links on smaller screens */
