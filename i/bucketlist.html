@@ -21,8 +21,7 @@
 
 .navbar {
     overflow: hidden;
-    background-color: #20134d;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -32,12 +31,13 @@
     align-items: center; /* Center-align items vertically */
     padding-top: 1.3rem;
     padding-bottom: 1.3rem;
+    color:#20134d;
 }
 
 .navbar a {
-    color: #fafafa;
+    color: #20134d;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20.8px 16px;
     text-decoration: none;
     font-size: 17px;
     margin: 0 10px;
@@ -77,8 +77,9 @@
 
 
     h1, h2{
-    font-family: Calibri, sans-serif;
-    font-size: 4.8rem;
+    font-family: Roboto, sans-serif;
+    font-size: 13px;
+    color: #20134d;
 }
 *{
 	box-sizing: border-box;
@@ -88,29 +89,20 @@ body, html {
 	  overflow-x: hidden;
     margin: 0px;
     padding: 0px;
-    background-color: #20134d;
-    color: #fff;
+    background-color: #ffffff;
+    color: #20134d;
     font-family: Roboto, sans-serif;
-    font-size: 8px;
     box-sizing: border-box;
+    font-size: 20px;
 }
 
-p {
-    font-size: 1.6rem;
-}
 
 a {
-    color: white;
+    color: #20134d;
     text-decoration: none;
     margin-left: 1.5rem;
 }
 
-
-	
-h1{
-	font-size: 13px;
-  color: white;
-	}
 	
 /* The container */
 .container {
@@ -204,23 +196,12 @@ h1{
     font-family: Calibri, sans-serif;
 }
 
-
-.Content p footer {
-    width: 100%;
-    text-align: center;
-    font-size: 1.6rem;
-    color: #ccc;
-    margin-bottom: 1rem;
-    line-height: 2.3rem;
-}
-
     
     .Content {
         width: 100%;
         height: auto;
         margin: auto;
         padding: .5rem 0rem;
-	      padding-top: 3.5rem;
         max-width: 120rem;
 		
     }
@@ -233,32 +214,6 @@ h1{
     }
     
 
-.fa-brands {
-    color: white;
-    font-size: 2.2rem;
-    text-decoration: none;
-}
-
-.fa-instagram:hover {
-    color: #d62976;
-}
-
-
-  ul.links {
-    padding-left: 0px;
-    text-align: center;
-  }
-  ul.links > li {
-    display: inline-block;
- 
-  }
-  ul.links > li:hover {
-    text-decoration: underline;
-  }
-  ul.links > li > a {
-    color: white;
-    text-decoration: none;
-  }
   @media only screen and (max-width: 768px){
 	html,
 	body
@@ -312,19 +267,19 @@ h1{
   <span class="checkmark"></span>
 </label>
 <label class="container">🎂 Take my birthday off work every year
-  <input type="checkbox">
+  <input type="checkbox" checked="checked">
   <span class="checkmark"></span>
 </label>
 <label class="container">🤗 Travel to meet a PenPal in person
   <input type="checkbox" checked="checked">
   <span class="checkmark"></span>
 </label>
-<label class="container">💪 Gain weight - goal of 55kgs
+<label class="container">💪 Gain weight - over 60kg
   <input type="checkbox">
   <span class="checkmark"></span>
 </label>
 <label class="container">🥢 Learn how to use chopsticks
-  <input type="checkbox">
+  <input type="checkbox" checked="checked">
   <span class="checkmark"></span>
 </label>
 <label class="container">🧖‍♀️ Try Finnish sauna in Finland
@@ -376,10 +331,6 @@ h1{
   <span class="checkmark"></span>
 </label>
 <label class="container">🌊 Stand under a waterfall
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-<label class="container">🏖️ Go to a nude beach
   <input type="checkbox">
   <span class="checkmark"></span>
 </label>
@@ -435,10 +386,6 @@ h1{
   <input type="checkbox">
   <span class="checkmark"></span>
 </label>
-<label class="container">🥌 Watch a live match of Curling
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
 <label class="container">🥌 Try Curling
   <input type="checkbox">
   <span class="checkmark"></span>
@@ -478,10 +425,6 @@ h1{
   <input type="checkbox">
   <span class="checkmark"></span>
 </label>
-<label class="container">🇰🇭 Visit Angkor Wat in Cambodia
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
 <label class="container">🦘 Visit Australia
   <input type="checkbox">
   <span class="checkmark"></span>
@@ -490,12 +433,12 @@ h1{
   <input type="checkbox" checked="checked">
   <span class="checkmark"></span>
 </label>
-<label class="container">🇪🇸 Visit Madrid
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
 <label class="container">🇧🇷 Visit Brazil - coast, Amazon, my friends and São Paulo
   <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">🇪🇸 Visit Madrid
+  <input type="checkbox" checked="checked">
   <span class="checkmark"></span>
 </label>
 <label class="container">🇵🇹 Visit Madeira
