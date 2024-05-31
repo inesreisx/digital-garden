@@ -242,23 +242,17 @@ a:active {
            
                      
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('.carousel').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        adaptiveHeight: true,
-        autoplay: true,
-        autoplaySpeed: 2000 // Adjust the speed as needed
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('[data-include]');
+      elements.forEach(el => {
+          fetch(el.getAttribute('data-include'))
+              .then(response => response.text())
+              .then(data => {
+                  el.innerHTML = data;
+              });
       });
-    });
-  function toggleMobileMenu() {
-    const mobileMenuLinks = document.querySelector('.mobile-menu-links');
-    mobileMenuLinks.classList.toggle('show');
-  }
+  });
 </script>
 </body>
 </html>
