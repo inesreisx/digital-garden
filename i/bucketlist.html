@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+<script src="include.js" defer></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -244,14 +245,7 @@ a {
     </head>
     
 <body>
-  <div class="navbar">
-    <div class="navbar-items">
-        <a href="https://inesreisx.com/">Home</a>
-        <a href="https://inesreisx.com/blog/">Blog</a>
-        <a href="https://inesreisx.com/i/writing">Writing</a>
-        <a href="https://inesreisx.com/i/photography">Photography</a>
-    </div>
-</div>
+  <div data-include="header.html"></div>
 <br>
     <div class="Content">
         <article>
@@ -477,5 +471,23 @@ a {
             </div>
         </article>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const elements = document.querySelectorAll('[data-include]');
+          elements.forEach(el => {
+              fetch(el.getAttribute('data-include'))
+                  .then(response => response.text())
+                  .then(data => {
+                      el.innerHTML = data;
+                  });
+          });
+      });
+    
+      function toggleMobileMenu() {
+        const mobileMenuLinks = document.querySelector('.mobile-menu-links');
+        mobileMenuLinks.classList.toggle('show');
+      }
+    </script>
 </body>
 </html>
