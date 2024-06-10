@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,10 @@
 <meta property="og:title" content="Inês Reis"/>
 <meta property="og:description" content="An online collection of content, thoughts, and ideas by @inesreisx." />
 <meta name="google-adsense-account" content="ca-pub-7773778866708742">
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
@@ -22,13 +23,12 @@
   gtag('js', new Date());
 
   gtag('config', 'G-GTLQ4VKFB1');
-	
 </script>
-
 <style>  
-*{
-	box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
+
 body {
     font-family: Roboto, sans-serif;
     color: #20124d;
@@ -39,11 +39,27 @@ body {
     background-color: #ffffff;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-  
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #091b33;
+    height: 70px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 100;
+}
 
 .container {
     display: flex;
     gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
 }
 
 .box {
@@ -52,15 +68,8 @@ body {
     border-radius: 5px;
     padding: 50px;
     text-align: center;
-    min-width: 100px;
-    
+    flex: 1; /* Ensures equal width */
 }
-  
-      .container {
-        display: flex;
-        justify-content: space-between;
-    }
-
 
 @media (max-width: 600px) {
     .container {
@@ -68,18 +77,11 @@ body {
         align-items: center;
     }
 }
-  
-    :root {
-        font-size: 10px;
-    }
 
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
+:root {
+    font-size: 10px;
+}
 
-  
 h1, h2 {
     font-family: Calibri, sans-serif;
     font-size: 2em;
@@ -88,87 +90,40 @@ h1, h2 {
 }
 
 p {
-  font-size: 20px;
-  color: #20124d;
-   
+    font-size: 20px;
+    color: #20124d;
+    text-align: left;
 }
 
 img {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
-
-   /* CSS for the sticky header */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #091b33;
-  height: 70px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 100;
-}
-
-
-	
-/* The container */
-.container {
     display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
 }
-  
-
 
 .Content {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  padding: 3.5rem 0rem 0rem;
-  max-width: 120rem;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 3.5rem 0rem 0rem;
+    max-width: 120rem;
 }
 
-  .Content article {
+.Content article {
     margin: auto;
     width: 70%;
     padding: 0px 2.5rem;
     border-radius: 1rem;
     margin-bottom: 5rem;
 }
-  
+
 .Content p {
-    text-align: left;
-    font-size: 20px;
-    color: #20124d;
-    margin-bottom: 1rem;
+    text-align: justify;
+    position: relative;
     line-height: 2.3rem;
     font-family: Calibri, sans-serif;
-    text-align: justify;
-    position: relative; /* Add this line */
-
-}
-
-  p {
-        text-align: left;
-  }
-.Content p img {
-    display: block;
-    margin: 0 auto;
-    width: 100%; /* Adjusted the width */
-    height: auto;
-    max-width: 100%; /* Added this line */
 }
 
 .Content p footer {
@@ -180,183 +135,117 @@ header {
     line-height: 2.3rem;
 }
 
-
-
-@media only screen and (max-width: 768px){
-    html,
-    body
-    {
+@media only screen and (max-width: 768px) {
+    html, body {
         font-size: 20px;
     }
+    .Content article {
+        width: 90%;
+    }
 }
 
-@media only screen and (max-width: 576px){
-    html,
-    body
-    {
+@media only screen and (max-width: 576px) {
+    html, body {
         font-size: 9px;
     }
-    .Content article
-    {
-        width: 90%;	
+    .Content article {
+        width: 90%;
     }
 }
 
-@media only screen and (max-width: 300px){
-    html,
-    body
-    {
+@media only screen and (max-width: 300px) {
+    html, body {
         font-size: 8px;
     }
 }
-  
-  img {
-    text-align: center;
-  }
- 
-  @media only screen and (max-width: 768px) {
-  img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-  }
+
+p[cite] {
+    margin: 0; /* Remove margin for mobile */
+    padding: 0; /* Remove padding for mobile */
+    font-size: 16px; /* Adjust font size for mobile */
 }
-  
-
-/* Adjust the width on smaller screens (e.g., mobile) */
-@media only screen and (max-width: 768px) {
-  
-      .container {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px;
-    }
-    
-
-  @media only screen and (max-width: 768px) {
-    p[cite] {
-      margin: 0; /* Remove margin for mobile */
-      padding: 0; /* Remove padding for mobile */
-      font-size: 16px; /* Adjust font size for mobile */
-    }
-  }
-
-  }
-
 </style>
 </head>
-
 <body>
-  <div data-include="../header.html"></div>
-
-
-
-    <div class="Content">
-        <article>
-            <br>
-            <h2>Let's collaborate!</h2>
-             <div class="container">
-        <div class="box">
-          <strong>Job Search</strong>
-          <p>Portfolio review, tips and tricks.</p>
+<div data-include="../header.html"></div>
+<div class="Content">
+    <article>
+        <h2>Let's collaborate!</h2>
+        <div class="container">
+            <div class="box">
+                <strong>Job Search</strong>
+                <p>Portfolio review, tips and tricks.</p>
+            </div>
+            <div class="box">
+                <strong>Writing</strong>
+                <p>Short-term writing projects.</p>
+            </div>
+            <div class="box">
+                <strong>Translations</strong>
+                <p>PT-EN-PT</p>
+            </div>
         </div>
-        <div class="box">
-          <strong>Writing</strong>
-          <p>Short-term writing projects.</p>
+        <h3>Motto</h3>
+        <p><i><center>My goal is to work towards holistic product and process solutions bringing users joy while creating long-term value.</center></i></p>
+        <h3>What I love</h3>
+        <p><ul>Content Management</ul></p>
+        <p><ul>Technical Documentation</ul></p>
+        <p><ul>Information Management</ul></p>
+        <h3>Awards and Recognitions</h3>
+        <p><ul>DigitalKoda - 1st Place Winner of the DSMMCM1819 SEO CUP (May 2019). <a href="https://digitalkoda.wordpress.com/2019/06/21/how-did-we-do-it/">Read more here.</a></ul></p>
+        <h3>Digital tools I'm familiar with</h3>
+        <p cite><ul>Word, WordPress, Blogger, Notion, Strapi, Umbraco, Sitecore, internal CMS’s, Discord, Facebook Business Manager, Screaming Frog, Excel, Google Sheets, Ahrefs, SEMRush, Accuranker, Supermetrics, Slack, Teamwork, ClickUp, Microsoft Teams, Sitebulb, DeepCrawl, Excel, Google Suite, Google Keyword Planner (Ads), Google Trends, Looker, Tableau, Headerlift, Canva, Google Webmaster Tools (Google Search Console, Google Analytics), GitHub, HTML5, CSS, Jira, Confluence, Azure DevOps, Microsoft Azure Explorer, .json, copy.AI,...</ul></p>
+        <h3>Personality Tests</h3>
+        <h3>Humble Beginnings</h3>
+        <p>"When I grow up, I want to wear a gabardine and support myself." As a child, my idea of success was simple: independence and a stylish gabardine. Decades later, I've achieved independence, but I've realized that gabardines aren't quite my style.</p>
+        <p>I come from a low/middle-class family. My mother was the first in our family to earn a university degree. My grandfather worked in the merchant marine, and my grandmother held multiple jobs even after retirement. Hard work and dreams have always been part of our lives.</p>
+        <p>At age 9, I started selling small handmade clay decorations and scoobie strings to my friends at school and church. Earning 18 euros was my biggest achievement at the time, and I was overjoyed.</p>
+        <p>"If you can dream it, you can do it."</p>
+        <p>Following my passion for online gaming communities, I got into Content through SEO and research. Finding gaps for Content development is the core that drives me forward, be it at tech or writing. I find happiness in improving processes and building opportunities for growth.</p>
+        <h3>Career Plan</h3>
+        <p><ul>Work in Content</ul></p>
+        <p><ul>Work 4 days a week in my mid-30s</ul></p>
+        <p><ul>Professional fluency in Dutch and Spanish</ul></p>
+        <div class="container">
+            <div class="box">
+                <strong>Things I look for</strong>
+                <p>International environments</p>
+                <p>Day off on your birthday</p>
+                <p>Hybrid or remote</p>
+                <p>An agile environment</p>
+                <p>Fast-paced</p>
+            </div>
+            <div class="box">
+                <strong>Things I love</strong>
+                <p>Transparency</p>
+                <p>User-centric</p>
+                <p>FREE Trainings</p>
+                <p>No NFTs</p>
+                <p>Good vibes</p>
+            </div>
         </div>
-        <div class="box">
-          <strong>Translations</strong>
-          <p>PT-EN-PT</p>
+        <div class="container">
+            <div class="box">
+                <strong>Lessons I have learned at work</strong>
+                <p>Never assume, always ask</p>
+                <p>Make sure to understand your contract, know exactly what your duties and rights are</p>
+                <p>DO NOT WORK WITHOUT A CONTRACT. Because in the end if it’s not written, it does not exist and no one will care about it besides yourself</p>
+                <p>Be kind to people. Everyone has their own story and is going through something</p>
+                <p>Be honest and transparent. If you’re the best match for the role, just go for it, if you aren’t, don’t be afraid to say it, and go on looking for a new adventure</p>
+                <p>Keep working and saving, to have money for at least the next 6 months in case you become unemployed - bills won’t magically disappear</p>
+                <p>Avoid stagnation. Life’s too short, thrive for a new learning every day</p>
+                <p>Don’t be afraid to fail or make mistakes - it’s the best way to learn</p>
+                <p>Something a manager once said: Learn from others’ mistakes - so you can avoid them for yourself</p>
+                <p>Stick to your values as long as you can, prove them wrong</p>
+                <p>There’s no perfect job - learn to look at the bright side</p>
+                <p>Don’t get yourself involved with drama, nor talk behind someone’s back - if your co-workers are doing this, they’re also doing it with you. Aka a red flag</p>
+                <p>Don’t overwork yourself and enjoy your breaks - I’m still working on this. As someone once said to me: “You’re working hard, don’t overwork yourself, take a break, you’ll still get your dollars at the end of the day”</p>
+                <p>Be grateful to be working! Someone out there right now is wishing to be in your shoes</p>
+            </div>
         </div>
-          </div>
-      
-      
-          <h3>Motto</h3>
-          <p><i><center>My goal is to work towards holistic product and process solutions bringing users joy while creating long-term value.</center></i></p>
-
-          
-          <h3>What I love</h3>
-            <p><ul>Content Management</ul></p>
-            <p><ul>Technical Documentation</ul></p>
-            <p><ul>Information Management</ul></p>
-  
-  <br>
-            <h3>Awards and Recognitions</h3>
-          <p><ul>DigitalKoda - 1st Place Winner of the DSMMCM1819 SEO CUP (May 2019). <a href="https://digitalkoda.wordpress.com/2019/06/21/how-did-we-do-it/">Read more here.</a></ul></p>
-        <br>
-
-      <h3>Digital tools I'm familiar with</h3>
-      <p cite><ul>Word, WordPress, Blogger, Notion, Strapi, Umbraco, Sitecore, internal CMS’s, Discord, Facebook Business Manager, Screaming Frog, Excel, Google Sheets, Ahrefs, SEMRush, Accuranker, Supermetrics, Slack, Teamwork, ClickUp, Microsoft Teams, Sitebulb, DeepCrawl, Excel, Google Suite, Google Keyword Planner (Ads), Google Trends, Looker, Tableau, Headerlift, Canva, Google Webmaster Tools (Google Search Console, Google Analytics), GitHub, HTML5, CSS, Jira, Confluence, Azure DevOps, Microsoft Azure Explorer, .json, copy.AI,...</ul></p>
-  
-          <h3>Personality Tests</h3>
-
-    <br>
-          <h3>Humble Beginnings</h3>
-  <p>"When I grow up, I want to wear a gabardine and support myself." As a child, my idea of success was simple: independence and a stylish gabardine. Decades later, I've achieved independence, but I've realized that gabardines aren't quite my style.</p>
-
-<p>I come from a low/middle-class family. My mother was the first in our family to earn a university degree. My grandfather worked in the merchant marine, and my grandmother held multiple jobs even after retirement. Hard work and dreams have always been part of our lives. </p>
-<p>At age 9, I started selling small handmade clay decorations and scoobie strings to my friends at school and church. Earning 18 euros was my biggest achievement at the time, and I was overjoyed.
-
-"If you can dream it, you can do it."
-
-
-
-<p>Following my passion for online gaming communities, I got into Content through SEO and research. Finding gaps for Content development is the core that drives me forward, be it at tech or writing. I find happiness in improving processes and building opportunities for growth.</p>
-    
-<br>
-            <h3>Career Plan</h3>
-          <p><ul>Work in Content</ul></p>
-          <p><ul>Work 4 days a week in my mid-30s</ul></p>
-          <p><ul>Professional fluency in Dutch and Spanish</ul></p>
-        <br>
-
-
-          
-<div class="container">
-    <div class="box">
-        <strong>Things I look for</strong>
-        <p>International environments</p>
-        <p>Day off on your birthday</p>
-        <p>Hybrid or remote</p>
-        <p>An agile environment</p>
-        <p>Fast-paced</p>
-    </div>
-    <div class="box">
-        <strong>Things I love</strong>
-        <p>Transparency</p>
-        <p>User-centric</p>
-        <p>FREE Trainings</p>
-        <p>No NFTs</p>
-        <p>Good vibes</p>
-    </div>
+    </article>
 </div>
-
-          
-          
-<div class="container">
-    <div class="box">
-        <strong>Lessons I have learned at work</strong>
-        <p>Never assume, always ask</p>      
-        <p>Make sure to understand your contract, know exactly what your duties and rights are</p>
-        <p>DO NOT WORK WITHOUT A CONTRACT. Because in the end if it’s not written, it does not exist and no one will care about it besides yourself</p>
-        <p>Be kind to people. Everyone has their own story and is going through something</p>
-        <p>Be honest and transparent. If you’re the best match for the role, just go for it, if you aren’t, don’t be afraid to say it, and go on looking for a new adventure</p>
-        <p>Keep working and saving, to have money for at least the next 6 months in case you become unemployed - bills won’t magically disappear</p>
-        <p>Avoid stagnation. Life’s too short, thrive for a new learning every day</p>
-        <p>Don’t be afraid to fail or make mistakes - it’s the best way to learn</p>
-        <p>Something a manager once said: Learn from others’ mistakes - so you can avoid them for yourself</p>
-        <p>Stick to your values as long as you can, prove them wrong</p>
-        <p>There’s no perfect job - learn to look at the bright side</p>
-        <p>Don’t get yourself involved with drama, nor talk behind someone’s back - if your co-workers are doing this, they’re also doing it with you. Aka a red flag</p>
-        <p>Don’t overwork yourself and enjoy your breaks - I’m still working on this. As someone once said to me: “You’re working hard, don’t overwork yourself, take a break, you’ll still get your dollars at the end of the day”</p>
-        <p>Be grateful to be working! Someone out there right now is wishing to be in your shoes</p>
-    </div>
-</div>
-
-
-                
-          
-  <script>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
         const elements = document.querySelectorAll('[data-include]');
         elements.forEach(el => {
@@ -367,11 +256,11 @@ header {
                 });
         });
     });
-  
+
     function toggleMobileMenu() {
-      const mobileMenuLinks = document.querySelector('.mobile-menu-links');
-      mobileMenuLinks.classList.toggle('show');
+        const mobileMenuLinks = document.querySelector('.mobile-menu-links');
+        mobileMenuLinks.classList.toggle('show');
     }
-  </script>
+</script>
 </body>
 </html>
