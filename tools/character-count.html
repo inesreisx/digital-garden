@@ -164,15 +164,16 @@
 
     /* Media query for mobile screens */
     @media (max-width: 600px) {
-        .share-icon-bar {
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        .share-icon-bar a {
-            padding: 8px;
-        }
+    .share-icon-bar {
+        flex-direction: column; /* Stack icons vertically on smaller screens */
+        align-items: center; /* Center items horizontally */
+        gap: 10px; /* Spacing between icons */
     }
+    .share-icon-bar a {
+        padding: 8px; /* Adjust padding for smaller touch targets */
+        font-size: 20px; /* Decrease font size for smaller screens */
+    }
+}
 
     /* Dark mode styles */
     body.dark-mode {
@@ -237,8 +238,7 @@
                class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="https://www.instagram.com/"
-               class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
+            <a href="https://www.instagram.com/stories" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
                 <i class="fab fa-instagram"></i>
             </a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://thenews.waffle.com.br/negocios/a-lista-dos-10-melhores-aeroportos-do-planeta-em-2024"
