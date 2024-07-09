@@ -238,13 +238,10 @@
                class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="https://www.instagram.com/stories" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://thenews.waffle.com.br/negocios/a-lista-dos-10-melhores-aeroportos-do-planeta-em-2024"
-               class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
-                <i class="fab fa-facebook"></i>
-            </a>
+
+<a href="#" onclick="copyToClipboard('https://www.inesreisx.com/tools/character-count'); return false;" class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
+    <i class="fa fa-link"></i>
+</a>
             <a href="mailto:?subject=Check%20this%20out&amp;body=Hi%20there%2C%0D%0A%0D%0AI%20found%20this%20interesting%20article%20and%20wanted%20to%20share%20it%20with%20you%3A%20https%3A%2F%2Fthenews.waffle.com.br%2Fnegocios%2Fa-lista-dos-10-melhores-aeroportos-do-planeta-em-2024."
                class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
                 <i class="far fa-envelope"></i>
@@ -289,6 +286,19 @@
         document.getElementById('result-paragraphs-num').textContent = paragraphs;
         document.getElementById('result-spaces-num').textContent = spaces;
     });
+  
+      function copyToClipboard(text) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Link copied to clipboard: ' + text);
+    }
 </script>
 </body>
 </html>
