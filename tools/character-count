@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Character Count Tool</title>
+    <meta name="description" content="Check out Character Count! It's a free online tool that counts characters, words, sentences, and paragraphs in your text. Plus, it has a cool dark mode for easy viewing.">
+    <meta property="og:description" content="Check out Character Count! It's a free online tool that counts characters, words, sentences, and paragraphs in your text. Plus, it has a cool dark mode for easy viewing." />
+    <meta property="og:title" content="Free Online Character Count Tool"/>
+    <meta property="og:description" content="Check out Character Count! It's a free online tool that counts characters, words, sentences, and paragraphs in your text. Plus, it has a cool dark mode for easy viewing." />
+    <meta name="google-adsense-account" content="ca-pub-7773778866708742">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GTLQ4VKFB1');
+    </script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        transition: background-color 0.3s ease; /* Smooth transition for dark mode */
+    }
+    .container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center; /* Centering content */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+    }
+    .container.dark-mode {
+        background-color: #222; /* Dark container background color */
+        color: #ddd; /* Light container text color */
+    }
+    textarea {
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        resize: none;
+        background-color: inherit;
+        color: inherit;
+    }
+    .info-counters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+        background-color: #f7f7f7; /* Light background color for counters */
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+    }
+    .info-counters.dark-mode {
+        background-color: #444; /* Dark background color for counters */
+        color: #ddd; /* Light text color for counters */
+    }
+    .info-counters ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+    .info-counters li {
+        flex: 1 1 calc(33.333% - 20px);
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .info-counters li strong {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .info-counters li div {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .share-icon {
+        font-size: 36px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .social-icons a {
+        display: inline-block;
+        color: #007bff;
+        font-size: 24px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+        color: #0056b3;
+    }
+    /* Styling for sticky sharing bar */
+    .sticky-share-bar {
+        position: sticky;
+        top: 20px;
+        background-color: #fff; /* Light background color for sticky bar */
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+        z-index: 100;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+    }
+    .sticky-share-bar.dark-mode {
+        background-color: #444; /* Dark background color for sticky bar */
+        color: #ddd; /* Light text color for sticky bar */
+    }
+    .share-icon-bar {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .share-icon-bar i {
+        font-size: 24px;
+        color: #007bff;
+    }
+    .share-icon-bar a {
+        color: #007bff;
+        font-size: 24px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        padding: 10px;
+    }
+    .share-icon-bar a:hover {
+        color: #0056b3;
+    }
+
+    /* Media query for mobile screens */
+    @media (max-width: 600px) {
+        .share-icon-bar {
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .share-icon-bar a {
+            padding: 8px;
+        }
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+        background-color: #222; /* Dark background color */
+        color: #ddd; /* Light text color */
+    }
+    body.dark-mode .container {
+        background-color: #444; /* Dark container background color */
+        color: #ddd; /* Light container text color */
+    }
+    body.dark-mode .info-counters {
+        background-color: #444; /* Dark background color for counters */
+        color: #ddd; /* Light text color for counters */
+    }
+    body.dark-mode .sticky-share-bar {
+        background-color: #444; /* Dark background color for sticky bar */
+        color: #ddd; /* Light text color for sticky bar */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Dark mode toggle -->
+    <div id="dark-mode-toggle">
+        <i id="dark-mode-icon" class="fas fa-moon" onclick="toggleDarkMode()"></i>
+    </div>
+    <br>
+    <textarea id="content-input" name="content-input" placeholder="Start typing or paste to begin"></textarea>
+    <div class="info-counters">
+        <ul>
+            <li id="result-characters">
+                <strong>Characters</strong>
+                <div id="result-characters-num">0</div>
+            </li>
+            <li id="result-words">
+                <strong>Words</strong>
+                <div id="result-words-num">0</div>
+            </li>
+            <li id="result-sentences">
+                <strong>Sentences</strong>
+                <div id="result-sentences-num">0</div>
+            </li>
+            <li id="result-paragraphs">
+                <strong>Paragraphs</strong>
+                <div id="result-paragraphs-num">0</div>
+            </li>
+            <li id="result-spaces">
+                <strong>Spaces</strong>
+                <div id="result-spaces-num">0</div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Sticky Sharing Bar -->
+    <div class="sticky-share-bar">
+        <div class="share-icon-bar">
+            <div class="flex items-center justify-center p-4">
+                <i class="fas fa-share-alt"></i>
+            </div>
+            <a href="https://api.whatsapp.com/send?text=Olha%20o%20que%20acabei%20de%20ler%3A%20A%20lista%20dos%2010%20melhores%20aeroportos%20do%20planeta%20em%202024.%20Clique%20aqui%20para%20ver%3A%20https%3A%2F%2Fthenews.waffle.com.br%2Fnegocios%2Fa-lista-dos-10-melhores-aeroportos-do-planeta-em-2024.%20Adoro%20esse%20grupo%20de%20m%C3%ADdia%3A%20https%3A%2F%2Fwaffle.com.br!"
+               class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/"
+               class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://thenews.waffle.com.br/negocios/a-lista-dos-10-melhores-aeroportos-do-planeta-em-2024"
+               class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="mailto:?subject=Check%20this%20out&amp;body=Hi%20there%2C%0D%0A%0D%0AI%20found%20this%20interesting%20article%20and%20wanted%20to%20share%20it%20with%20you%3A%20https%3A%2F%2Fthenews.waffle.com.br%2Fnegocios%2Fa-lista-dos-10-melhores-aeroportos-do-planeta-em-2024."
+               class="flex items-center justify-center p-4 hover:bg-neutral-100 transition-all">
+                <i class="far fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        const body = document.body;
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+
+        // Toggle dark mode class on body
+        body.classList.toggle('dark-mode');
+
+        // Change icon based on dark mode
+        if (body.classList.contains('dark-mode')) {
+            darkModeIcon.classList.remove('fa-moon');
+            darkModeIcon.classList.add('fa-sun');
+        } else {
+            darkModeIcon.classList.remove('fa-sun');
+            darkModeIcon.classList.add('fa-moon');
+        }
+    }
+
+    document.getElementById('content-input').addEventListener('input', function() {
+        const text = this.value;
+        
+        const characters = text.length;
+        const words = text.trim().split(/\s+/).filter(word => word).length;
+        const sentences = text.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0).length;
+        const paragraphs = text.split(/\n+/).filter(paragraph => paragraph.trim().length > 0).length;
+        const spaces = (text.match(/\s/g) || []).length;
+
+        document.getElementById('result-characters-num').textContent = characters;
+        document.getElementById('result-words-num').textContent = words;
+        document.getElementById('result-sentences-num').textContent = sentences;
+        document.getElementById('result-paragraphs-num').textContent = paragraphs;
+        document.getElementById('result-spaces-num').textContent = spaces;
+    });
+</script>
+</body>
+</html>
