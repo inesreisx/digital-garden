@@ -302,6 +302,12 @@
         }
     }
 
+        // Enable dark mode by default
+        window.onload = function() {
+        document.body.classList.add('dark-mode');
+        document.getElementById('dark-mode-icon').classList.add('fa-moon');
+    }
+
     document.getElementById('content-input').addEventListener('input', function() {
         const text = this.value;
         
