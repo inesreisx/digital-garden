@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Line Tester</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .preview-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 300px;
+        }
+
+        .preview {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .result-item {
+            margin-bottom: 10px;
+        }
+
+        .result-item.not-found {
+            color: green;
+            font-weight: normal;
+        }
+
+        .result-item.found {
+            color: red;
+            font-weight: bold;
+        }
+
+        .result-item.highlight-red-bold {
+            font-weight: bold;
+            color: red;
+        }
+
+        .result-item.special-symbols-found {
+            color: red;
+            font-weight: bold;
+        }
+
+        .result-item.special-symbols-not-found {
+            color: green;
+            font-weight: bold;
+        }
+
+        .result-item.lowercase-warning {
+            color: red;
+            font-weight: bold;
+        }
+
+        .result-item.lowercase-start-warning {
+            color: red;
+            font-weight: bold;
+        }
+
+      .highlight-red-bold {
+    color: red;
+    font-weight: bold;
+}
+      
+        .quote-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .quote {
+            font-size: 1.5em;
+            font-style: italic;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .by-inesreisx {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .by-inesreisx:hover {
+            background-color: #f7f7f7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        body.dark-mode .container {
+            background-color: #333;
+            color: #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode textarea {
+            background-color: #444;
+            color: #ddd;
+            border: 1px solid #555;
+        }
+
+        body.dark-mode button {
+            background-color: #007bff;
+        }
+
+        body.dark-mode button:hover {
+            background-color: #0056b3;
+        }
+
+        body.dark-mode .result-item {
+            color: #ddd;
+        }
+
+        body.dark-mode .result-item.not-found {
+            color: #0f0;
+        }
+
+        body.dark-mode .result-item.found {
+            color: #f00;
+        }
+
+        body.dark-mode .result-item.special-symbols-not-found {
+            color: #0f0;
+        }
+
+        body.dark-mode .result-item.lowercase-warning {
+            color: #f00;
+        }
+
+        body.dark-mode .result-item.lowercase-start-warning {
+            color: #f00;
+        }
+
+        body.dark-mode #dark-mode-icon {
+            color: #ddd;
+        }
+
+        body.dark-mode .quote-container {
+            color: #ddd;
+        }
+
+        body.dark-mode .quote {
+            color: #fff;
+        }
+
+        body.dark-mode .by-inesreisx {
+            background-color: #444;
+            color: #ddd;
+        }
+
+
+/* Dark mode styles for preview sections */
+body.dark-mode .preview, 
+body.dark-mode .desktop-preview-section, 
+body.dark-mode .mobile-preview-section, 
+body.dark-mode #mobile-preview-content {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #ddd;
+}
+
+/* Additional dark mode specific styles */
+body.dark-mode .desktop-preview,
+body.dark-mode .mobile-preview {
+    background-color: #333;
+    border-color: #555;
+}
+      
+/* Keep the red color for highlight-red-bold in dark mode */
+body.dark-mode .highlight-red-bold {
+    color: red; /* Ensures the red color remains red in dark mode */
+}
+      
+       .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 300px; /* Adjust width as needed */
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the tooltip text */
+    left: 50%;
+    margin-left: -150px; /* Center the tooltip text */
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+sup {
+    font-size: 0.75em; /* Adjust size as needed */
+    vertical-align: super;
+}
+
+.highlight-red-bold {
+    color: red;
+    font-weight: bold;
+}
+
+.not-found {
+    color: gray;
+}
+
+.special-symbols-found {
+    color: orange;
+}
+
+        .desktop-preview-section {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .mobile-preview-section {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+      
+      
+.preview {
+    position: relative;
+    padding-bottom: 20px; /* Add some padding to the bottom to prevent overlap */
+}
+
+.desktop-preview-section, .mobile-preview-section {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.char-count {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    right: 0; /* Position at the right */
+    background-color: rgba(0, 0, 0, 0.2); /* Optional: Background for better visibility */
+    color: white;
+    padding: 5px;
+    border-radius: 3px 0 0 0; /* Optional: Rounded corners */
+    font-size: 14px; /* Adjust size as needed */
+}
+      
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="container">
+        <div id="dark-mode-toggle">
+            <i id="dark-mode-icon" class="fas fa-sun" onclick="toggleDarkMode()"></i>
+        </div>
+        <h1>Subject Line Tester</h1>
+        <textarea id="subject-line" placeholder="Enter your subject line here..."></textarea>
+        <button id="analyze-button" onclick="analyzeSubjectLine()">Analyze</button>
+      <div id="subject-line-display" style="display: none; margin-top: 20px; font-size: 1.5em; font-weight: bold; text-align: center; font-style: italic;">
+    <span id="displayed-subject-line"></span>
+    <i id="copy-to-clipboard" class="fas fa-copy" style="cursor: pointer; margin-left: 10px;" title="Copy to Clipboard"></i>
+</div>
+        <div id="results"></div>
+    
+    </div>
+
+    <div class="preview-container">
+      
+<div class="preview" id="desktop-preview">
+    <h2>Desktop Preview</h2>
+    <div id="desktop-preview-50" class="desktop-preview-section">
+        <span>Subject Line (50 chars): Enter your subject line to see the preview.</span>
+        <div class="char-count" id="desktop-char-count-50">0</div>
+    </div>
+    <div id="desktop-preview-70" class="desktop-preview-section">
+        <span>Subject Line (70 chars): Enter your subject line to see the preview.</span>
+        <div class="char-count" id="desktop-char-count-70">0</div>
+    </div>
+</div>
+
+<div class="preview" id="mobile-preview">
+    <h2>Mobile Preview</h2>
+    <div id="mobile-preview-33" class="mobile-preview-section">
+        <span>Subject Line (33 chars): Enter your subject line to see the preview.</span>
+        <div class="char-count" id="mobile-char-count-33">0</div>
+    </div>
+    <div id="mobile-preview-43" class="mobile-preview-section">
+        <span>Subject Line (43 chars): Enter your subject line to see the preview.</span>
+        <div class="char-count" id="mobile-char-count-43">0</div>
+    </div>
+    <div id="mobile-preview-60" class="mobile-preview-section">
+        <span>Subject Line (60 chars): Enter your subject line to see the preview.</span>
+        <div class="char-count" id="mobile-char-count-60">0</div>
+    </div>
+</div>
+
+
+      
+      
+</div>
+
+    </div>
+</div>
+
+<script>
+             function analyzeSubjectLine() {
+            const subjectLine = document.getElementById('subject-line').value.trim();
+            if (subjectLine) {
+                document.getElementById('displayed-subject-line').textContent = subjectLine;
+                document.getElementById('subject-line-display').style.display = 'block';
+            } else {
+                document.getElementById('subject-line-display').style.display = 'none';
+            }
+        }
+
+        function copyToClipboard() {
+            const text = document.getElementById('displayed-subject-line').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+  
+function countSyllables(word) {
+    word = word.toLowerCase();
+    if (word.length <= 3) return 1;
+    word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+    word = word.replace(/^y/, '');
+    return word.match(/[aeiouy]{1,2}/g)?.length || 1;
+}
+
+function calculateGradeLevel(subjectLine) {
+    const words = subjectLine.trim().split(/\s+/).length;
+    const sentences = (subjectLine.match(/[.!?]/g) || []).length + 1; // Assumes at least one sentence if no punctuation
+    const syllables = subjectLine.split(/\s+/).reduce((total, word) => total + countSyllables(word), 0);
+
+    if (sentences === 0 || words === 0) return 'N/A'; // Avoid division by zero
+
+    // Flesch-Kincaid Grade Level formula
+    const gradeLevel = 0.39 * (words / sentences) + 11.8 * (syllables / words) - 15.59;
+
+    // Map numerical grade levels to school grades
+    if (gradeLevel < 5) return 'Below 5th Grade';
+    if (gradeLevel < 6) return '5th Grade';
+    if (gradeLevel < 7) return '6th Grade';
+    if (gradeLevel < 8) return '7th Grade';
+    if (gradeLevel < 9) return '8th Grade';
+    if (gradeLevel < 10) return '9th Grade';
+    if (gradeLevel < 11) return '10th Grade';
+    if (gradeLevel < 12) return '11th Grade';
+    return '12th Grade and Above';
+}
+  
+function analyzeSubjectLine() {
+    const subjectLine = document.getElementById('subject-line').value.trim();
+    const resultsDiv = document.getElementById('results');
+    const desktopPreviewContent50 = document.getElementById('desktop-preview-50');
+    const desktopPreviewContent70 = document.getElementById('desktop-preview-70');
+    const mobilePreviewContent33 = document.getElementById('mobile-preview-33');
+    const mobilePreviewContent43 = document.getElementById('mobile-preview-43');
+    const mobilePreviewContent60 = document.getElementById('mobile-preview-60');
+    const displayedSubjectLine = document.getElementById('displayed-subject-line');
+    const subjectLineDisplay = document.getElementById('subject-line-display');
+    const copyToClipboard = document.getElementById('copy-to-clipboard');
+
+    resultsDiv.innerHTML = '';
+    desktopPreviewContent50.textContent = subjectLine.slice(0, 50);
+    desktopPreviewContent70.textContent = subjectLine.slice(0, 70);
+    mobilePreviewContent33.textContent = subjectLine.slice(0, 33);
+    mobilePreviewContent43.textContent = subjectLine.slice(0, 43);
+    mobilePreviewContent60.textContent = subjectLine.slice(0, 60);
+  
+
+
+function updatePreview(containerSelector, subjectLine, limit) {
+    const container = document.querySelector(containerSelector);
+    const previewContent = container.querySelector('.preview-content');
+    
+    if (previewContent) {
+        previewContent.textContent = subjectLine.slice(0, limit);
+    }
+}
+    // Display subject line with larger font
+    displayedSubjectLine.textContent = subjectLine;
+    subjectLineDisplay.style.display = 'block';
+
+    copyToClipboard.onclick = function() {
+        navigator.clipboard.writeText(subjectLine).then(function() {
+            alert('Subject line copied to clipboard!');
+        }, function(err) {
+            alert('Failed to copy subject line: ' + err);
+        });
+    };
+
+    const charCount = subjectLine.length;
+    const wordCount = subjectLine.trim().split(/\s+/).length;
+    const exclamationCount = (subjectLine.match(/!/g) || []).length;
+    const interrogationCount = (subjectLine.match(/\?/g) || []).length;
+    const allCapsWords = subjectLine.match(/\b[A-Z]+\b/g) || [];
+    const spammyWords = [
+        'free', 'buy', 'limited-time offer', 'discount', 'earn money', 'exclusive deal',
+        'guarantee', 'act now', 'risk-free', 'save big', 'win', 'cash', 'credit', 'instant',
+        'order now', 'winner', 'apply now', 'clearance', 'cheap', 'best price', 'limited', 
+        'urgent', 'important information', 'click here', 'offer ends soon', 'congratulations', 
+        'no cost', 'refund', 'get paid', 'increase sales', 'hurry', 'complimentary', 
+        'financial incentives', 'over-promising', 'guaranteed', 'no risk'
+    ];
+    const foundSpammyWords = spammyWords.filter(word => subjectLine.toLowerCase().includes(word.toLowerCase()));
+
+    const badTabWords = [
+        'Act now', 'Apply now', 'As seen on', 'Big bucks', 'Billion dollars', 'Cash bonus',
+        'Cents on the dollar', 'Consolidate debt', 'Double your income', 'Free gift', 'Free info',
+        'Free membership', 'Free preview', 'Free quote', 'Free research', 'Free sample', 
+        'Free trial', 'Free access', 'Free updates', 'Full refund', 'Guaranteed', 'Increase sales',
+        'Increase traffic', 'Instant access', 'Instant cash', 'Limited time', 'Make money',
+        'Money back', 'No fees', 'One time', 'One time only', 'Online biz opportunity',
+        'Online income', 'Promise you', 'Pure profit', 'Risk-free', 'Satisfaction guaranteed',
+        'Save big', 'Score with', 'Special promotion', 'Unsecured credit', 'Unsecured debt',
+        'Unsecured loan', 'Unsecured credit card', 'Additional income', 'Amazing stuff',
+        'Be your own boss', 'Big money', 'Billions', 'Big win', 'Cash', 'Clearance', 'Deals',
+        'Earnings', 'Free access', 'Free info', 'Free membership', 'Free money', 'Free preview',
+        'Free quote', 'Free sample', 'Free trial', 'Free video', 'Free website', 'Free gift',
+        'Freebie', 'Free!', 'Free download', 'Free consultation', 'Free gift card', 'Free money',
+        'Free quote', 'Free report', 'Free software', 'Free user', 'Free webinar', 'Free prize',
+        '100% free', '100% satisfied', '100% guaranteed', 'All natural', 'Banned', 'Beneficiary',
+        'Bypass', 'Click below', 'Click to remove', 'Click here', 'Direct email', 'Direct marketing',
+        'Eliminate bad credit', 'Earn money'
+    ];
+    const foundBadTabWords = badTabWords.filter(word => subjectLine.toLowerCase().includes(word.toLowerCase()));
+
+    const reRegex = /(^|\s|[^a-zA-Z0-9])RE[^a-zA-Z0-9]/i;
+    const fwdRegex = /(^|\s|[^a-zA-Z0-9])FWD[^a-zA-Z0-9]/i;
+
+    const foundRE = reRegex.test(subjectLine);
+    const foundFWD = fwdRegex.test(subjectLine);
+
+    const specialSymbols = /[#\$@*%^!?/+\−×÷=<>±∞∫√∑≠≤≥∂∇∈∉∪∩∧∨⊂⊆⊄⊇⊕⊗⊥∅∆∇∋⊗⊥⟨⟩⌈⌉⌊⌋⌜⌝⌞⌟⏞⏟⠁⠂⠃⠄⠅⠆⠇⠈⠉⠊⠋⠛⠜⠝⠞⠟⠠⠡⠢⠣⠤⠥⠦⠧⠨⠩⠪⠫⠬⠭⠮⠯⠰⠱⠲⠳⠴⠵⠶⠷⠸⠹⠺⠻⠼⠽⠾⠿]/;
+    const containsSpecialSymbols = specialSymbols.test(subjectLine);
+
+    const isAllLowercase = subjectLine === subjectLine.toLowerCase();
+    const startsWithLowercase = /^[a-z]/.test(subjectLine);
+
+    const isAllUppercase = subjectLine === subjectLine.toUpperCase();
+
+    if (isAllUppercase) {
+        resultsDiv.innerHTML += `<div class="result-item highlight-red-bold">Your subject line is all UPPERCASE</div>`;
+    }
+
+    if (!subjectLine.toLowerCase().includes('free')) {
+        resultsDiv.innerHTML += `<div class="result-item not-found">'Free' was not found in the subject</div>`;
+    } else {
+        resultsDiv.innerHTML += `<div class="result-item highlight-red-bold">'Free' was found in the subject</div>`;
+    }
+
+    if (!foundRE && !foundFWD) {
+        resultsDiv.innerHTML += `<div class="result-item not-found">'RE' or 'FWD' was not found in the subject</div>`;
+    } else {
+        if (foundRE) {
+            resultsDiv.innerHTML += `<div class="result-item highlight-red-bold">'RE' was found in the subject</div>`;
+        } else {
+            resultsDiv.innerHTML += `<div class="result-item not-found">'RE' was not found in the subject</div>`;
+        }
+        if (foundFWD) {
+            resultsDiv.innerHTML += `<div class="result-item highlight-red-bold">'FWD' was found in the subject</div>`;
+        } else {
+            resultsDiv.innerHTML += `<div class="result-item not-found">'FWD' was not found in the subject</div>`;
+        }
+    }
+
+    if (containsSpecialSymbols) {
+        resultsDiv.innerHTML += `<div class="result-item special-symbols-found highlight-red-bold">Special symbols found in the subject line</div>`;
+    } else {
+        resultsDiv.innerHTML += `<div class="result-item special-symbols-not-found">No special symbols found</div>`;
+    }
+
+    if (isAllLowercase) {
+        resultsDiv.innerHTML += `<div class="result-item lowercase-warning">Subject line is all lowercase</div>`;
+    } else if (startsWithLowercase) {
+        resultsDiv.innerHTML += `<div class="result-item lowercase-start-warning">Your subject line starts with lowercase</div>`;
+    }
+
+    const readabilityScore = wordCount > 12 ? 'Low' : 'High';
+    const gradeLevel = calculateGradeLevel(subjectLine);
+
+    resultsDiv.innerHTML += `<div class="result-item">Character Count: <span>${charCount}</span></div>`;
+    resultsDiv.innerHTML += `<div class="result-item">Word Count: <span>${wordCount}</span></div>`;
+    resultsDiv.innerHTML += `<div class="result-item">Scannability: <span>${readabilityScore}</span></div>`;
+     resultsDiv.innerHTML += `<div class="result-item">Readability Grade Level: <span>${gradeLevel}</span></div>`;
+    resultsDiv.innerHTML += `<div class="result-item">Exclamation Marks: <span>${exclamationCount}</span></div>`;
+    resultsDiv.innerHTML += `<div class="result-item">Interrogation Marks: <span>${interrogationCount}</span></div>`;
+    resultsDiv.innerHTML += `<div class="result-item">All Caps Words: <span class="${allCapsWords.length ? 'highlight-red-bold' : ''}">${allCapsWords.join(', ') || '0'}</span></div>`;
+    resultsDiv.innerHTML += `
+        <div class="result-item">
+            <span class="tooltip"><sup>ⓘ<sup class="tooltip-text">free, buy, limited-time offer, discount, earn money, exclusive deal, guarantee, act now, risk-free, save big, win, cash, credit, instant, order now, winner, apply now, clearance, cheap, best price, limited, urgent, important information, click here, offer ends soon, congratulations, no cost, refund, get paid, increase sales, hurry, complimentary, financial incentives, over-promising, guaranteed, no risk</sup></sup></span>
+            Spammy Words: <span>${foundSpammyWords.join(', ') || '0'}</span>
+        </div>
+        <div class="result-item">
+            <span class="tooltip"><sup>ⓘ<sup class="tooltip-text">Act now, Apply now, As seen on, Big bucks, Billion dollars, Cash bonus, Cents on the dollar, Consolidate debt, Double your income, Free gift, Free info, Free membership, Free preview, Free quote, Free research, Free sample, Free trial, Free access, Free updates, Full refund, Guaranteed, Increase sales, Increase traffic, Instant access, Instant cash, Limited time, Make money, Money back, No fees, One time, One time only, Online biz opportunity, Online income, Promise you, Pure profit, Risk-free, Satisfaction guaranteed, Save big, Score with, Special promotion, Unsecured credit, Unsecured debt, Unsecured loan, Unsecured credit card, Additional income, Amazing stuff, Be your own boss, Big money, Billions, Big win, Cash, Clearance, Deals, Earnings, Free access, Free info, Free membership, Free money, Free preview, Free quote, Free sample, Free trial, Free video, Free website, Free gift, Freebie, Free!, Free download, Free consultation, Free gift card, Free money, Free quote, Free report, Free software, Free user, Free webinar, Free prize, 100% free, 100% satisfied, 100% guaranteed, All natural, Banned, Beneficiary, Bypass, Click below, Click to remove, Click here, Direct email, Direct marketing, Eliminate bad credit, Earn money</sup></sup></span>
+            Bad Tab Words: <span>${foundBadTabWords.join(', ') || '0'}</span>
+        </div>
+    `;
+}
+  
+    function copyOutput() {
+        const outputHtml = document.getElementById('outputHtml');
+        const range = document.createRange();
+        range.selectNode(outputHtml);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        alert('Quote copied to clipboard!');
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        darkModeIcon.src = isDarkMode ? 'sun.png' : 'moon.png';
+        darkModeIcon.alt = isDarkMode ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+  
+  // Add event listener for the Enter key
+document.getElementById('subject-line').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevents the default action (e.g., new line in textarea)
+        analyzeSubjectLine();
+    }
+});
+</script>
+
+
+</body>
+    <a tabindex="-1" class="by-inesreisx" target="_blank" href="https://inesreisx.com/tools/">
+    by @inesreisx
+  </a>
+</html>
