@@ -3,10 +3,17 @@
 
 <url>
   <loc>https://inesreisx.com/</loc>
+  <priority>1.0</priority>
 </url>
 
+  <url>
+  <loc>https://inesreisx.com/wall-of-love/>
+  <priority>1.0</priority>
+</url>
+  
 <url>
   <loc>https://inesreisx.com/blog/</loc>
+  <priority>1.0</priority>
 </url>
 
 <url>
@@ -16,6 +23,7 @@
 
 <url>
   <loc>https://inesreisx.com/i/photography</loc>
+  <priority>1.0</priority>
 </url>
 
 <url>
