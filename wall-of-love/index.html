@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wall of Love Inês Reis</title>
+<meta name="description" content="All drawings, canvas, mixed-media, and digital arts made by @inesreisx.">
+<meta property="og:description" content="All drawings, canvas, mixed-media, and digital arts made by @inesreisx." />
+<meta property="og:title" content="Photography by Inês Reis"/>
+<meta property="og:description" content="All drawings, canvas, mixed-media, and digital arts made by @inesreisx." />
+<meta name="google-adsense-account" content="ca-pub-7773778866708742">
+<link rel="canonical" href="https://www.inesreisx.com/wall-of-love">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+<script src="include.js" defer></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GTLQ4VKFB1');
+</script>
+<style>
+     body {
+        font-family: Roboto, sans-serif;
+        min-height: 100vh;
+        background-color: #ffffff;
+        color: #20134d;
+        padding-bottom: 3rem;
+        cursor: zoom-in;
+    }
+  
+    .navbar {
+    overflow: hidden;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center-align items vertically */
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+
+.navbar a {
+    color: #20134d;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+.navbar a:hover {
+    background: #fafafa;
+    color: #20134d;
+    border-radius: 5px;
+}
+    
+    :root {
+        font-size: 10px;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+  
+  @media (max-width: 926px) {
+  .navbar-items {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .navbar a {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+}
+  
+/* Gallery layout */
+#images-wrapper {    
+   line-height: 0;       
+   -webkit-column-count: 5;    
+   -webkit-column-gap: 0px;    
+   -moz-column-count: 5;
+   -moz-column-gap: 0px;
+   column-count: 5;    
+   column-gap: 0px;  
+  margin-top: 5rem; /* Adjust the value as needed for the desired spacing */
+}  
+
+#images-wrapper img {    
+   width: 100% !important;    
+   height: auto !important;  
+}  
+
+#images-wrapper {    
+   display:inline-block;    
+   margin-right: auto;    
+   margin-left: auto;  
+}
+            
+@media (max-width: 1000px) {
+   #images-wrapper {
+   -moz-column-count:    3;
+   -webkit-column-count: 3;
+   column-count:         3;
+   }
+}
+
+@media (max-width: 800px) {
+   #images-wrapper {
+   -moz-column-count:    2;
+   -webkit-column-count: 2;
+   column-count:         2;
+   }
+}
+
+@media (max-width: 400px) {
+   #images-wrapper {
+   -moz-column-count:    1;
+   -webkit-column-count: 1;
+   column-count:        1;
+   }
+}
+
+/* Modal styles */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    z-index: 999;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow content when zoomed */
+}
+
+.modal-content img {
+    transition: transform 0.5s ease;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+  .modal-open {
+  overflow: hidden;
+}
+  
+.modal-content img.zoomed {
+    transform: scale(1.5); /* You can adjust the scale factor as needed */
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  padding: 2rem; /* Add padding */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 2rem; /* Add padding */
+}
+
+.arrow.left {
+    left: 10px;
+  
+}
+
+.arrow.right {
+    right: 10px;
+  
+}
+    #scrollToTopButton {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: black;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    #scrollToTopButton.show {
+      display: block;
+      opacity: 1;
+    }
+</style>
+</head>
+<body>
+  
+<div class="navbar">
+  <div class="navbar-items">
+    <a href="https://inesreisx.com/">Home</a>
+    <a href="https://inesreisx.com/">Bucketlist</a>
+  </div>
+</div>
+  
+  
+<div id="images-wrapper"> 
+   <!-- Gallery items will be dynamically added here -->
+</div>
+
+<!-- Image Modal -->
+<div class="gallery-modal" id="galleryModal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <span class="arrow left" onclick="prevImage()">&#8249;</span>
+    <img src="" alt="" class="modal-image" id="modalImage">
+    <span class="arrow right" onclick="nextImage()">&#8250;</span>
+  </div>
+</div>
+
+  
+    <button onclick="scrollToTop()" id="scrollToTopButton">
+    <span style="font-size: 20px;">&#8593;</span>
+  </button>
+  
+<script>
+// Array of image URLs or paths with labels
+const imageUrls = [
+{ url: '../media/Wall-of-Love/Drawing-inesreisx-783.jpeg' },
+{ url: '../media/ },
+
+{ url: '../media/Art/Drawing-inesreisx-1.jpg', labels: ['All'] }
+];
+
+function filterImages(label) {
+    // Select all gallery items
+    const galleryItems = document.querySelectorAll("#images-wrapper img");
+
+    // Loop through each gallery item
+    galleryItems.forEach(item => {
+        // Check if the provided label is included in the item's labels
+        if (item.dataset.label.includes(label) || label === 'all') {
+            // If it matches, show the item
+            item.style.display = 'block';
+        } else {
+            // If it doesn't match, hide the item
+            item.style.display = 'none';
+        }
+    });
+}
+  
+const galleryContainer = document.getElementById('images-wrapper');
+
+// Loop through the imageUrls array and dynamically create gallery items
+imageUrls.forEach((image, index) => {
+    const imageElement = document.createElement('img');
+    imageElement.classList.add('lazy-img');
+    imageElement.dataset.src = image.url;
+    imageElement.alt = `Picture ${index + 1}`;
+    imageElement.dataset.label = image.labels; // Store label as a dataset attribute
+    galleryContainer.appendChild(imageElement);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let lazyImages = [].slice.call(document.querySelectorAll(".lazy-img"));
+    let active = false;
+    let currentImageIndex = 0;
+
+    const lazyLoad = function() {
+        if (active === false) {
+            active = true;
+
+            setTimeout(function() {
+                lazyImages.forEach(function(lazyImage) {
+                    if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.classList.remove("lazy-img");
+
+                        lazyImages = lazyImages.filter(function(image) {
+                            return image !== lazyImage;
+                        });
+
+                        if (lazyImages.length === 0) {
+                            document.removeEventListener("scroll", lazyLoad);
+                            window.removeEventListener("resize", lazyLoad);
+                            window.removeEventListener("orientationchange", lazyLoad);
+                        }
+                    }
+                });
+
+                active = false;
+            }, 200);
+        }
+    };
+
+    lazyLoad();
+
+    document.addEventListener("scroll", lazyLoad);
+    window.addEventListener("resize", lazyLoad);
+    window.addEventListener("orientationchange", lazyLoad);
+    
+    // Selecting gallery items
+    const galleryItems = document.querySelectorAll("#images-wrapper img");
+
+// Function to open modal
+function openModal() {
+    galleryModal.style.display = 'flex';
+    document.body.classList.add('modal-open'); // Disable scrolling
+}
+
+// Function to close modal
+function closeModal() {
+    document.getElementById('galleryModal').style.display = 'none';
+    document.body.classList.remove('modal-open'); // Enable scrolling
+}
+
+    // Event listener for close button
+    document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+    // Function to navigate to the previous image
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+        const imageUrl = galleryItems[currentImageIndex].src;
+        modalImage.src = imageUrl;
+        modalImage.classList.remove('zoomed'); // Remove zoom class on image change
+    }
+
+    // Function to navigate to the next image
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+        const imageUrl = galleryItems[currentImageIndex].src;
+        modalImage.src = imageUrl;
+        modalImage.classList.remove('zoomed'); // Remove zoom class on image change
+    }
+
+    // Event listeners for gallery items
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentImageIndex = index;
+            const imageUrl = item.src;
+            modalImage.src = imageUrl;
+            modalImage.classList.add('zoomed'); // Add zoom class when clicked
+            openModal();
+        });
+
+        item.addEventListener('mouseover', () => {
+            document.body.style.cursor = 'zoom-in';
+        });
+
+        item.addEventListener('mouseout', () => {
+            document.body.style.cursor = 'auto';
+        });
+    });
+
+    // Event listener for previous arrow
+    document.querySelector('.arrow.left').addEventListener('click', prevImage);
+
+    // Event listener for next arrow
+    document.querySelector('.arrow.right').addEventListener('click', nextImage);
+
+    // Touch events for swiping images on mobile
+    let initialX = 0;
+
+    modalImage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+            initialX = e.touches[0].clientX;
+        }
+    });
+
+    modalImage.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 1) {
+            const currentX = e.touches[0].clientX;
+            const deltaX = currentX - initialX;
+
+            if (deltaX > 50) {
+                prevImage();
+                initialX = currentX;
+            } else if (deltaX < -50) {
+                nextImage();
+                initialX = currentX;
+            }
+        }
+    });
+
+    modalImage.addEventListener('touchend', () => {
+        initialX = 0;
+    });
+});
+    window.onscroll = function() {
+    var button = document.getElementById("scrollToTopButton");
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var documentHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+
+    if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
+    }
+  };
+
+  var button = document.getElementById("scrollToTopButton");
+  button.addEventListener("click", scrollToTop);
+  button.addEventListener("touchstart", scrollToTop);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+</script>
+
+</body>
+</html>
