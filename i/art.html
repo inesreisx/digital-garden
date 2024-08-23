@@ -1122,6 +1122,17 @@ function closeModal() {
     document.body.classList.remove('modal-open'); // Enable scrolling
 }
 
+      // Keyboard navigation using arrow keys
+    document.addEventListener('keydown', (event) => {
+        if (galleryModal.style.display === 'flex') { // Check if modal is open
+            if (event.key === 'ArrowLeft') {
+                prevImage();
+            } else if (event.key === 'ArrowRight') {
+                nextImage();
+            }
+        }
+    });
+  
     // Event listener for close button
     document.querySelector('.close-modal').addEventListener('click', closeModal);
 
