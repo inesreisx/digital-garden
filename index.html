@@ -155,6 +155,24 @@ a:active {
     }   
   }
 
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.social-icons a .fa-heart {
+    transition: transform 0.3s ease;
+}
+
+/* Heartbeat effect on hover */
+.social-icons a .fa-heart:hover {
+    animation: heartbeat 0.9s ease infinite;
+}
 
   
 </style>
