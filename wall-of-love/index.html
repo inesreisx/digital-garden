@@ -390,16 +390,18 @@ function closeModal() {
     document.body.classList.remove('modal-open'); // Enable scrolling
 }
 
-      // Keyboard navigation using arrow keys
-    document.addEventListener('keydown', (event) => {
-        if (galleryModal.style.display === 'flex') { // Check if modal is open
-            if (event.key === 'ArrowLeft') {
-                prevImage();
-            } else if (event.key === 'ArrowRight') {
-                nextImage();
-            }
+// Keyboard navigation using arrow keys and ESC to close modal
+document.addEventListener('keydown', (event) => {
+    if (galleryModal.style.display === 'flex') { // Check if modal is open
+        if (event.key === 'ArrowLeft') {
+            prevImage(); // Navigate to the previous image
+        } else if (event.key === 'ArrowRight') {
+            nextImage(); // Navigate to the next image
+        } else if (event.key === 'Escape') {
+            galleryModal.style.display = 'none'; // Close the modal
         }
-    });
+    }
+});
   
     // Event listener for close button
     document.querySelector('.close-modal').addEventListener('click', closeModal);
