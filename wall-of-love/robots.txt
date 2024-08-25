@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /media/Wall-of-Love/
+
+Sitemap: https://inesreisx.com/sitemap.xml
