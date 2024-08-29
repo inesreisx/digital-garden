@@ -22,43 +22,42 @@
 	
 </script>
 <style>
-        * {
+         * {
+            box-sizing: border-box;
             font-family: Georgia, Cambria, "Times New Roman", Times, serif;
         }
 
         html, body {
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         h1 {
-            font-size: 50px;
-            margin-bottom: 17px;
+            font-size: 2.5em; /* Responsive font size */
+            margin-bottom: 1rem;
             color: #333;
         }
 
         h2 {
-            font-size: 24px;
-            line-height: 1.6;
-            margin: 30px 0 0 0;
-            margin-bottom: 18px;
-            margin-top: 33px;
+            font-size: 1.6em; /* Responsive font size */
+            margin: 1.5rem 0;
             color: #333;
         }
 
         h3 {
-            font-size: 30px;
-            margin: 10px 0 20px 0;
+            font-size: 1.8em; /* Responsive font size */
+            margin: 1rem 0;
             color: #333;
         }
 
         .navbar {
-            top: 0;
-            left: 0;
             width: 100%;
             background-color: #ffffff;
-            z-index: 100;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
             transition: top 0.3s; /* Smooth transition */
         }
 
@@ -67,7 +66,7 @@
             color: #20134d;
             padding: 14px 16px;
             text-decoration: none;
-            font-size: 17px;
+            font-size: 1em; /* Responsive font size */
         }
 
         .navbar a:hover {
@@ -75,40 +74,21 @@
             color: black;
         }
 
-        header {
-            width: 640px;
+        header, section {
+            max-width: 800px; /* Max width for larger screens */
             margin: auto;
-        }
-
-        section {
-            width: 640px;
-            margin: auto;
+            padding: 0 20px; /* Padding for small screens */
         }
 
         section p {
-            margin-bottom: 27px;
-            font-size: 20px;
-            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 1.2em; /* Responsive font size */
             color: #333;
         }
 
         section img {
-            max-width: 640px;
-        }
-
-        .aspectRatioPlaceholder {
-            max-width: auto !important;
-            max-height: auto !important;
-        }
-
-        .aspectRatioPlaceholder-fill {
-            padding-bottom: 0 !important;
-        }
-
-        header,
-        section[data-field=subtitle],
-        section[data-field=description] {
-            display: none;
+            width: 100%; /* Make images responsive */
+            height: auto;
         }
 
         #scrollToTopButton {
@@ -132,11 +112,48 @@
             display: block;
             opacity: 1;
         }
-      
-              .byline {
-            font-size: 14px;
+
+        .byline {
+            font-size: 0.9em;
             color: #666;
             margin: 10px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2, h3 {
+                font-size: 1.5em;
+            }
+
+            .navbar a {
+                font-size: 0.9em; /* Slightly smaller links */
+            }
+
+            section p {
+                font-size: 1em; /* Smaller font for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2, h3 {
+                font-size: 1.2em;
+            }
+
+            .navbar a {
+                padding: 10px 12px; /* Less padding for smaller screens */
+            }
+
+            section p {
+                font-size: 0.9em; /* Smaller font for very small screens */
+            }
         }
     </style>
 </head>
