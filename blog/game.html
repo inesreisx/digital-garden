@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile Tangle: Color Quest</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #game {
+            display: grid;
+            grid-template-columns: repeat(5, 80px);
+            grid-gap: 10px;
+        }
+        .tile {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #moves {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="game"></div>
+        <div id="moves">Moves Left: <span id="movesLeft">15</span></div>
+    </div>
+    <script>
+        const colors = ['red', 'green', 'blue', 'yellow'];
+        const gridSize = 5;
+        const maxMoves = 15;  // Increased number of moves
+        let movesLeft = maxMoves;
+
+        const gameContainer = document.getElementById('game');
+        const movesLeftDisplay = document.getElementById('movesLeft');
+
+        // Create the grid of tiles
+        for (let i = 0; i < gridSize * gridSize; i++) {
+            const tile = document.createElement('div');
+            tile.className = 'tile';
+            tile.dataset.colorIndex = 0;
+            tile.style.backgroundColor = colors[tile.dataset.colorIndex];
+            tile.addEventListener('click', changeColor);
+            gameContainer.appendChild(tile);
+        }
+
+        // Function to change the tile's color and affect neighbors
+        function changeColor(event) {
+            if (movesLeft > 0) {
+                const tile = event.target;
+                const index = Array.from(gameContainer.children).indexOf(tile);
+                
+                // Change the clicked tile's color
+                changeTileColor(tile);
+                
+                // Change neighboring tiles' colors
+                const neighbors = getNeighbors(index);
+                neighbors.forEach(changeTileColor);
+                
+                movesLeft--;
+                movesLeftDisplay.textContent = movesLeft;
+                
+                checkWinCondition();
+            }
+        }
+
+        // Function to change a tile's color
+        function changeTileColor(tile) {
+            let colorIndex = parseInt(tile.dataset.colorIndex);
+            colorIndex = (colorIndex + 1) % colors.length;
+            tile.dataset.colorIndex = colorIndex;
+            tile.style.backgroundColor = colors[colorIndex];
+        }
+
+        // Get neighboring tiles (above, below, left, right)
+        function getNeighbors(index) {
+            const neighbors = [];
+            const row = Math.floor(index / gridSize);
+            const col = index % gridSize;
+
+            if (row > 0) neighbors.push(gameContainer.children[index - gridSize]); // Above
+            if (row < gridSize - 1) neighbors.push(gameContainer.children[index + gridSize]); // Below
+            if (col > 0) neighbors.push(gameContainer.children[index - 1]); // Left
+            if (col < gridSize - 1) neighbors.push(gameContainer.children[index + 1]); // Right
+
+            return neighbors;
+        }
+
+        // Check if all tiles are the same color
+        function checkWinCondition() {
+            const tiles = document.querySelectorAll('.tile');
+            const firstColor = tiles[0].style.backgroundColor;
+            const allSameColor = Array.from(tiles).every(tile => tile.style.backgroundColor === firstColor);
+            
+            if (allSameColor) {
+                setTimeout(() => {
+                    alert('You won!');
+                    resetGame();
+                }, 100);
+            } else if (movesLeft === 0) {
+                setTimeout(() => {
+                    alert('Out of moves! Try again.');
+                    resetGame();
+                }, 100);
+            }
+        }
+
+        // Reset the game
+        function resetGame() {
+            movesLeft = maxMoves;
+            movesLeftDisplay.textContent = movesLeft;
+            document.querySelectorAll('.tile').forEach(tile => {
+                tile.dataset.colorIndex = 0;
+                tile.style.backgroundColor = colors[0];
+            });
+        }
+    </script>
+</body>
+</html>
