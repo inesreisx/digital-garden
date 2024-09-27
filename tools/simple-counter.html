@@ -75,8 +75,8 @@
         font-size: 2rem;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        -webkit-tap-highlight-color: transparent; /* Disables tap highlight */
-        touch-action: manipulation; /* Disables zooming on tap */
+        -webkit-tap-highlight-color: transparent; 
+        touch-action: manipulation; 
     }
 
     .button:hover {
@@ -146,6 +146,7 @@
         .counter-wrapper {
             flex-direction: row; /* Change layout to column on mobile */
             align-items: center;    /* Center align the elements */
+            height: 350px;
         }
 
         .counter {
@@ -160,9 +161,10 @@
         }
 
         .button {
-            padding: 10px 20px; /* Adjust padding for smaller screens */
+            padding: 10px 20px; 
             font-size: 1.5rem;
             margin-top: 450px;
+            width: 80px;
         }
 
         .dark-mode-toggle, .reset-icon {
