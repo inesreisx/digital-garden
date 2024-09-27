@@ -77,7 +77,7 @@
 
     .image-container img {
       width: 100%;
-      max-width: 300px;
+      max-width: 250px;
       margin: 10px;
       border-radius: 2rem;
       transition: transform 0.3s;
@@ -85,7 +85,7 @@
 
     .image-container img:hover {
   transform: scale(1.1);
-  margin: 15px; /* Increase the margin slightly on hover */
+
 }
 
     .by-inesreisx {
@@ -116,12 +116,12 @@
     }
 
     @media (min-width: 992px) {
-      .image-container {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        margin: 20px auto;
-        max-width: 960px;
-      }
+  .image-container img {
+    flex-basis: calc(33.33% - 20px); 
+    margin: 10px;
+    max-width: 250px; /
+  }
+}
 
       .image-container img {
         flex-basis: calc(33.33% - 20px);
