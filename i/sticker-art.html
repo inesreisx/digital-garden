@@ -537,6 +537,49 @@ function closeModal() {
         }
     });
 
+    // Keyboard navigation (ESC to close, left and right to navigate)
+document.addEventListener('keydown', (event) => {
+    if (galleryModal.style.display === 'flex') { // Check if modal is open
+        if (event.key === 'ArrowRight') {
+            nextImage();
+        } else if (event.key === 'ArrowLeft') {
+            prevImage();
+        } else if (event.key === 'Escape') {
+            closeModal();
+        }
+    }
+});
+
+
+// Touch events for swipe on mobile
+let initialX = 0;
+
+modalImage.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+        initialX = e.touches[0].clientX;
+    }
+});
+
+modalImage.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 1) {
+        const currentX = e.touches[0].clientX;
+        const deltaX = currentX - initialX;
+
+        if (deltaX > 50) {
+            prevImage();
+            initialX = currentX;
+        } else if (deltaX < -50) {
+            nextImage();
+            initialX = currentX;
+        }
+    }
+});
+
+modalImage.addEventListener('touchend', () => {
+    initialX = 0;
+});
+
+
     modalImage.addEventListener('touchmove', (e) => {
         if (e.touches.length === 1) {
             const currentX = e.touches[0].clientX;
