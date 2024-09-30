@@ -479,6 +479,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let active = false;
     let currentImageIndex = 0;
 
+    const galleryModal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    const galleryItems = document.querySelectorAll("#images-wrapper img");
+
     const lazyLoad = function() {
         if (active === false) {
             active = true;
@@ -507,28 +511,21 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     lazyLoad();
-
     document.addEventListener("scroll", lazyLoad);
     window.addEventListener("resize", lazyLoad);
     window.addEventListener("orientationchange", lazyLoad);
     
-    // Selecting gallery items
-    const galleryItems = document.querySelectorAll("#images-wrapper img");
+    // Function to open modal
+    function openModal() {
+        galleryModal.style.display = 'flex';
+        document.body.classList.add('modal-open'); // Disable scrolling
+    }
 
-// Function to open modal
-function openModal() {
-    galleryModal.style.display = 'flex';
-    document.body.classList.add('modal-open'); // Disable scrolling
-}
-
-// Function to close modal
-function closeModal() {
-    document.getElementById('galleryModal').style.display = 'none';
-    document.body.classList.remove('modal-open'); // Enable scrolling
-}
-
-    // Event listener for close button
-    document.querySelector('.close-modal').addEventListener('click', closeModal);
+    // Function to close modal
+    function closeModal() {
+        galleryModal.style.display = 'none';
+        document.body.classList.remove('modal-open'); // Enable scrolling
+    }
 
     // Function to navigate to the previous image
     function prevImage() {
@@ -555,25 +552,30 @@ function closeModal() {
             modalImage.classList.add('zoomed'); // Add zoom class when clicked
             openModal();
         });
-
-        item.addEventListener('mouseover', () => {
-            document.body.style.cursor = 'zoom-in';
-        });
-
-        item.addEventListener('mouseout', () => {
-            document.body.style.cursor = 'auto';
-        });
     });
 
-    // Event listener for previous arrow
-    document.querySelector('.arrow.left').addEventListener('click', prevImage);
+    // Event listener for close button
+    document.querySelector('.close-modal').addEventListener('click', closeModal);
 
-    // Event listener for next arrow
+    // Event listeners for previous/next arrow
+    document.querySelector('.arrow.left').addEventListener('click', prevImage);
     document.querySelector('.arrow.right').addEventListener('click', nextImage);
 
-    // Touch events for swiping images on mobile
-    let initialX = 0;
+    // Keyboard navigation (ESC to close, left and right to navigate)
+    document.addEventListener('keydown', (event) => {
+        if (galleryModal.style.display === 'flex') { // Check if modal is open
+            if (event.key === 'ArrowRight') {
+                nextImage();
+            } else if (event.key === 'ArrowLeft') {
+                prevImage();
+            } else if (event.key === 'Escape') {
+                closeModal();
+            }
+        }
+    });
 
+    // Touch events for swipe on mobile
+    let initialX = 0;
     modalImage.addEventListener('touchstart', (e) => {
         if (e.touches.length === 1) {
             initialX = e.touches[0].clientX;
@@ -599,34 +601,34 @@ function closeModal() {
         initialX = 0;
     });
 });
-    window.onscroll = function() {
+
+window.onscroll = function() {
     var button = document.getElementById("scrollToTopButton");
     var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var documentHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
     );
 
     if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
-      button.classList.add("show");
+        button.classList.add("show");
     } else {
-      button.classList.remove("show");
+        button.classList.remove("show");
     }
-  };
+};
 
-  var button = document.getElementById("scrollToTopButton");
-  button.addEventListener("click", scrollToTop);
-  button.addEventListener("touchstart", scrollToTop);
+var button = document.getElementById("scrollToTopButton");
+button.addEventListener("click", scrollToTop);
+button.addEventListener("touchstart", scrollToTop);
 
-  function scrollToTop() {
+function scrollToTop() {
     window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+        top: 0,
+        behavior: "smooth"
     });
-  }
+}
 </script>
-
 </body>
 </html>
