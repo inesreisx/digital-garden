@@ -30,7 +30,7 @@
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
-            transition: background-color 0.3s ease; /* Smooth transition for dark mode */
+            transition: background-color 0.3s ease;
             overflow: hidden; /* Remove scroll on mobile */
         }
         .container {
@@ -38,7 +38,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
             text-align: center;
             box-sizing: border-box;
@@ -52,19 +52,40 @@
             width: 100%;
             height: 80px;
             margin-bottom: 10px;
-            padding: 5px;
+            padding: 10px;
             font-size: 14px;
             border: 1px solid #ddd;
             border-radius: 5px;
             background-color: inherit;
             color: inherit;
+            display: inline-block;
+        }
+        .copy-btn {
+            margin-left: 10px;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
         table {
             width: 100%;
             margin-bottom: 20px;
         }
         td {
-            padding: 15px;
+            padding: 10px;
             text-align: center;
             font-size: 24px;
             cursor: pointer;
@@ -73,19 +94,6 @@
             background-color: #007bff;
             color: white;
             border-radius: 5px;
-        }
-        .copy-btn {
-            margin-top: 10px;
-            padding: 8px 15px;
-            font-size: 14px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        .copy-btn:hover {
-            background-color: #0056b3;
         }
         .sticky-share-bar {
             position: sticky;
@@ -119,7 +127,14 @@
             background-color: #222;
             color: #ddd;
         }
-        .by-inesreisx {
+        /* Media queries for responsive design */
+        @media (max-width: 768px) {
+            textarea {
+                width: 100%;
+            }
+        }
+      
+              .by-inesreisx {
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -147,10 +162,11 @@
         <i id="dark-mode-icon" class="fas fa-moon" onclick="toggleDarkMode()"></i>
     </div>
 
-    <h2>Superscript Generator</h2>
+    <h2>Superscript and Subscript Generator</h2>
 
     <!-- Superscript Table -->
     <table>
+      <h3>Simplify Your Citations</h3>
         <tbody>
             <tr>
                 <td onclick="copySuperscript('⁰')">⁰</td>
@@ -169,12 +185,22 @@
         </tbody>
     </table>
 
-    <!-- Superscript Generator -->
-    <textarea id="input-text" placeholder="Enter your text here"></textarea>
-    <button class="copy-btn" onclick="generateSuperscript()">Generate Superscript</button>
-    <br>
-    <textarea id="superscript-output" placeholder="Generated superscript will appear here" readonly></textarea>
-    <button class="copy-btn" onclick="copyGeneratedSuperscript()">Copy Superscript</button>
+    <!-- Input and Superscript/Subscript Outputs -->
+    <div class="output">
+        <textarea id="input-text" placeholder="Enter your text here" oninput="generateScript()"></textarea>
+    </div>
+
+    <div class="output">
+        <h3>Superscript</h3>&nbsp;
+        <textarea id="superscript-output" placeholder="Generated superscript will appear here" readonly></textarea>
+       <button class="copy-btn" onclick="copyText('superscript-output')">Copy Superscript</button>
+    </div>
+
+    <div class="output">
+        <h3>Subscript</h3>&nbsp;
+        <textarea id="subscript-output" placeholder="Generated subscript will appear here" readonly></textarea>
+      <button class="copy-btn" onclick="copyText('subscript-output')">Copy Subscript</button>
+    </div>
 
     <!-- Social Media Sharing -->
     <div class="sticky-share-bar" id="share-bar">
@@ -187,29 +213,30 @@
 </div>
 
 <script>
-    // Function to toggle dark mode
-    function toggleDarkMode() {
-        const body = document.body;
-        const container = document.getElementById('container');
-        const shareBar = document.getElementById('share-bar');
-        const darkModeIcon = document.getElementById('dark-mode-icon');
+    // Superscript and Subscript Maps
+    const superscriptMap = {
+        '0': '⁰', '1': '¹', '2': '²', '3': '³',
+        '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷',
+        '8': '⁸', '9': '⁹', 'a': 'ᵃ', 'b': 'ᵇ', 
+        'c': 'ᶜ', 'd': 'ᵈ', 'e': 'ᵉ', 'f': 'ᶠ', 
+        'g': 'ᵍ', 'h': 'ʰ', 'i': 'ⁱ', 'j': 'ʲ', 
+        'k': 'ᵏ', 'l': 'ˡ', 'm': 'ᵐ', 'n': 'ⁿ', 
+        'o': 'ᵒ', 'p': 'ᵖ', 'r': 'ʳ', 's': 'ˢ', 
+        't': 'ᵗ', 'u': 'ᵘ', 'v': 'ᵛ', 'w': 'ʷ', 
+        'x': 'ˣ', 'y': 'ʸ', 'z': 'ᶻ'
+    };
 
-        // Toggle dark mode class on body, container, and share bar
-        body.classList.toggle('dark-mode');
-        container.classList.toggle('dark-mode');
-        shareBar.classList.toggle('dark-mode');
+    const subscriptMap = {
+        '0': '₀', '1': '₁', '2': '₂', '3': '₃',
+        '4': '₄', '5': '₅', '6': '₆', '7': '₇',
+        '8': '₈', '9': '₉', 'a': 'ₐ', 'e': 'ₑ', 
+        'h': 'ₕ', 'i': 'ᵢ', 'j': 'ⱼ', 'k': 'ₖ', 
+        'l': 'ₗ', 'm': 'ₘ', 'n': 'ₙ', 'o': 'ₒ', 
+        'p': 'ₚ', 'r': 'ᵣ', 's': 'ₛ', 't': 'ₜ', 
+        'u': 'ᵤ', 'v': 'ᵥ', 'x': 'ₓ'
+    };
 
-        // Change icon based on dark mode
-        if (body.classList.contains('dark-mode')) {
-            darkModeIcon.classList.remove('fa-sun');
-            darkModeIcon.classList.add('fa-moon');
-        } else {
-            darkModeIcon.classList.remove('fa-moon');
-            darkModeIcon.classList.add('fa-sun');
-        }
-    }
-
-    // Copy a superscript from the table
+      // Copy a superscript from the table
     function copySuperscript(text) {
         var textarea = document.createElement('textarea');
         textarea.value = text;
@@ -219,52 +246,51 @@
         document.body.removeChild(textarea);
         alert('Superscript ' + text + ' copied to clipboard');
     }
-
-    // Generate superscript text from input
-    function generateSuperscript() {
+  
+    // Generate both superscript and subscript
+    function generateScript() {
         const inputText = document.getElementById('input-text').value;
-        const superscriptMap = {
-            '0': '⁰', '1': '¹', '2': '²', '3': '³',
-            '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷',
-            '8': '⁸', '9': '⁹'
-        };
         let superscriptText = '';
+        let subscriptText = '';
 
         for (let char of inputText) {
-            if (superscriptMap[char]) {
-                superscriptText += superscriptMap[char];
-            } else {
-                superscriptText += char;  // Keep non-number characters as is
-            }
+            // Superscript generation
+            superscriptText += superscriptMap[char] || char;
+
+            // Subscript generation
+            subscriptText += subscriptMap[char] || char;
         }
 
         document.getElementById('superscript-output').value = superscriptText;
+        document.getElementById('subscript-output').value = subscriptText;
     }
 
-    // Copy generated superscript
-    function copyGeneratedSuperscript() {
-        const superscriptText = document.getElementById('superscript-output').value;
-        var textarea = document.createElement('textarea');
-        textarea.value = superscriptText;
-        document.body.appendChild(textarea);
-        textarea.select();
+    // Copy to clipboard
+    function copyText(elementId) {
+        const textToCopy = document.getElementById(elementId);
+        textToCopy.select();
         document.execCommand('copy');
-        document.body.removeChild(textarea);
-        alert('Generated superscript copied to clipboard');
+        alert('Copied to clipboard: ' + textToCopy.value);
     }
 
-    // Copy URL to clipboard
-    function copyToClipboard(text) {
-        var textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.setAttribute('readonly', '');
-        textarea.style.position = 'absolute';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        alert('Link copied to clipboard: ' + text);
+    // Toggle dark mode
+    function toggleDarkMode() {
+        const body = document.body;
+        const container = document.getElementById('container');
+        const shareBar = document.getElementById('share-bar');
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+
+        body.classList.toggle('dark-mode');
+        container.classList.toggle('dark-mode');
+        shareBar.classList.toggle('dark-mode');
+
+        if (body.classList.contains('dark-mode')) {
+            darkModeIcon.classList.remove('fa-sun');
+            darkModeIcon.classList.add('fa-moon');
+        } else {
+            darkModeIcon.classList.remove('fa-moon');
+            darkModeIcon.classList.add('fa-sun');
+        }
     }
 
     // Enable dark mode by default on load
@@ -273,11 +299,10 @@
         document.getElementById('container').classList.add('dark-mode');
         document.getElementById('share-bar').classList.add('dark-mode');
         document.getElementById('dark-mode-icon').classList.add('fa-moon');
-    }
+    };
 </script>
-
 </body>
-    <a tabindex="-1" class="by-inesreisx" target="_blank" href="https://inesreisx.com/tools/">
+  <a tabindex="-1" class="by-inesreisx" target="_blank" href="https://inesreisx.com/tools/">
     by @inesreisx
   </a>
 </html>
