@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superscript and Subscript Generator - Free Online Tool</title>
+    <meta name="description" content="Free superscript and subscript generator online for free. Use this tool to simplify creating citations, references, and formulas. Perfect for social media, academic writing, and more.">
+    <meta property="og:description" content="Free superscript and subscript generator online for free. Use this tool to simplify creating citations, references, and formulas. Perfect for social media, academic writing, and more." />
+    <meta property="og:title" content="Superscript and Subscript Generator - Free Online Tool"/>
+    <meta name="google-adsense-account" content="ca-pub-7773778866708742">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="canonical" href="https://www.inesreisx.com/tools/superscript-subscript-generator">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪩</text></svg>">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GTLQ4VKFB1');
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease; /* Smooth transition for dark mode */
+            overflow: hidden; /* Remove scroll on mobile */
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .container.dark-mode {
+            background-color: #222;
+            color: #ddd;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: inherit;
+            color: inherit;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        td {
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        td:hover {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        .copy-btn {
+            margin-top: 10px;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+        .sticky-share-bar {
+            position: sticky;
+            top: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 100;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .sticky-share-bar.dark-mode {
+            background-color: #444;
+            color: #ddd;
+        }
+        .share-icon-bar a {
+            color: #007bff;
+            font-size: 24px;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+        .share-icon-bar a:hover {
+            color: #0056b3;
+        }
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #222;
+            color: #ddd;
+        }
+        .by-inesreisx {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+   
+    transition: background-color 0.3s ease;
+}
+
+.by-inesreisx:hover {
+    background-color: #F7F7F7;
+}
+    </style>
+</head>
+<body>
+
+<div class="container" id="container">
+    <!-- Dark mode toggle -->
+    <div id="dark-mode-toggle">
+        <i id="dark-mode-icon" class="fas fa-moon" onclick="toggleDarkMode()"></i>
+    </div>
+
+    <h2>Superscript Generator</h2>
+
+    <!-- Superscript Table -->
+    <table>
+        <tbody>
+            <tr>
+                <td onclick="copySuperscript('⁰')">⁰</td>
+                <td onclick="copySuperscript('¹')">¹</td>
+                <td onclick="copySuperscript('²')">²</td>
+                <td onclick="copySuperscript('³')">³</td>
+                <td onclick="copySuperscript('⁴')">⁴</td>
+            </tr>
+            <tr>
+                <td onclick="copySuperscript('⁵')">⁵</td>
+                <td onclick="copySuperscript('⁶')">⁶</td>
+                <td onclick="copySuperscript('⁷')">⁷</td>
+                <td onclick="copySuperscript('⁸')">⁸</td>
+                <td onclick="copySuperscript('⁹')">⁹</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Superscript Generator -->
+    <textarea id="input-text" placeholder="Enter your text here"></textarea>
+    <button class="copy-btn" onclick="generateSuperscript()">Generate Superscript</button>
+    <br>
+    <textarea id="superscript-output" placeholder="Generated superscript will appear here" readonly></textarea>
+    <button class="copy-btn" onclick="copyGeneratedSuperscript()">Copy Superscript</button>
+
+    <!-- Social Media Sharing -->
+    <div class="sticky-share-bar" id="share-bar">
+        <div class="share-icon-bar">
+            <a href="#" onclick="copyToClipboard(window.location.href); return false;"><i class="fa fa-link"></i></a> 
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20tool%3A%20https://yourwebsite.com"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:?subject=Check%20this%20out&amp;body=Hi%20there%2C%0D%0A%0D%0AI%20found%20this%20interesting%20tool%20and%20wanted%20to%20share%20it%20with%20you%3A%20https://yourwebsite.com"><i class="far fa-envelope"></i></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        const body = document.body;
+        const container = document.getElementById('container');
+        const shareBar = document.getElementById('share-bar');
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+
+        // Toggle dark mode class on body, container, and share bar
+        body.classList.toggle('dark-mode');
+        container.classList.toggle('dark-mode');
+        shareBar.classList.toggle('dark-mode');
+
+        // Change icon based on dark mode
+        if (body.classList.contains('dark-mode')) {
+            darkModeIcon.classList.remove('fa-sun');
+            darkModeIcon.classList.add('fa-moon');
+        } else {
+            darkModeIcon.classList.remove('fa-moon');
+            darkModeIcon.classList.add('fa-sun');
+        }
+    }
+
+    // Copy a superscript from the table
+    function copySuperscript(text) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Superscript ' + text + ' copied to clipboard');
+    }
+
+    // Generate superscript text from input
+    function generateSuperscript() {
+        const inputText = document.getElementById('input-text').value;
+        const superscriptMap = {
+            '0': '⁰', '1': '¹', '2': '²', '3': '³',
+            '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷',
+            '8': '⁸', '9': '⁹'
+        };
+        let superscriptText = '';
+
+        for (let char of inputText) {
+            if (superscriptMap[char]) {
+                superscriptText += superscriptMap[char];
+            } else {
+                superscriptText += char;  // Keep non-number characters as is
+            }
+        }
+
+        document.getElementById('superscript-output').value = superscriptText;
+    }
+
+    // Copy generated superscript
+    function copyGeneratedSuperscript() {
+        const superscriptText = document.getElementById('superscript-output').value;
+        var textarea = document.createElement('textarea');
+        textarea.value = superscriptText;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Generated superscript copied to clipboard');
+    }
+
+    // Copy URL to clipboard
+    function copyToClipboard(text) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Link copied to clipboard: ' + text);
+    }
+
+    // Enable dark mode by default on load
+    window.onload = function() {
+        document.body.classList.add('dark-mode');
+        document.getElementById('container').classList.add('dark-mode');
+        document.getElementById('share-bar').classList.add('dark-mode');
+        document.getElementById('dark-mode-icon').classList.add('fa-moon');
+    }
+</script>
+
+</body>
+    <a tabindex="-1" class="by-inesreisx" target="_blank" href="https://inesreisx.com/tools/">
+    by @inesreisx
+  </a>
+</html>
