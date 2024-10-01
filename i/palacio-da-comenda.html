@@ -575,30 +575,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Touch events for swipe on mobile
 let initialX = 0;
+let isSwiping = false;  // Track if swipe has already been detected
+
 modalImage.addEventListener('touchstart', (e) => {
     if (e.touches.length === 1) {
         initialX = e.touches[0].clientX;
+        isSwiping = false;  // Reset swipe status
     }
 });
 
 modalImage.addEventListener('touchmove', (e) => {
-    if (e.touches.length === 1) {
+    if (e.touches.length === 1 && !isSwiping) {  // Check if it's the first touch
         const currentX = e.touches[0].clientX;
         const deltaX = currentX - initialX;
 
-        if (deltaX > 50) {
+        if (deltaX > 50) {  // Swipe right
             prevImage();
-            initialX = currentX;
-        } else if (deltaX < -50) {
+            initialX = currentX;  // Update the initial position
+            isSwiping = true;  // Mark swipe as detected
+        } else if (deltaX < -50) {  // Swipe left
             nextImage();
-            initialX = currentX;
+            initialX = currentX;  // Update the initial position
+            isSwiping = true;  // Mark swipe as detected
         }
     }
 });
 
 modalImage.addEventListener('touchend', () => {
-    initialX = 0;
+    initialX = 0;  // Reset after touch ends
 });
+
 
 window.onscroll = function() {
     var button = document.getElementById("scrollToTopButton");
