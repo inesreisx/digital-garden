@@ -473,6 +473,38 @@ imageUrls.forEach((image, index) => {
     galleryContainer.appendChild(imageElement);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const modalImage = document.getElementById('modalImage');
+    let initialX = null;
+
+    modalImage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+            initialX = e.touches[0].clientX;
+        }
+    });
+
+    modalImage.addEventListener('touchmove', (e) => {
+        if (initialX === null) return;
+
+        const currentX = e.touches[0].clientX;
+        const diffX = initialX - currentX;
+
+        if (Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                nextImage(); // Swipe left, show next image
+            } else {
+                prevImage(); // Swipe right, show previous image
+            }
+            initialX = null; // Reset swipe
+        }
+    });
+
+    modalImage.addEventListener('touchend', () => {
+        initialX = null; // Reset on touch end
+    });
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
     let lazyImages = [].slice.call(document.querySelectorAll(".lazy-img"));
     let active = false;
@@ -513,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("scroll", lazyLoad);
     window.addEventListener("resize", lazyLoad);
     window.addEventListener("orientationchange", lazyLoad);
-    
+
     // Function to open modal
     function openModal() {
         galleryModal.style.display = 'flex';
@@ -573,8 +605,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-   // Touch events for swipe on mobile
-   let initialX = 0;
+    // Improved swipe handling for touch events
+    let initialX = 0;
+    let swipeThreshold = 30; // Adjust swipe sensitivity threshold
+
     modalImage.addEventListener('touchstart', (e) => {
         if (e.touches.length === 1) {
             initialX = e.touches[0].clientX;
@@ -586,20 +620,23 @@ document.addEventListener("DOMContentLoaded", function() {
             const currentX = e.touches[0].clientX;
             const deltaX = currentX - initialX;
 
-            if (deltaX > 50) {
-                prevImage();
-                initialX = currentX;
-            } else if (deltaX < -50) {
-                nextImage();
-                initialX = currentX;
+            // Detect left or right swipe
+            if (Math.abs(deltaX) > swipeThreshold) {
+                if (deltaX > 0) {
+                    prevImage();
+                } else {
+                    nextImage();
+                }
+                initialX = currentX; // Reset initialX after each swipe
             }
         }
     });
 
     modalImage.addEventListener('touchend', () => {
-        initialX = 0;
+        initialX = 0; // Reset after touch ends
     });
 });
+
 
 
 window.onscroll = function() {
