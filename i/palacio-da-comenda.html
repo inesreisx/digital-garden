@@ -573,32 +573,31 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Touch events for swipe on mobile
-    let initialX = 0;
-    modalImage.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 1) {
-            initialX = e.touches[0].clientX;
+// Touch events for swipe on mobile
+let initialX = 0;
+modalImage.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+        initialX = e.touches[0].clientX;
+    }
+});
+
+modalImage.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 1) {
+        const currentX = e.touches[0].clientX;
+        const deltaX = currentX - initialX;
+
+        if (deltaX > 50) {
+            prevImage();
+            initialX = currentX;
+        } else if (deltaX < -50) {
+            nextImage();
+            initialX = currentX;
         }
-    });
+    }
+});
 
-    modalImage.addEventListener('touchmove', (e) => {
-        if (e.touches.length === 1) {
-            const currentX = e.touches[0].clientX;
-            const deltaX = currentX - initialX;
-
-            if (deltaX > 50) {
-                prevImage();
-                initialX = currentX;
-            } else if (deltaX < -50) {
-                nextImage();
-                initialX = currentX;
-            }
-        }
-    });
-
-    modalImage.addEventListener('touchend', () => {
-        initialX = 0;
-    });
+modalImage.addEventListener('touchend', () => {
+    initialX = 0;
 });
 
 window.onscroll = function() {
