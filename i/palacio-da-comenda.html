@@ -20,183 +20,181 @@
   gtag('js', new Date());
 
   gtag('config', 'G-GTLQ4VKFB1');
-	
 </script>
 <style>
-     body {
-        font-family: "Open Sans", Arial, sans-serif;
-        min-height: 100vh;
-        background-color: #fafafa;
-        color: #262626;
-        padding-bottom: 3rem;
-        cursor: zoom-in;
-    }
-  
-    .navbar {
-    overflow: hidden;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center-align items vertically */
-    padding-top: 1.3rem;
-    padding-bottom: 1.3rem;
-}
-
-.navbar a {
-    color: #fafafa;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    margin: 0 10px;
-}
-
-.navbar a:hover {
-    background: #fafafa;
-    color: black;
-}
-    
-    :root {
-        font-size: 10px;
-    }
-
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
-  
-  @media (max-width: 926px) {
-  .navbar-items {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  body {
+      font-family: "Open Sans", Arial, sans-serif;
+      min-height: 100vh;
+      background-color: #fafafa;
+      color: #262626;
+      padding-bottom: 3rem;
+      cursor: zoom-in;
   }
+
+  .navbar {
+      overflow: hidden;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center; /* Center-align items vertically */
+      padding-top: 1.3rem;
+      padding-bottom: 1.3rem;
+  }
+
   .navbar a {
-    margin: 5px 0;
-    font-size: 1rem;
+      color: #fafafa;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      margin: 0 10px;
   }
-}
-  
-/* Gallery layout */
-#images-wrapper {    
-   line-height: 0;       
-   -webkit-column-count: 5;    
-   -webkit-column-gap: 0px;    
-   -moz-column-count: 5;
-   -moz-column-gap: 0px;
-   column-count: 5;    
-   column-gap: 0px;  
-  margin-top: 5rem; /* Adjust the value as needed for the desired spacing */
-}  
 
-#images-wrapper img {    
-   width: 100% !important;    
-   height: auto !important;  
-}  
+  .navbar a:hover {
+      background: #fafafa;
+      color: black;
+  }
 
-#images-wrapper {    
-   display:inline-block;    
-   margin-right: auto;    
-   margin-left: auto;  
-}
-            
-@media (max-width: 1000px) {
-   #images-wrapper {
-   -moz-column-count:    3;
-   -webkit-column-count: 3;
-   column-count:         3;
-   }
-}
+  :root {
+      font-size: 10px;
+  }
 
-@media (max-width: 800px) {
-   #images-wrapper {
-   -moz-column-count:    2;
-   -webkit-column-count: 2;
-   column-count:         2;
-   }
-}
+  *,
+  *::before,
+  *::after {
+      box-sizing: border-box;
+  }
 
-@media (max-width: 400px) {
-   #images-wrapper {
-   -moz-column-count:    1;
-   -webkit-column-count: 1;
-   column-count:        1;
-   }
-}
+  @media (max-width: 926px) {
+      .navbar-items {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+      }
+      .navbar a {
+          margin: 5px 0;
+          font-size: 1rem;
+      }
+  }
 
-/* Modal styles */
-.gallery-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
-    z-index: 999;
-    overflow: auto;
-}
+  /* Gallery layout */
+  #images-wrapper {
+      line-height: 0;
+      -webkit-column-count: 5;
+      -webkit-column-gap: 0px;
+      -moz-column-count: 5;
+      -moz-column-gap: 0px;
+      column-count: 5;
+      column-gap: 0px;
+      margin-top: 5rem; /* Adjust the value as needed for the desired spacing */
+  }
 
-.modal-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Hide overflow content when zoomed */
-}
+  #images-wrapper img {
+      width: 100% !important;
+      height: auto !important;
+  }
 
-.modal-content img {
-    transition: transform 0.5s ease;
-    max-width: 100%;
-    max-height: 100%;
-}
+  #images-wrapper {
+      display: inline-block;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+  @media (max-width: 1000px) {
+      #images-wrapper {
+          -moz-column-count: 3;
+          -webkit-column-count: 3;
+          column-count: 3;
+      }
+  }
+
+  @media (max-width: 800px) {
+      #images-wrapper {
+          -moz-column-count: 2;
+          -webkit-column-count: 2;
+          column-count: 2;
+      }
+  }
+
+  @media (max-width: 400px) {
+      #images-wrapper {
+          -moz-column-count: 1;
+          -webkit-column-count: 1;
+          column-count: 1;
+      }
+  }
+
+  /* Modal styles */
+  .gallery-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+      z-index: 999;
+      overflow: auto;
+  }
+
+  .modal-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden; /* Hide overflow content when zoomed */
+  }
+
+  .modal-content img {
+      transition: transform 0.5s ease;
+      max-width: 90%; /* Ensure image fits inside the modal */
+      max-height: 90%; /* Ensure image fits inside the modal */
+  }
 
   .modal-open {
-  overflow: hidden;
-}
-  
-.modal-content img.zoomed {
-    transform: scale(1.5); /* You can adjust the scale factor as needed */
-}
+      overflow: hidden;
+  }
 
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-  padding: 2rem; /* Add padding */
-}
+  .modal-content img.zoomed {
+      transform: scale(1.5); /* You can adjust the scale factor as needed */
+  }
 
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    padding: 2rem; /* Add padding */
-}
+  .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 2rem; /* Add padding */
+  }
 
-.arrow.left {
-    left: 10px;
-  
-}
+  .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 2rem; /* Add padding */
+  }
 
-.arrow.right {
-    right: 10px;
-  
-}
-    #scrollToTopButton {
+  .arrow.left {
+      left: 10px;
+  }
+
+  .arrow.right {
+      right: 10px;
+  }
+
+  #scrollToTopButton {
       display: none;
       position: fixed;
       bottom: 20px;
@@ -211,45 +209,42 @@
       cursor: pointer;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
-    }
-    
-    #scrollToTopButton.show {
+  }
+
+  #scrollToTopButton.show {
       display: block;
       opacity: 1;
-    }
+  }
 </style>
 </head>
 <body>
-  
-    <div class="navbar">
-        <div class="navbar-items">
+  <div class="navbar">
+      <div class="navbar-items">
           <a href="https://inesreisx.com/">Home</a>
           <a href="https://inesreisx.com/i/art">Art</a>
           <a href="https://inesreisx.com/i/photography">Photography</a>
           <a href="https://inesreisx.com/i/writing">Blog</a>
-        </div>
       </div>
-  
-  
-<div id="images-wrapper"> 
-   <!-- Gallery items will be dynamically added here -->
-</div>
-
-<!-- Image Modal -->
-<div class="gallery-modal" id="galleryModal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeModal()">&times;</span>
-    <span class="arrow left" onclick="prevImage()">&#8249;</span>
-    <img src="" alt="" class="modal-image" id="modalImage">
-    <span class="arrow right" onclick="nextImage()">&#8250;</span>
   </div>
-</div>
 
-  
-    <button onclick="scrollToTop()" id="scrollToTopButton">
-    <span style="font-size: 20px;">&#8593;</span>
+  <div id="images-wrapper">
+      <!-- Gallery items will be dynamically added here -->
+  </div>
+
+  <!-- Image Modal -->
+  <div class="gallery-modal" id="galleryModal">
+      <div class="modal-content">
+          <span class="close-modal" onclick="closeModal()">&times;</span>
+          <span class="arrow left" onclick="prevImage()">&#8249;</span>
+          <img src="" alt="" class="modal-image" id="modalImage">
+          <span class="arrow right" onclick="nextImage()">&#8250;</span>
+      </div>
+  </div>
+
+  <button onclick="scrollToTop()" id="scrollToTopButton">
+      <span style="font-size: 20px;">&#8593;</span>
   </button>
-  
+
 <script>
 // Array of image URLs or paths with labels
 const imageUrls = [
@@ -441,7 +436,6 @@ const imageUrls = [
 { url: '../media/Palace/palacio-da-comenda-setubal-inesreisx-3.jpg', labels: ['All'] },
 { url: '../media/Palace/palacio-da-comenda-setubal-inesreisx-2.jpg', labels: ['All'] },
 { url: '../media/Palace/palacio-da-comenda-setubal-inesreisx-1.jpg', labels: ['All'] }
-
 ];
 
 function filterImages(label) {
