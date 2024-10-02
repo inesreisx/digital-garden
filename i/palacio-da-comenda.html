@@ -445,67 +445,27 @@ const imageUrls = [
 ];
 
 function filterImages(label) {
-    // Select all gallery items
     const galleryItems = document.querySelectorAll("#images-wrapper img");
-
-    // Loop through each gallery item
     galleryItems.forEach(item => {
-        // Check if the provided label is included in the item's labels
         if (item.dataset.label.includes(label) || label === 'all') {
-            // If it matches, show the item
             item.style.display = 'block';
         } else {
-            // If it doesn't match, hide the item
             item.style.display = 'none';
         }
     });
 }
-  
-const galleryContainer = document.getElementById('images-wrapper');
 
-// Loop through the imageUrls array and dynamically create gallery items
+const galleryContainer = document.getElementById('images-wrapper');
 imageUrls.forEach((image, index) => {
     const imageElement = document.createElement('img');
     imageElement.classList.add('lazy-img');
     imageElement.dataset.src = image.url;
     imageElement.alt = `Picture ${index + 1}`;
-    imageElement.dataset.label = image.labels; // Store label as a dataset attribute
+    imageElement.dataset.label = image.labels;
     galleryContainer.appendChild(imageElement);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const modalImage = document.getElementById('modalImage');
-    let initialX = null;
-
-    modalImage.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 1) {
-            initialX = e.touches[0].clientX;
-        }
-    });
-
-    modalImage.addEventListener('touchmove', (e) => {
-        if (initialX === null) return;
-
-        const currentX = e.touches[0].clientX;
-        const diffX = initialX - currentX;
-
-        if (Math.abs(diffX) > 50) {
-            if (diffX > 0) {
-                nextImage(); // Swipe left, show next image
-            } else {
-                prevImage(); // Swipe right, show previous image
-            }
-            initialX = null; // Reset swipe
-        }
-    });
-
-    modalImage.addEventListener('touchend', () => {
-        initialX = null; // Reset on touch end
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
     let lazyImages = [].slice.call(document.querySelectorAll(".lazy-img"));
     let active = false;
     let currentImageIndex = 0;
@@ -513,21 +473,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const galleryModal = document.getElementById('galleryModal');
     const modalImage = document.getElementById('modalImage');
     const galleryItems = document.querySelectorAll("#images-wrapper img");
+    let initialX = null;
+    let swipeTimeout = null;
 
     const lazyLoad = function() {
         if (active === false) {
             active = true;
-
             setTimeout(function() {
                 lazyImages.forEach(function(lazyImage) {
                     if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
                         lazyImage.src = lazyImage.dataset.src;
                         lazyImage.classList.remove("lazy-img");
-
                         lazyImages = lazyImages.filter(function(image) {
                             return image !== lazyImage;
                         });
-
                         if (lazyImages.length === 0) {
                             document.removeEventListener("scroll", lazyLoad);
                             window.removeEventListener("resize", lazyLoad);
@@ -535,7 +494,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     }
                 });
-
                 active = false;
             }, 200);
         }
@@ -546,55 +504,56 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", lazyLoad);
     window.addEventListener("orientationchange", lazyLoad);
 
-    // Function to open modal
     function openModal() {
         galleryModal.style.display = 'flex';
-        document.body.classList.add('modal-open'); // Disable scrolling
+        document.body.classList.add('modal-open');
     }
 
-    // Function to close modal
     function closeModal() {
         galleryModal.style.display = 'none';
-        document.body.classList.remove('modal-open'); // Enable scrolling
+        document.body.classList.remove('modal-open');
     }
 
-    // Function to navigate to the previous image
-    function prevImage() {
-        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
-        const imageUrl = galleryItems[currentImageIndex].src;
-        modalImage.src = imageUrl;
-        modalImage.classList.remove('zoomed'); // Remove zoom class on image change
+    function loadImage(url, callback) {
+        const img = new Image();
+        img.src = url;
+        img.onload = callback;
     }
 
-    // Function to navigate to the next image
     function nextImage() {
         currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
         const imageUrl = galleryItems[currentImageIndex].src;
-        modalImage.src = imageUrl;
-        modalImage.classList.remove('zoomed'); // Remove zoom class on image change
+        loadImage(imageUrl, () => {
+            modalImage.src = imageUrl;
+            modalImage.classList.remove('zoomed');
+        });
     }
 
-    // Event listeners for gallery items
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+        const imageUrl = galleryItems[currentImageIndex].src;
+        loadImage(imageUrl, () => {
+            modalImage.src = imageUrl;
+            modalImage.classList.remove('zoomed');
+        });
+    }
+
     galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             currentImageIndex = index;
             const imageUrl = item.src;
             modalImage.src = imageUrl;
-            modalImage.classList.add('zoomed'); // Add zoom class when clicked
+            modalImage.classList.add('zoomed');
             openModal();
         });
     });
 
-    // Event listener for close button
     document.querySelector('.close-modal').addEventListener('click', closeModal);
-
-    // Event listeners for previous/next arrow
     document.querySelector('.arrow.left').addEventListener('click', prevImage);
     document.querySelector('.arrow.right').addEventListener('click', nextImage);
 
-    // Keyboard navigation (ESC to close, left and right to navigate)
     document.addEventListener('keydown', (event) => {
-        if (galleryModal.style.display === 'flex') { // Check if modal is open
+        if (galleryModal.style.display === 'flex') {
             if (event.key === 'ArrowRight') {
                 nextImage();
             } else if (event.key === 'ArrowLeft') {
@@ -605,10 +564,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Improved swipe handling for touch events
-    let initialX = 0;
-    let swipeThreshold = 30; // Adjust swipe sensitivity threshold
-
     modalImage.addEventListener('touchstart', (e) => {
         if (e.touches.length === 1) {
             initialX = e.touches[0].clientX;
@@ -616,28 +571,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     modalImage.addEventListener('touchmove', (e) => {
-        if (e.touches.length === 1) {
-            const currentX = e.touches[0].clientX;
-            const deltaX = currentX - initialX;
+        if (initialX === null || swipeTimeout) return;
 
-            // Detect left or right swipe
-            if (Math.abs(deltaX) > swipeThreshold) {
-                if (deltaX > 0) {
-                    prevImage();
-                } else {
+        swipeTimeout = setTimeout(() => {
+            const currentX = e.touches[0].clientX;
+            const diffX = initialX - currentX;
+
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
                     nextImage();
+                } else {
+                    prevImage();
                 }
-                initialX = currentX; // Reset initialX after each swipe
+                initialX = currentX;
             }
-        }
+
+            swipeTimeout = null; // Reset swipe timeout
+        }, 100); // Adjust delay as needed
     });
 
     modalImage.addEventListener('touchend', () => {
-        initialX = 0; // Reset after touch ends
+        initialX = null; // Reset after touch ends
     });
 });
-
-
 
 window.onscroll = function() {
     var button = document.getElementById("scrollToTopButton");
