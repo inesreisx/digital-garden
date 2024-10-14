@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Search - Tips</title>
+<meta name="description" content="Free tips and tricks to find your dream job. If you can dream it you can do it!">
+<meta property="og:description" content="Free tips and tricks to find your dream job. If you can dream it you can do it!" />
+<meta property="og:title" content="Job Search - Tips"/>
+<link rel="icon" href="../inesreisx-favicon.png" type="image/x-icon">
+<meta name="google-adsense-account" content="ca-pub-7773778866708742">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins|Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+<script src="../include.js" defer></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GTLQ4VKFB1');
+</script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #20124d;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            background-color: #091b33;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            padding: 80px 20px 20px; /* Add padding at the top to prevent content from being hidden by the navbar */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Open Sans', sans-serif;
+            color: #282944;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
+        }
+
+        ul li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .box {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #091b33;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopButton {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #10172a;
+            color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        #scrollToTopButton.show {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 100px 10px 20px; /* Adjust padding for mobile */
+            }
+
+            .section {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            h1, h2, h3 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 576px) {
+            html, body {
+                font-size: 14px;
+            }
+
+            h1, h2, h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Job Search Tips
+    </header>
+
+    <div class="content">
+        <section class="section">
+            <h1>Welcome to Your Job Search Journey</h1>
+            <p>If you can dream it, you can do it! Dreaming about a new possibility and believing you can do it is an essential first step. Focus on getting your narrative crystal clear.</p>
+        </section>
+
+        <section class="section">
+            <h2>Key Job Search Tips</h2>
+            <div class="box">
+                <p><strong>From my experience:</strong></p>
+                <ul>
+                    <li>It can take around 3-6 months to find a job (even while having a job).</li>
+                    <li>It can take around 10 interviews to land a job. Don’t despair!</li>
+                    <li>Send a thank-you email after receiving a rejection—builds good karma.</li>
+                    <li>Best recruitment times: Jan-April and Sep-Dec. Many jobs start in May and October.</li>
+                    <li>Recruiters are agile! Some will actually read your portfolio / your whole profile and ask you questions about it.</li>
+                    <li>More and more jobs request Dutch proficiency, so learning the language is worthwhile.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Popular Job Boards</h2>
+            <div class="box">
+<ul>
+    <li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
+    <li><a href="https://nl.indeed.com/" target="_blank">Indeed NL</a></li>
+    <li><a href="https://wellfound.com/location/netherlands" target="_blank">Wellfound (Recommended by Dutch recruiters)</a></li>
+    <li><a href="https://www.languagematters.co.uk/jobs/" target="_blank">Language Matters</a></li>
+    <li><a href="https://www.independentrecruiters.nl/" target="_blank">Independent Recruiters</a></li>
+    <li><a href="https://www.progressiverecruitment.com/en-gb/" target="_blank">Progressive Recruitment</a></li>
+    <li><a href="https://www.michaelpage.nl/en" target="_blank">Michael Page</a></li>
+    <li><a href="https://www.mjpeople.nl/en/" target="_blank">MJ People</a></li>
+    <li><a href="https://www.pagepersonnel.nl/en" target="_blank">Page Personnel</a></li>
+    <li><a href="https://undutchables.nl/" target="_blank">Undutchables</a></li>
+    <li><a href="https://unique.nl/en" target="_blank">Unique NL</a></li>
+    <li><a href="https://www.walterspeople.nl/en" target="_blank">Walters People</a></li>
+    <li><a href="https://www.projobhouseofcareers.nl/" target="_blank">Projob House of Careers</a></li>
+    <li><a href="https://www.octagon.nl/" target="_blank">Octagon</a></li>
+    <li><a href="https://www.adamsrecruitment.com/" target="_blank">Adams Recruitment</a></li>
+    <li><a href="https://www.abroad-experience.com/" target="_blank">Abroad Experience</a></li>
+    <li><a href="https://www.randstad.nl/" target="_blank">Randstad NL</a></li>
+</ul>
+
+            </div>
+        </section>
+
+               <section class="section">
+            <h2>Tips and Tricks</h2>
+            <div class="box">
+<ul>
+    <li>Update your portfolio / website / LinkedIn / socials.</li>
+    <li>Create LinkedIn job alerts if using LinkedIn (or job alerts in any other platform).</li>
+    <li>Verify LinkedIn profile – boosts your profile, gets more views, and maybe messages from recruiters.</li>
+    <li>Reach out to your network / friend recruiters.</li>
+    <li>Browse for jobs directly on the company’s website if you see a certain company is actively hiring at the moment (even if not for related jobs).</li>
+    <li>Don’t feel scared by the requirements. If you feel it’s a match, just apply.</li>
+    <li>It is worth writing a motivation letter for the jobs you really want!</li>
+    <li>Recommended for when you get the offer: Use the app KopieID to send personal information with watermarks.</li>
+</ul>
+            </div>
+        </section>
+      
+      
+
+        <section class="section">
+            <h2>Practical Interview Tips</h2>
+            <div class="box">
+                <ul>
+                    <li>Accept water or a drink when offered—it helps relax and keeps you refreshed.</li>
+                    <li>Prepare your "tell me about yourself" response with 5 main points: name, where you’re from, education, current role, ambitions. This will give opportunity to recruiters to ask more questions
+</li>
+                    <li>Mention something interesting you've read about the industry.</li>
+                    <li>Keep pen and paper handy.</li>
+                    <li>Create a comfortable interview setup at home if virtual.</li>
+                </ul>
+            </div>
+        </section>
+      
+            <section class="section">
+            <h2>FAQ by recruiters:</h2>
+            <div class="box">
+<ul>
+    <li>So, tell me about yourself. Reply with Past, Present, Future (or Education/past, Current job/present, Ambitions/future, and hobbies).</li>
+    <li>Formula: Accomplished X by doing X measured by X.</li>
+    <li>Why are you applying to this role?</li>
+    <li>Why do you want to work in The Netherlands?</li>
+    <li>What do you do in your current role?</li>
+    <li>This job will involve traveling, are you comfortable with it?</li>
+    <li>What are you looking for in a new job?</li>
+    <li>Why do you want to work here? Company mission + goals + intersection.</li>
+    <li>What is one lesson you learned?</li>
+    <li>What is your greatest weakness? Answer: my greatest challenge is to have a high-level view...</li>
+    <li>Why should we hire you? Combine hard skills, soft skills, and a funny thing.</li>
+    <li>Why did you leave your job? Not challenging enough / didn’t match expectations – don’t mention that you didn’t like the manager or the environment was toxic (even if true).</li>
+    <li>What is a time you failed / showed leadership / achieved a goal?</li>
+</ul>
+
+            </div>
+        </section>
+      
+
+        <section class="section">
+            <h2>Things to Ask in an Interview</h2>
+            <div class="box">
+<ul>
+    <li>Salary (is it including or excluding holiday pay?)</li>
+    <li>How many hours per week?</li>
+    <li>Expected start date?</li>
+    <li>How many people are you hiring for this role?</li>
+    <li>Is this a new role?</li>
+    <li>Why are you hiring for this role?</li>
+    <li>How big is the team?</li>
+    <li>What’s a day-to-day like?</li>
+    <li>What are the opportunities for growth?</li>
+    <li>What does a day look like in this role?</li>
+    <li>What are the expectations for this role?</li>
+    <li>What tools do you use?</li>
+    <li>If I would start today, what would be my first priority?</li>
+    <li>If any news, how has that impacted the business?</li>
+    <li>What are the next steps in the recruitment process?</li>
+    <li>Why is this vacancy open?</li>
+</ul>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Final Tips</h2>
+            <div class="box">
+                <ul>
+                    <li>Update your portfolio, website, LinkedIn, and socials regularly.</li>
+                    <li>Don't be scared by the requirements—apply if you feel it’s a good match.</li>
+                    <li>It's worth writing a motivation letter for jobs you really want.</li>
+                    <li>Upload your CV to <a href="https://www.jobleads.com/nl/free-resume-review">JobLeads</a> for a free CV review.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" id="scrollToTopButton">
+        <span style="font-size: 20px;">&#8593;</span>
+    </button>
+
+    <script>
+        window.onscroll = function() {
+            var button = document.getElementById("scrollToTopButton");
+            var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            var documentHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight,
+                document.body.clientHeight, document.documentElement.clientHeight
+            );
+
+            if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+                button.classList.add("show");
+            } else {
+                button.classList.remove("show");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+</html>
