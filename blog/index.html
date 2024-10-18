@@ -25,221 +25,171 @@
         html, body {
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scrollbar */
             font-family: Roboto, sans-serif;
-            color: #20124d;
-            font-size: 16px;
             background-color: #ffffff;
         }
-
         .container {
             display: flex;
+            flex-direction: row;
             height: 100vh;
-            flex-direction: row; /* Default to row for desktop */
         }
-
-        .left-side, .right-side {
-            width: 50%;
-            overflow-y: auto;
-            position: relative; /* Allows absolute positioning of overlay */
-            box-sizing: border-box;
-        }
-
         .left-side {
-            background-color: #f0f0f0; /* Background color for the left side */
+            width: 30%;
+            background-color: #f0f0f0;
             padding: 20px;
+            overflow-y: auto;
+            transition: transform 0.3s ease; /* For sliding effect */
         }
-
         .right-side {
+            width: 70%;
             padding: 20px;
+            overflow-y: auto;
         }
-
-        .left-side img, .right-side img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px 0;
+        .post-title {
+            margin: 15px 0;
+            cursor: pointer;
         }
-
-        .left-side .post, .right-side p {
-            margin: 20px 0;
-        }
-
-        .left-side .year {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .left-side .title a {
+        .post-title a {
             text-decoration: none;
             color: black;
         }
-
-        .left-side .title a:hover {
+        .post-title a:hover {
             text-decoration: underline;
         }
-
-        .right-side p {
-            line-height: 1.6;
+        #content {
+            font-size: 1.1em;
         }
 
-        #scrollToTopButton {
+        /* Hamburger Menu Icon */
+        .menu-toggle {
             display: none;
+            font-size: 30px;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #10172a;
-            color: #fff;
-            border: none;
-            outline: none;
+            top: 10px;
+            left: 10px;
             cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
         }
 
-        #scrollToTopButton.show {
-            display: block;
-            opacity: 1;
-        }
-
-        /* Media query for mobile devices */
+        /* Hide the sidebar (titles) on mobile */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Stack elements vertically on mobile */
-                height: auto; /* Allow container height to adjust based on content */
+            .left-side {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100vh;
+                width: 70%;
+                background-color: #f0f0f0;
+                transform: translateX(-100%); /* Hide sidebar */
+                z-index: 1000;
             }
 
-            .left-side, .right-side {
-                width: 100%; /* Full width for both sides */
-                height: auto; /* Auto height to fit content */
+            .right-side {
+                width: 100%;
+                padding: 20px;
             }
 
-            .left-side, .right-side {
-                padding: 10px; /* Adjust padding for mobile */
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                z-index: 1100; /* Ensure the toggle button is above the sidebar */
             }
 
-            .left-side img, .right-side img {
-                margin: 10px 0; /* Adjust margin for mobile */
+            /* When sidebar is active */
+            .left-side.active {
+                transform: translateX(0); /* Slide in */
+            }
+
+            .right-side.active {
+                opacity: 0.3; /* Dim background when sidebar is open */
+                pointer-events: none; /* Disable interactions with content */
+            }
+
+            /* Hide scrollbar on mobile when sidebar is open */
+            body.sidebar-open {
+                overflow: hidden;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Menu Toggle for Mobile -->
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
     <div class="container">
-        <div class="left-side">
-            <a href="https://inesreisx.com">🏡</a>
-            <div class="post">
-                <div class="year">2022</div>
-                <div class="body">
-                    <div class="title"><a href="./a-tiktok-guide-for-indie-game-developers-boost-your-game">A TikTok Guide for Indie Game Developers — Boost Your Game</a></div>
-                </div>
-                <br>
-                <div class="body">
-                    <div class="title"><a href="./cidade-da-malta-portugal-nostalgia">Nostalgia - Cidade da Malta</a></div>
-                </div>
-                <br>
-                <br>
-                <div class="post">
-                    <div class="year">2021</div>
-                    <div class="body">
-                        <div class="title"><a href="./finland-why-you-gotta-be-so-cool">Finland, why you gotta be so cool?</a></div>
-                    </div>
-                    <br>
-                    <div class="body">
-                        <div class="title"><a href="./do-you-read-long-articles-a-quick-look-into-3-gaming-fansites-worlds">Do you read long articles? — A quick look into 3 gaming fansites worlds</a></div>
-                    </div>
-                </div>
-                <br>
-                <div class="post">
-                    <div class="year">2020</div>
-                    <div class="body">
-                        <div class="title"><a href="./i-was-thinking-about-ethical-gaming">I was thinking about Ethical Gaming</a></div>
-                    </div>
-                    <br>
-                    <div class="body">
-                        <div class="title"><a href="./code-first-girls-why-you-should-join">Code First: Girls - why you should join</a></div>
-                    </div>
-                </div>
-                <br>
-                <!--<div class="post">
-                    <div class="year">Soon</div>
-                    <div class="title"><a href="">Soon</a></div>
-                </div>-->
+        <!-- Left Side (Post Titles) -->
+        <div class="left-side" id="sidebar">
+            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/childhood-dream.html')">
+                <a href="#">My Childhood Dream</a>
+            </div>
+            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/a-tiktok-guide-for-indie-game-developers-boost-your-game')">
+                <a href="#">A TikTok Guide for Indie Game Developers</a>
+            </div>
+            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/cidade-da-malta-portugal-nostalgia')">
+                <a href="#">Nostalgia - Cidade da Malta</a>
+            </div>
+            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/finland-why-you-gotta-be-so-cool')">
+                <a href="#">Finland, why you gotta be so cool?</a>
+            </div>
+            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/do-you-read-long-articles-a-quick-look-into-3-gaming-fansites-worlds')">
+                <a href="#">Do you read long articles?</a>
+            </div>
+                      <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/i-was-thinking-about-ethical-gaming')">
+                <a href="#">I was thinking about Ethical Gaming</a>
+            </div>
+                      <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/code-first-girls-why-you-should-join')">
+                <a href="#">Code First: Girls - why you should join</a>
             </div>
         </div>
-        <div class="right-side">
-            <h3>A Childhood Dream: How I Started Writing</h3>
-            <p>I’m used to carrying pen and paper with me since I can remember. I started writing at cafés, where I spent most of my childhood afternoons with my aunt and grandmother, as an escape to entertain myself.</p>
-            <p>My first “head to toes” fantasy story was written by the age of 11, <a href="https://www.deviantart.com/inesreis/art/Expelindo-Epifanias-by-Ines-Reis-861367078">"O Mundo da Imaginação"</a>.</p>
-            <p>At school, I used to create storylines in group projects, went to the finals of a Portuguese Language Contest, and my written-in-a-hurry-before-the-class poem <a href="https://www.deviantart.com/inesreis/art/Uma-Colecao-de-Poemas-por-Ines-Reis-861367394">“O que eu gostaria de ver da janela do meu quarto“</a> was read twice during class because my colleagues liked it. I was also that person who’d write a full paragraph of 7 sentences for a two-line answer in exams.</p>
-            <img src="/media/Writing/inesreisx-presenting-a-short-story-selected-to-be-presented-to-other-classes-the-cupcake-killer-with-Marta-and-Daniel.jpg" alt="Presenting a Short Story">
-            <p>On the picture, I’m presenting the story we wrote for the English class with my colleagues, co-writers and illustrators, Marta and Daniel. “Cupcake Killer”, a cupcake who was so hungry he went to eat the inhabitants of an imaginary village. We had a lot of fun! Sadly I didn’t save our presentation, but you can <a href="https://www.deviantart.com/inesreis/art/Expelindo-Epifanias-by-Ines-Reis-861367078">read another of my short stories here</a>.</p>
-            <h2>
-                Learning about SEO</h2>    
-                  
-                  <p>At uni, <a href="https://web.archive.org/web/20240222131748/https://digitalkoda.wordpress.com/2019/06/21/how-did-we-do-it/">I won an SEO Cup by ranking our blog first on Google</a> for a given keyword. I was the team leader, and the one who created all the social media accounts, and wrote all the blog posts. On another project, I was the one who <a href="https://web.archive.org/web/20240222131748/https://theexecs.wordpress.com/2018/02/08/geberit-the-execs-video/">wrote the storyline and created the video for a group project</a> aimed at promoting a smart toilet.</p>
-                  
-                  <h2>Freelance Writing</h2>
-                  
-                  <p>By November 2022, <a href="https://web.archive.org/web/20240222131748/https://drive.google.com/drive/folders/15hzfJ_fMqR1cLPLIezU0LQ9a_6VJuGdD?usp=sharing">I started working as a freelance writer</a>.</p>
-                  
-                  <h2>Publications</h2>
-                  
-                  <p>At 23, <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/gallery/75858530/writing-portfolio">I compiled all of my writing volumes</a> with personalized covers by my friend and digital designer, Diego B. Monti. They’re available on my DeviantArt.</p>
-        
-        <p>At 24, I started publishing some of my poems as open submissions across poetry websites. I also try to participate in the Weekly <a href="https://web.archive.org/web/20240222131748/https://greythoughts.info/search?q=inesreisx">writing submission by Grey Thoughts</a>.</p>
-        
-        <p>Across time I’ve published texts and poems in Portuguese in anthologies by Chiado Editora, a Portuguese publisher:</p>
-          
-                  <ol>
-                    
-                  <li>‘Entre o Sono e o Sonho’ – Antologia de Poesia, October 2018 with “13-Olha não sei. Sei lá” <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/art/Uma-Colecao-de-Poemas-por-Ines-Reis-861367394">in Uma Coleção de Poemas</a></li>
-                    
-         <li>‘Colectânea de Contos de Natal – Volume I, da Chiado Books’, December 2018 with “Mais uma Ceia” <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/art/Expelindo-Epifanias-by-Ines-Reis-861367078">in Expelindo Epifanias</a></li>
-           
-         <li>‘SMS - Colectânea de Micro Narrativas Ficcionais - Volume I’, January 2019 with “Micro Narrativa” <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/art/Expelindo-Epifanias-by-Ines-Reis-861367078">in Expelindo Epifanias</a></li>
-           
-         <li>Antologia de Poesia Contemporânea “Entre o Sono e o Sonho Vol. XII’, December 2020 with “9) Unnamed” <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/art/Uma-Colecao-de-Poemas-por-Ines-Reis-861367394">in Uma Coleção de Poemas</a></li>
-           
-         <li>Antologia da Literatura Livre “Liberdade” Vol. II, April 2021 with “À vontade” <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/art/Expelindo-Epifanias-by-Ines-Reis-861367078">in Expelindo Epifanias</a></li>
-           
-         <li>Antologia de Poesia Contemporânea “Entre o Sono e o Sonho - Vol. XIII”, December 2021 with "À Janela" <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/art/Uma-Colecao-de-Poemas-por-Ines-Reis-861367394">in Uma Coleção de Poemas</a></li>
-           
-         <li>Antologia de Poesia Contemporânea “Entre o Sono e o Sonho - Vol. XIV”, October 2022 with "Pra Você" <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/art/Uma-Colecao-de-Poemas-por-Ines-Reis-861367394">in Uma Coleção de Poemas</a>
-        
-         <li>Antologia de Literatura Portuguesa “Fragmentos de Saudade - Vol.1”, June 2023 with "Saudade" <a href="https://web.archive.org/web/20240222131748/https://href.li/?https://www.deviantart.com/inesreis/art/Uma-Colecao-de-Poemas-por-Ines-Reis-861367394">in Uma Coleção de Poemas</a>
-                    </li>
-                  </ol>
-                    
-        
-            
-            <button onclick="scrollToTop()" id="scrollToTopButton">
-              <span style="font-size: 20px;">&#8593;</span>
-            </button>
+
+        <!-- Right Side (Post Content) -->
+        <div class="right-side" id="content-area">
+            <div id="content">
+                <h3>Welcome to Inês' Blog!</h3>
+                <p>Click on any post title on the left to read the full content here.</p>
+            </div>
         </div>
     </div>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const scrollToTopButton = document.getElementById('scrollToTopButton');
-
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    scrollToTopButton.classList.add('show');
-                } else {
-                    scrollToTopButton.classList.remove('show');
-                }
-            });
-
-            scrollToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
+        // Function to load the post content from an external HTML file
+        function loadPost(page) {
+            fetch(page)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('content').innerHTML = html;
+                    closeSidebar(); // Close sidebar after post is loaded (on mobile)
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                    document.getElementById('content').innerHTML = "<p>Sorry, the content could not be loaded.</p>";
                 });
-            });
+        }
+
+        // Hamburger Menu Toggling for Mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const contentArea = document.getElementById('content-area');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', function() {
+            // Toggle the sidebar
+            sidebar.classList.toggle('active');
+            contentArea.classList.toggle('active');
+            body.classList.toggle('sidebar-open');
         });
+
+        // Function to close sidebar after selecting a blog post
+        function closeSidebar() {
+            // Close the sidebar after loading a post
+            sidebar.classList.remove('active');
+            contentArea.classList.remove('active');
+            body.classList.remove('sidebar-open');
+        }
     </script>
 </body>
 </html>
