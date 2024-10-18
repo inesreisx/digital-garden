@@ -67,26 +67,23 @@ h1,h2.heading-text a {
     text-decoration: none;
   }
   
-/* hover */
-
-a:link {
+/* Default link styles */
+a:link, a:visited {
   color: #fafafa;
+  text-decoration: none;
 }
 
-/* visited link */
-a:visited {
-  color: #fafafa;
-}
-
-/* mouse over link */
+/* Hover effect */
 a:hover {
-  color: #fafafa;
+  color: #fafafa; /* Keep the font color */
+  text-decoration: underline;
+  text-decoration-color: inherit; /* Underline color will be the same as the text color */
 }
 
-/* selected link */
+/* Active state */
 a:active {
   color: #f2f2f2;
-}  
+}
 
 
 .social-icons {

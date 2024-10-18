@@ -1,5 +1,5 @@
 <style>
-        .navbar {
+  .navbar {
     overflow: hidden;
     position: relative;
     top: 0;
@@ -7,133 +7,118 @@
     right: 0;
     z-index: 1;
     display: flex;
-    justify-content: center;
-    align-items: center; /* Center-align items vertically */
+    justify-content: flex-end; /* Align the hamburger to the right */
+    align-items: center;
     padding-top: 1.3rem;
     padding-bottom: 1.3rem;
-}
+    background-color: #ffffff;
+  }
 
-    .navbar a {
-      color: #20124d;
-      text-align: center;
-      padding: 10px 8px;
-      text-decoration: none;
-      font-size: 17px;
-      margin: 0 10px;
-    }
+  /* Links styling for dropdown menu */
+  .navbar a {
+    color: #20124d;
+    text-align: center;
+    padding: 10px 8px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px;
+  }
 
-    .navbar a:hover {
-      background: #f1f1f1;
-      color: black;
-      border-radius: 5px;
-    }
+  /* Hover effect for links */
+  .navbar a:hover {
+    color: #20124d; /* Font color */
+    text-decoration: underline;
+    text-decoration-color: inherit; /* Underline color matches the text color */
+    border-radius: 5px;
+  }
 
-    .mobile-menu {
-      display: none; /* Hide by default on larger screens */
-    }
-
-    /* Add a class for the navigation links in the mobile menu */
-    .mobile-menu-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: fixed;
-      top: 60px; /* Adjust the top position based on your design */
-      left: 0;
-      right: 0;
-      background-color: #ffffff;
-      z-index: 1;
-      display: none; /* Hide by default */
-    }
-    .mobile-menu {
-      display: none; /* Hide by default on larger screens */
-    }
-
-    /* Add a class for the navigation links in the mobile menu */
-    .mobile-menu-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: fixed;
-      top: 60px; /* Adjust the top position based on your design */
-      left: 0;
-      right: 0;
-      background-color: #ffffff;
-      z-index: 1;
-      display: none; /* Hide by default */
-    }
-
-
-    /* Mobile styles */
-@media (max-width: 812px) {
-
-
-.navbar a {
-    padding: 10px 10px; /* Adjust padding for navbar links */
-    font-size: 14px; /* Decrease font size for navbar links */
-}
-
-/* ... (other existing mobile styles) ... */
-}
-
-    @media (max-width: 812px) {
-      /* Hide the regular navbar links on smaller screens */
-      .navbar-items {
-        display: none;
-      }
-
-      /* Display the mobile menu icon */
-      .mobile-menu {
-        display: flex;
-        cursor: pointer;
-        font-size: 30px;
-        color: black;
-      }
-
-      /* Display the navigation links in the mobile menu */
-      .mobile-menu-links.show {
-        display: flex;
-      }
-
-      .navbar a {
-        padding: 10px 10px; /* Adjust padding for mobile navbar links */
-        font-size: 14px; /* Decrease font size for mobile navbar links */
-        text-align: center;
-        width: 100%; /* Make links take full width in mobile menu */
-      }
-    }
-
-.navbar a:hover {
-    background: #f1f1f1;
+  /* Always show hamburger menu on both desktop and mobile */
+  .mobile-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
     color: black;
-}
+    margin-right: 20px;
+  }
+
+  /* Dropdown menu styling */
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    display: none; /* Hidden by default */
+  }
+
+  /* Show menu when toggled */
+  .mobile-menu-links.show {
+    display: flex;
+    padding: 30px;
+  }
+
+  /* Hide regular navbar links */
+  .navbar-items {
+    display: none;
+  }
+
+  /* Desktop styles */
+  @media (min-width: 813px) {
+    .navbar {
+      justify-content: flex-end; /* Align hamburger on the right */
+    }
+
+    .mobile-menu {
+      margin-right: 20px; /* Keep it aligned to the far right on desktop */
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 812px) {
+    .navbar {
+      justify-content: flex-end; /* Hamburger still on the right */
+    }
+
+    .mobile-menu {
+      display: block;
+      margin-right: 20px;
+    }
+
+    /* Hide regular navbar links on mobile */
+    .navbar-items {
+      display: none;
+    }
+
+    .mobile-menu-links.show {
+      display: flex; /* Show mobile menu links when toggled */
+    }
+  }
 </style>
 
-
 <div class="navbar">
-    <!-- Mobile menu icon -->
-    <div class="mobile-menu" onclick="toggleMobileMenu()">☰</div>
-    <!-- Navbar links for larger screens -->
-    <div class="navbar-items">
-      <a href="https://inesreisx.com/">Home</a>
-      <a href="https://inesreisx.com/i/bucketlist">Bucketlist</a>
-      <a href="https://inesreisx.com/blog">Blog</a>
-      <a href="https://inesreisx.com/i/art">Art</a>
-      <a href="https://inesreisx.com/i/career">Career</a>
-      <a href="https://inesreisx.com/tools">Tools</a>
-      <a href="https://inesreisx.com/i/volunteering">Volunteering</a>
-      <a href="https://inesreisx.com/i/photography">Photography</a>
-      <a href="https://inesreisx.com/i/projects">Projects</a>
-    </div>
-    <!-- Mobile menu links -->
-    <div class="mobile-menu-links">
-      <a href="https://inesreisx.com/i/bucketlist">Bucketlist</a>
-      <a href="https://inesreisx.com/blog">Blog</a>
-      <a href="https://inesreisx.com/i/art">Art</a>
-      <a href="https://inesreisx.com/i/career">Career</a>
-      <a href="https://inesreisx.com/tools">Tools</a>
-      <a href="https://inesreisx.com/i/volunteering">Volunteering</a>
-      <a href="https://inesreisx.com/i/photography">Photography</a>
-      <a href="https://inesreisx.com/i/projects">Projects</a>
-    </div>
+  <!-- Mobile menu icon (hamburger) -->
+  <div class="mobile-menu" onclick="toggleMobileMenu()">☰</div>
+
+  <!-- Dropdown menu links (shown when the hamburger is clicked) -->
+  <div class="mobile-menu-links">
+    <a href="https://inesreisx.com/i/bucketlist">Bucketlist</a>
+    <a href="https://inesreisx.com/blog">Blog</a>
+    <a href="https://inesreisx.com/i/art">Art</a>
+    <a href="https://inesreisx.com/i/career">Career</a>
+    <a href="https://inesreisx.com/tools">Tools</a>
+    <a href="https://inesreisx.com/i/volunteering">Volunteering</a>
+    <a href="https://inesreisx.com/i/photography">Photography</a>
+    <a href="https://inesreisx.com/i/projects">Projects</a>
   </div>
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const mobileMenuLinks = document.querySelector('.mobile-menu-links');
+    mobileMenuLinks.classList.toggle('show');
+  }
+</script>
