@@ -67,23 +67,26 @@ h1,h2.heading-text a {
     text-decoration: none;
   }
   
-/* Default link styles */
-a:link, a:visited {
+/* hover */
+
+a:link {
   color: #fafafa;
-  text-decoration: none;
 }
 
-/* Hover effect */
+/* visited link */
+a:visited {
+  color: #fafafa;
+}
+
+/* mouse over link */
 a:hover {
-  color: #fafafa; /* Keep the font color */
-  text-decoration: underline;
-  text-decoration-color: inherit; /* Underline color will be the same as the text color */
+  color: #fafafa;
 }
 
-/* Active state */
+/* selected link */
 a:active {
   color: #f2f2f2;
-}
+}  
 
 
 .social-icons {
@@ -177,6 +180,7 @@ a:active {
 </style>
 </head>
 <body>
+  <div data-include="header.html"></div>
 
       
         <section class="content-section">
@@ -191,7 +195,7 @@ a:active {
                         <a href="https://www.goodreads.com/user/show/103411221-in-s-reis/" target="_blank"><i class="fab fa-goodreads"></i></a>
                         <a href="https://www.instagram.com/byines/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://paypal.me/inesreisx" target="_blank" title="Buy me a chocolate!"><i class="fa-solid fa-mug-hot"></i></a>
-			<a href="https://inesreisx.com/wall-of-love" target="_blank"><i class="fa-solid fa-heart" style="color: #dc4873;"></i>
+			                  <a href="https://inesreisx.com/wall-of-love" target="_blank"><i class="fa-solid fa-heart" style="color: #dc4873;"></i>
                     </div>
                   </div>
                 </div>
@@ -199,7 +203,6 @@ a:active {
     
                    
                      
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
       const elements = document.querySelectorAll('[data-include]');

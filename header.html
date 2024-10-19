@@ -7,7 +7,7 @@
     right: 0;
     z-index: 1;
     display: flex;
-    justify-content: flex-end; /* Align the hamburger to the right */
+    justify-content: flex-end; /* Align the hamburger to the right on desktop */
     align-items: center;
     padding-top: 1.3rem;
     padding-bottom: 1.3rem;
@@ -38,12 +38,12 @@
     cursor: pointer;
     font-size: 30px;
     color: black;
-    margin-right: 20px;
+    margin-right: 20px; /* Right margin on desktop */
   }
 
   /* Dropdown menu styling */
   .mobile-menu-links {
-    display: flex;
+    display: none; /* Hidden by default */
     flex-direction: column;
     align-items: center;
     position: fixed;
@@ -52,18 +52,12 @@
     left: 0;
     background-color: #ffffff;
     z-index: 100;
-    display: none; /* Hidden by default */
   }
 
   /* Show menu when toggled */
   .mobile-menu-links.show {
     display: flex;
     padding: 30px;
-  }
-
-  /* Hide regular navbar links */
-  .navbar-items {
-    display: none;
   }
 
   /* Desktop styles */
@@ -80,21 +74,12 @@
   /* Mobile styles */
   @media (max-width: 812px) {
     .navbar {
-      justify-content: flex-end; /* Hamburger still on the right */
+      justify-content: center; /* Center hamburger on mobile */
     }
 
     .mobile-menu {
       display: block;
-      margin-right: 20px;
-    }
-
-    /* Hide regular navbar links on mobile */
-    .navbar-items {
-      display: none;
-    }
-
-    .mobile-menu-links.show {
-      display: flex; /* Show mobile menu links when toggled */
+      margin-right: 0; /* Center the menu without right margin */
     }
   }
 </style>
