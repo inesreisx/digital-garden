@@ -181,6 +181,28 @@
                 <td onclick="copySuperscript('⁸')">⁸</td>
                 <td onclick="copySuperscript('⁹')">⁹</td>
             </tr>
+            <tr>
+                <td onclick="copySuperscript('©')">©</td>
+                <td onclick="copySuperscript('®')">®</td>
+                <td onclick="copySuperscript('™')">™</td>
+            </tr>
+          
+        <div class="dropdown-content">
+            <a href="#" onclick="copySymbol('©')">©</a>
+            <a href="#" onclick="copySymbol('®')">®</a>
+            <a href="#" onclick="copySymbol('™')">™</a>
+            <a href="#" onclick="copySymbol('€')">€</a>
+            <a href="#" onclick="copySymbol('£')">£</a>
+            <a href="#" onclick="copySymbol('¥')">¥</a>
+            <a href="#" onclick="copySymbol('÷')">÷</a>
+            <a href="#" onclick="copySymbol('±')">±</a>
+            <a href="#" onclick="copySymbol('×')">×</a>
+            <a href="#" onclick="copySymbol('∞')">∞</a>
+            <a href="#" onclick="copySymbol('π')">π</a>
+            <a href="#" onclick="copySymbol('Ω')">Ω</a>
+            <a href="#" onclick="copySymbol('∑')">∑</a>
+            <a href="#" onclick="copySymbol('√')">√</a>
+        </div>
         </tbody>
     </table>
 
@@ -299,6 +321,17 @@
         document.getElementById('share-bar').classList.add('dark-mode');
         document.getElementById('dark-mode-icon').classList.add('fa-moon');
     };
+  
+      // Function to copy symbol from dropdown
+    function copySymbol(symbol) {
+        var textarea = document.createElement('textarea');
+        textarea.value = symbol;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Symbol ' + symbol + ' copied to clipboard');
+    }
 </script>
 </body>
   <a tabindex="-1" class="by-inesreisx" target="_blank" href="https://inesreisx.com/tools/">
