@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,13 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- Google tag (gtag.js) -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  
+  
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
 <script src="../include.js" defer></script>
 <script>
@@ -74,10 +81,6 @@ header {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.box:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-}
 
 
 @media (max-width: 600px) {
@@ -98,7 +101,7 @@ h1, h2 {
     text-align: center; /* Add this line to center the text */
 }
 
-p {
+p, i, li {
     font-size: 20px;
     color: #20124d;
     text-align: left;
@@ -123,7 +126,7 @@ img {
 .Content article {
     margin: auto;
     width: 70%;
-    padding: 0px 2.5rem;
+
     border-radius: 1rem;
     margin-bottom: 5rem;
 }
@@ -144,6 +147,94 @@ img {
     line-height: 2.3rem;
 }
 
+  @media only screen and (max-width: 768px) {
+    html, body {
+        font-size: 20px;
+    }
+    p, i, li {
+    font-size: 16px;
+    color: #20124d;
+    text-align: left;
+}
+    
+    .Content article {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    html, body {
+        font-size: 9px;
+    }
+  p, i, li {
+    font-size: 16px;
+    color: #20124d;
+    text-align: left;
+}
+    .Content article {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    html, body {
+        font-size: 8px;
+    }
+  p, i, li {
+    font-size: 16px;
+    color: #20124d;
+    text-align: left;
+}
+}
+
+.carousel-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.slick-slide img {
+    width: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.slick-slide p {
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+}
+
+.pricelist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.pricelist-button {
+    background-color: #091b33;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pricelist-button:hover {
+    background-color: #0f305b;
+    transform: scale(1.05);
+}
+
+.pricelist-button:hover {
+    background-color: #0f305b;
+    transform: scale(1.05);
+}
+  
 @media only screen and (max-width: 768px) {
     html, body {
         font-size: 20px;
@@ -173,43 +264,113 @@ p[cite] {
     padding: 0; /* Remove padding for mobile */
     font-size: 16px; /* Adjust font size for mobile */
 }
+  
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    20%, 60% {
+        transform: scale(1.2);
+    }
+}
+
+.social-icons a .fa-heart {
+    color: #dc4873; /* Heart color */
+    animation: heartbeat 1.5s ease infinite; /* Continuous animation */
+}
+
+/* Optional: Additional hover effect to emphasize heartbeat */
+.social-icons a .fa-heart:hover {
+    animation: heartbeat 0.9s ease infinite;
+}
+
+      #scrollToTopButton {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: black;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    #scrollToTopButton.show {
+      display: block;
+      opacity: 1;
+    }
+
 </style>
 </head>
 <body>
 <div data-include="../header.html"></div>
 <div class="Content">
     <article>
+      
+
+      
         <h2>Let's collaborate!</h2>
-        <div class="container">
-            <div class="box">
-                <strong>Job Search</strong>
-                <p>Portfolio review, tips and tricks.</p>
-            </div>
-            <div class="box">
-                <strong>Writing</strong>
-                <p>Short-term writing projects.</p>
-            </div>
-            <div class="box">
-                <strong>Translations</strong>
-                <p>PT-EN-PT</p>
-            </div>
-        </div>        
+        <div class="pricelist-container">
+            <button class="pricelist-button">Web SEO Audit ($5)</button>
+            <button class="pricelist-button">Help with Job Search ($5)</button>
+            <button class="pricelist-button">Translations (PT-EN-PT) ($5)</button>
+            <button class="pricelist-button">Writing Projects (Variable Pricing)</button>
+        </div>
+      
+      
         <h3>Motto</h3>
         <p><i><center>My goal is to work towards holistic product and process solutions bringing users joy while creating long-term value.</center></i></p>
-        <h3>What I love</h3>
+        
+     
+
+          <h3>Client Reviews</h3>
+      <div class="social-icons">
+<p>Kind words from others <a href="https://inesreisx.com/wall-of-love" target="_blank"><i class="fa-solid fa-heart" style="color: #dc4873;"></i></a></p>
+    </a>
+</div>
+      
+  
+        <div class="carousel-container">
+            <div class="slick-carousel">
+                <div>
+                    <img src="client1.jpg" alt="Client 1 Photo">
+                    <p>"Great collaboration, highly professional and creative!" - Client 1</p>
+                </div>
+                <div>
+                    <img src="client2.jpg" alt="Client 2 Photo">
+                    <p>"Helped me refine my resume and find a new job in no time!" - Client 2</p>
+                </div>
+                <div>
+                    <img src="client3.jpg" alt="Client 3 Photo">
+                    <p>"Wonderful writer, delivered amazing work on short notice." - Client 3</p>
+                </div>
+            </div>
+        </div>
+  
+      <h3>What I love</h3>
         <ul>
             <li><a href="https://inesreisx.com/tools" target="_blank">Optimizing work!</a></li>
             <li>Content Management</li>
             <li>Writing Technical Documentation</li>
             <li>Information Management</li>
         </ul>        
-        <br>
+        
+      <br>
+      
         <h3>Awards and Recognitions</h3>
         <p><ul>🏆 DigitalKoda - 1st Place Winner of the DSMMCM1819 SEO CUP (May 2019). <a href="https://digitalkoda.wordpress.com/2019/06/21/how-did-we-do-it/">Read more here.</a></ul></p>
         <br>
         <h3>Digital tools I'm familiar with</h3>
         <p cite><ul>Word, WordPress, Blogger, Notion, Strapi, Umbraco, Sitecore, internal CMS’s, Discord, Facebook Business Manager, Screaming Frog, Excel, Google Sheets, Ahrefs, SEMRush, Accuranker, Supermetrics, Slack, Teamwork, ClickUp, Microsoft Teams, Sitebulb, DeepCrawl, Excel, Google Suite, Google Keyword Planner (Ads), Google Trends, Looker, Tableau, Headerlift, Canva, Google Webmaster Tools (Google Search Console, Google Analytics), GitHub, HTML5, CSS, Jira, Confluence, Azure DevOps, Microsoft Azure Explorer, .json, copy.AI, Smartsheet, Figma, Mural, Photoshop, DOCU, GCP, Oracle, Eloqua, Ceros, internal CMS, Asana, Vimeo...</ul></p>
         <br>
+  
         <h3>Personality Tests</h3>
         <ul>
             <li><a href="../media/Career/CliftonStrengths-Ines-Reis-inesreisx.pdf">CliftonStrengths</a>: Futuristic, Learner, Focus, Arranger, Connectedness.</li>
@@ -219,6 +380,7 @@ p[cite] {
         </ul>
         
         <br>
+  
         <h3>Humble Beginnings</h3>
         <p>"When I grow up, I want to wear a gabardine and support myself." As a child, my idea of success was simple: independence and a stylish gabardine. Decades later, I've achieved independence, but I've realized that gabardines aren't quite my style.</p>
         <p>I come from a low/middle-class family. My mother was the first in our family to earn a university degree. My grandfather worked in the merchant marine, and my grandmother held multiple jobs even after retirement. Hard work and dreams have always been part of our lives.</p>
@@ -226,9 +388,11 @@ p[cite] {
         <p><em>"If you can dream it, you can do it."</em></p>
         <p>Following my passion for online gaming communities, I got into Content through SEO and research. Finding gaps for Content development is the core that drives me forward, be it at tech or writing. I find happiness in improving processes and building opportunities for growth.</p>
         <br>
+  
+  
         <h3>Career Plan</h3>
         <ul>
-            <li>Work in Content - Information Architecture + Web Content Management</li>
+            <li>Work in Content: Information Architecture + Web Content Management</li>
             <li>Work 4 days a week in my mid-30s</li>
             <li>Professional fluency in Spanish and Dutch</li>
         </ul>        
@@ -251,6 +415,8 @@ p[cite] {
             </div>
         </div>
         <br>
+  
+  
         <div class="container">
             <div class="box">
                 <strong>Lessons I have learned at work</strong>
@@ -270,9 +436,12 @@ p[cite] {
                 <p>Be grateful to be working! Someone out there right now is wishing to be in your shoes</p>
             </div>
         </div>
-        <h3>Feedback</h3>
-        <p>Kind words from others <a href="https://inesreisx.com/wall-of-love" target="_blank"><i class="fa-solid fa-heart" style="color: #dc4873;"></i></p>
-    </article>
+  
+  
+       <button onclick="scrollToTop()" id="scrollToTopButton">
+    <span style="font-size: 20px;">&#8593;</span>
+  </button> 
+        
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -290,6 +459,58 @@ p[cite] {
         const mobileMenuLinks = document.querySelector('.mobile-menu-links');
         mobileMenuLinks.classList.toggle('show');
     }
+  
+      $(document).ready(function(){
+        $('.slick-carousel').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const elements = document.querySelectorAll('[data-include]');
+        elements.forEach(el => {
+            fetch(el.getAttribute('data-include'))
+                .then(response => response.text())
+                .then(data => {
+                    el.innerHTML = data;
+                });
+        });
+    });
+  
+  window.onscroll = function() {
+    var button = document.getElementById("scrollToTopButton");
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var documentHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+
+    if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
+    }
+  };
+
+  var button = document.getElementById("scrollToTopButton");
+  button.addEventListener("click", scrollToTop);
+  button.addEventListener("touchstart", scrollToTop);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
 </script>
 </body>
 </html>
