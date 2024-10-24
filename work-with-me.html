@@ -188,22 +188,30 @@ img {
 } 
 
 .carousel-container {
-    width: 80%;
+    width: 100%; /* Use full width for the carousel container */
     margin: auto;
     padding: 20px 0;
+    overflow: hidden; /* Prevent image overflow */
+}
+
+.slick-slide {
+    display: flex !important; /* Ensure slides are flex containers */
+    justify-content: center; /* Center the images */
+    align-items: center; /* Vertically center the images */
 }
 
 .slick-slide img {
-    width: auto;
-    border-radius: 50%;
-    margin: 0 auto;
-    display: block;
+    max-width: 100%; /* Prevent images from exceeding the container width */
+    max-height: 300px; /* Set a reasonable max height for images */
+    border-radius: 10px; /* Give images rounded corners */
+    object-fit: cover; /* Make sure images maintain their aspect ratio */
 }
 
-.slick-slide p {
-    text-align: center;
-    margin-top: 10px;
-    color: #333;
+/* Media Queries for Smaller Screens */
+@media only screen and (max-width: 600px) {
+    .slick-slide img {
+        max-height: 200px; /* Adjust max height for smaller screens */
+    }
 }
 
 .pricelist-container {
@@ -234,7 +242,7 @@ img {
     background-color: #0f305b;
     transform: scale(1.05);
 }
-  
+
 @media only screen and (max-width: 768px) {
     html, body {
         font-size: 20px;
