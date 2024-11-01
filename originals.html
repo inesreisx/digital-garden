@@ -18,8 +18,6 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  
-  
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
 <script src="../include.js" defer></script>
@@ -135,6 +133,30 @@ main {
   width: 100%;
   box-sizing: border-box;
 }
+    
+    /* Support Button Styles */
+.support-button {
+  background-color: white;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.support-button i {
+  font-size: 1.2em;
+}
+
+.support-button:hover {
+  background-color: #f0f0f0;
+}
   </style>
 </head>
 <body>
@@ -147,6 +169,7 @@ main {
     <ul>
       <li><strong><a href="#work">Work</strong></a></li>
       <li><a href="https://inesreisx.com/">About</a></li>
+      <li><a href="https://inesreisx.com/i/art">All Arts</a></li>
     </ul>
   </nav>
 </div>
@@ -172,9 +195,13 @@ main {
 
 
     <section id="contact" class="contact-section">
-<center><p><em><strong></stron>Coming in 2025</strong></em></p></center>
-            <p>&copy; Inês Reis. All rights reserved.</p>
-
+      <center><p><em><strong>Coming in 2025</strong></em></p></center>
+      <p>&copy; Inês Reis. All rights reserved.</p>
+      <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+      <script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#008AD8', 'A0A36GIJG');kofiwidget2.draw();</script> 
+      <button class="support-button" onclick="window.open('https://paypal.me/inesreisx', '_blank')">
+        <i class="fas fa-heart"></i> Donate with PayPal
+      </button>
     </section>
   </main>
 </body>
