@@ -24,143 +24,168 @@
 
       gtag('config', 'G-GTLQ4VKFB1');
     </script>
-  <style>
+    <style>
+    /* General Styles */
     body {
       margin: 0;
-      padding: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
+      color: #fff;
+      overflow: hidden;
     }
-    
     canvas {
       position: fixed;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
     }
-
-    header {
+    header, footer {
       background-color: rgba(51, 51, 51, 0.2);
-      color: #fff;
       padding: 20px;
       text-align: center;
+      z-index: 2;
     }
-    
     footer {
-      background-color: rgba(51, 51, 51, 0.2);
-      color: #fff;
-      padding: 10px;
-      text-align: center;
       position: fixed;
       bottom: 0;
-      left: 0;
       width: 100%;
-      text-align: left;
       display: flex;
-      align-items: left;
-      justify-content: left;
-      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
-    
     .content {
-      padding-bottom: 50px; /* Add padding to the content to prevent overlap with the footer */
-      max-height: calc(100vh - 70px);
+      padding: 20px;
+      z-index: 2;
     }
-    
-    .image-container {
+
+    /* Search Bar Styles */
+    .search-bar {
+      margin: 20px auto;
+      text-align: center;
+    }
+    .search-bar input {
+      padding: 10px;
+      font-size: 1rem;
+      width: 80%;
+      max-width: 500px;
+    }
+
+    /* Tool Container Styles */
+    .tool-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      margin: 20px;
+      gap: 15px;
+      z-index: 2;
     }
-
-    .image-container img {
-      width: 100%;
-      max-width: 250px;
-      margin: 10px;
-      border-radius: 2rem;
+    .tool-item {
+      width: 150px;
+      cursor: pointer;
       transition: transform 0.3s;
     }
+    .tool-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .tool-item:hover {
+      transform: scale(1.1);
+    }
 
-    .image-container img:hover {
-  transform: scale(1.1);
+    /* Support Button Styles */
+    .support-button {
+      background-color: white;
+      color: #333;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .support-button i {
+      font-size: 1.2em;
+    }
 
-}
-
+    /* Credit Link */
     .by-inesreisx {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background-color: white;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-   
-    transition: background-color 0.3s ease;
-}
-
-.by-inesreisx:hover {
-    background-color: #F7F7F7;
-}
-
-    @media (min-width: 768px) {
-      .image-container {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        margin: 20px;
-      }
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: white;
+      color: black;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+      z-index: 2;
     }
-
-    @media (min-width: 992px) {
-  .image-container img {
-    flex-basis: calc(33.33% - 20px); 
-    margin: 10px;
-    max-width: 250px; /
-  }
-}
-
-      .image-container img {
-        flex-basis: calc(33.33% - 20px);
-        margin: 10px;
-      }
+    .by-inesreisx:hover {
+      background-color: #F7F7F7;
     }
-
-    @media (min-width: 768px) {
-/* Hide scrollbar for WebKit browsers */
-.image-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge, and Firefox */
-.image-container {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-}
   </style>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <canvas id="universe"></canvas>
   
   <header>
-    <h1>Online Text tools</h1>
+    <h1>Online Text Tools</h1>
+    <div class="search-bar">
+      <input type="text" id="toolSearch" placeholder="Search for a tool..." oninput="filterTools()">
+    </div>
   </header>
 
-  <div class="content"> <!-- Add a wrapper div for the content -->
-    <div class="image-container">
-      <a href="https://inesreisx.com/tools/character-count"><img src="/media/Projects/Character-Counter-free-online-tool-inesreisx.png" alt="Character Counter Free Online Tool"></a>
-      <a href="https://inesreisx.com/tools/text-to-html-converter"><img src="/media/Projects/Text-to-html-converter-free-online-tool-inesreisx.png" alt="Text to HTML converter"></a>
-      <a href="https://inesreisx.com/tools/simple-counter"><img src="/media/Projects/simple-counter-tool-inesreisx.png" alt="Simple Counter Free Online Tool"></a>
-      <a href="https://inesreisx.com/tools/superscript-subscript-generator"><img src="/media/Projects/superscript-subscript-generator-inesreisx.jpeg" alt="Superscript and Subscript Generator - Free Online Tool"></a>
+  <div class="content">
+    <div id="toolList" class="tool-container">
+      <!-- Tool Items -->
+      <div class="tool-item" data-tool-name="Character Counter" onclick="loadTool('character-count')">
+        <img src="/media/Projects/Character-Counter-free-online-tool-inesreisx.png" alt="Character Counter">
+      </div>
+      <div class="tool-item" data-tool-name="Text to HTML Converter" onclick="loadTool('text-to-html-converter')">
+        <img src="/media/Projects/Text-to-html-converter-free-online-tool-inesreisx.png" alt="Text to HTML Converter">
+      </div>
+      <div class="tool-item" data-tool-name="Simple Counter" onclick="loadTool('simple-counter')">
+        <img src="/media/Projects/simple-counter-tool-inesreisx.png" alt="Simple Counter">
+      </div>
+      <div class="tool-item" data-tool-name="Superscript and Subscript Generator" onclick="loadTool('superscript-subscript-generator')">
+        <img src="/media/Projects/superscript-subscript-generator-inesreisx.jpeg" alt="Superscript and Subscript Generator">
+      </div>
     </div>
   </div>
 
+  <footer>
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#008AD8', 'A0A36GIJG');kofiwidget2.draw();</script> 
+    <button class="support-button" onclick="window.open('https://paypal.me/inesreisx', '_blank')">
+      <i class="fas fa-heart"></i> Donate with PayPal
+    </button>
+  </footer>
+
+  <!-- Credit Link -->
+  <a tabindex="-1" class="by-inesreisx" target="_blank" href="https://inesreisx.com/">
+    by @inesreisx
+  </a>
+
   <script>
+    function filterTools() {
+      const query = document.getElementById('toolSearch').value.toLowerCase();
+      const tools = document.querySelectorAll('.tool-item');
+
+      tools.forEach(tool => {
+        const toolName = tool.getAttribute('data-tool-name').toLowerCase();
+        tool.style.display = toolName.includes(query) ? 'block' : 'none';
+      });
+    }
+
+    function loadTool(toolPath) {
+      const toolURL = `https://inesreisx.com/tools/${toolPath}`;
+      window.location.href = toolURL;
+    }
+
+    // Background Animation Script
     var canvas = document.getElementById('universe');
     var context = canvas.getContext('2d');
     var stars = [];
@@ -218,7 +243,4 @@
     animate();
   </script>
 </body>
-<a tabindex="-1" class="by-inesreisx" target="_blank" href="https://inesreisx.com/">
-  by @inesreisx
-</a>
 </html>
