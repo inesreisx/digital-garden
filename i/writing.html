@@ -79,7 +79,26 @@ header {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+/* hover */
 
+a:link {
+  color: #20124d;
+}
+
+/* visited link */
+a:visited {
+  color: #20124d;
+}
+
+/* mouse over link */
+a:hover {
+  color: #20124d;
+}
+
+/* selected link */
+a:active {
+  color: #20124d;
+}  
 
 @media (max-width: 600px) {
     .container {
@@ -185,25 +204,7 @@ img {
 }
 } 
 
-.carousel-container {
-    width: 100%; /* Use full width for the carousel container */
-    margin: auto;
-    padding: 20px 0;
-    overflow: hidden; /* Prevent image overflow */
-}
 
-.slick-slide {
-    display: flex !important; /* Ensure slides are flex containers */
-    justify-content: center; /* Center the images */
-    align-items: center; /* Vertically center the images */
-}
-
-.slick-slide img {
-    max-width: 100%; /* Prevent images from exceeding the container width */
-    max-height: 300px; /* Set a reasonable max height for images */
-    border-radius: 10px; /* Give images rounded corners */
-    object-fit: cover; /* Make sure images maintain their aspect ratio */
-}
 
 /* Media Queries for Smaller Screens */
 @media only screen and (max-width: 600px) {
@@ -214,32 +215,7 @@ img {
 
 .pricelist-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
-}
 
-.pricelist-button {
-    background-color: #091b33;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.pricelist-button:hover {
-    background-color: #0f305b;
-    transform: scale(1.05);
-}
-
-.pricelist-button:hover {
-    background-color: #0f305b;
-    transform: scale(1.05);
-}
 
 @media only screen and (max-width: 768px) {
     html, body {
