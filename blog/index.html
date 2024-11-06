@@ -21,174 +21,196 @@
 
       gtag('config', 'G-GTLQ4VKFB1');
     </script>
-    <style>
-        html, body {
+
+    <style>  
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Roboto, sans-serif;
-            background-color: #ffffff;
         }
+
+body {
+    font-family: Roboto, sans-serif;
+    color: #20124d;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #091b33;
+    height: 70px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+        .Content {
+            width: 100%;
+            max-width: 800px; /* Center content on page */
+            padding: 3.5rem 1.5rem;
+            margin: auto;
+        }
+
+        .Content article {
+            width: 100%;
+            text-align: justify;
+            margin: auto;
+            border-radius: 1rem;
+        }
+
         .container {
-            display: flex;
-            flex-direction: row;
-            height: 100vh;
+            width: 100%;
+            max-width: 700px; /* Narrow width for readability */
+            margin: auto;
+            padding: 20px 0;
         }
-        .left-side {
-            width: 30%;
-            background-color: #f0f0f0;
-            padding: 20px;
-            overflow-y: auto;
-            transition: transform 0.3s ease; /* For sliding effect */
+
+        .post .year, .post .title {
+            margin: 1rem 0;
         }
-        .right-side {
-            width: 70%;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .post-title {
-            margin: 15px 0;
-            cursor: pointer;
-        }
-        .post-title a {
+
+        a {
+            color: #20124d;
             text-decoration: none;
-            color: black;
-        }
-        .post-title a:hover {
-            text-decoration: underline;
-        }
-        #content {
-            font-size: 1.1em;
         }
 
-        /* Hamburger Menu Icon */
-        .menu-toggle {
+        a:hover {
+            color: #20124d;
+        }
+
+        h1, h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        #scrollToTopButton {
             display: none;
-            font-size: 30px;
             position: fixed;
-            top: 10px;
-            left: 10px;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+            color: #fff;
+            border: none;
             cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
 
-        /* Hide the sidebar (titles) on mobile */
+        #scrollToTopButton.show {
+            display: block;
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
-            .left-side {
-                position: fixed;
-                left: 0;
-                top: 0;
-                height: 100vh;
-                width: 70%;
-                background-color: #f0f0f0;
-                transform: translateX(-100%); /* Hide sidebar */
-                z-index: 1000;
+            .container {
+                flex-direction: column;
+                align-items: center;
             }
-
-            .right-side {
-                width: 100%;
-                padding: 20px;
+            .Content {
+                padding: 2rem 1rem;
             }
+        }
 
-            .menu-toggle {
-                display: block;
-                position: fixed;
-                z-index: 1100; /* Ensure the toggle button is above the sidebar */
+        @media (max-width: 576px) {
+            body {
+                font-size: 16px;
             }
-
-            /* When sidebar is active */
-            .left-side.active {
-                transform: translateX(0); /* Slide in */
-            }
-
-            .right-side.active {
-                opacity: 0.3; /* Dim background when sidebar is open */
-                pointer-events: none; /* Disable interactions with content */
-            }
-
-            /* Hide scrollbar on mobile when sidebar is open */
-            body.sidebar-open {
-                overflow: hidden;
+            .Content {
+                padding: 1.5rem 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Menu Toggle for Mobile -->
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-
-    <div class="container">
-        <!-- Left Side (Post Titles) -->
-        <div class="left-side" id="sidebar">
-            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/childhood-dream.html')">
-                <a href="#">My Childhood Dream</a>
+    <div data-include="../header.html"></div>
+    <div class="Content">
+        <article>
+            <div class="container">
+                <div class="post">
+                    <div class="year">2022</div>
+                    <div class="body">
+                        <div class="title"><a href="./a-tiktok-guide-for-indie-game-developers-boost-your-game">A TikTok Guide for Indie Game Developers — Boost Your Game</a></div>
+                    </div>
+                    <div class="body">
+                        <div class="title"><a href="./cidade-da-malta-portugal-nostalgia">Nostalgia - Cidade da Malta</a></div>
+                    </div>
+                  <br>
+                    <div class="year">2021</div>
+                    <div class="body">
+                        <div class="title"><a href="./finland-why-you-gotta-be-so-cool">Finland, why you gotta be so cool?</a></div>
+                    </div>
+                    <div class="body">
+                        <div class="title"><a href="./do-you-read-long-articles-a-quick-look-into-3-gaming-fansites-worlds">Do you read long articles? — A quick look into 3 gaming fansites worlds</a></div>
+                    </div>
+                  <br>
+                    <div class="year">2020</div>
+                    <div class="body">
+                        <div class="title"><a href="./i-was-thinking-about-ethical-gaming">I was thinking about Ethical Gaming</a></div>
+                    </div>
+                    <div class="body">
+                        <div class="title"><a href="./code-first-girls-why-you-should-join">Code First: Girls - why you should join</a></div>
+                    </div>
+                </div>
             </div>
-            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/a-tiktok-guide-for-indie-game-developers-boost-your-game')">
-                <a href="#">A TikTok Guide for Indie Game Developers</a>
-            </div>
-            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/cidade-da-malta-portugal-nostalgia')">
-                <a href="#">Nostalgia - Cidade da Malta</a>
-            </div>
-            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/finland-why-you-gotta-be-so-cool')">
-                <a href="#">Finland, why you gotta be so cool?</a>
-            </div>
-            <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/do-you-read-long-articles-a-quick-look-into-3-gaming-fansites-worlds')">
-                <a href="#">Do you read long articles?</a>
-            </div>
-                      <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/i-was-thinking-about-ethical-gaming')">
-                <a href="#">I was thinking about Ethical Gaming</a>
-            </div>
-                      <div class="post-title" onclick="loadPost('https://inesreisx.com/blog/code-first-girls-why-you-should-join')">
-                <a href="#">Code First: Girls - why you should join</a>
-            </div>
-        </div>
-
-        <!-- Right Side (Post Content) -->
-        <div class="right-side" id="content-area">
-            <div id="content">
-                <h3>Welcome to Inês' Blog!</h3>
-                <p>Click on any post title on the left to read the full content here.</p>
-            </div>
-        </div>
+        </article>
+        <button onclick="scrollToTop()" id="scrollToTopButton">
+            <span style="font-size: 20px;">&#8593;</span>
+        </button>
     </div>
 
     <script>
-        // Function to load the post content from an external HTML file
-        function loadPost(page) {
-            fetch(page)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    document.getElementById('content').innerHTML = html;
-                    closeSidebar(); // Close sidebar after post is loaded (on mobile)
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                    document.getElementById('content').innerHTML = "<p>Sorry, the content could not be loaded.</p>";
-                });
-        }
-
-        // Hamburger Menu Toggling for Mobile
-        const menuToggle = document.getElementById('menu-toggle');
-        const sidebar = document.getElementById('sidebar');
-        const contentArea = document.getElementById('content-area');
-        const body = document.body;
-
-        menuToggle.addEventListener('click', function() {
-            // Toggle the sidebar
-            sidebar.classList.toggle('active');
-            contentArea.classList.toggle('active');
-            body.classList.toggle('sidebar-open');
+        $(document).ready(function() {
+            $('.slick-carousel').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
         });
 
-        // Function to close sidebar after selecting a blog post
-        function closeSidebar() {
-            // Close the sidebar after loading a post
-            sidebar.classList.remove('active');
-            contentArea.classList.remove('active');
-            body.classList.remove('sidebar-open');
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('[data-include]').forEach(el => {
+                fetch(el.getAttribute('data-include'))
+                    .then(response => response.text())
+                    .then(data => { el.innerHTML = data; });
+            });
+        });
+
+        window.onscroll = function() {
+            const button = document.getElementById("scrollToTopButton");
+            const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            const documentHeight = Math.max(
+                document.body.scrollHeight, document.documentElement.scrollHeight,
+                document.body.offsetHeight, document.documentElement.offsetHeight
+            );
+
+            if (scrollPos > 0.5 * (documentHeight - windowHeight)) {
+                button.classList.add("show");
+            } else {
+                button.classList.remove("show");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
 </body>
