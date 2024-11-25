@@ -417,9 +417,13 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const truncateLength = 150; // Limit for truncated text
+    const desktopTruncateLength = 140; // Truncate length for desktop
+    const mobileTruncateLength = 93; // Truncate length for mobile
 
-    // Truncate content and setup Read more...
+    // Determine current truncation length based on screen width
+    const truncateLength = window.innerWidth <= 768 ? mobileTruncateLength : desktopTruncateLength;
+
+    //  Truncate content and setup Read more...
     document.querySelectorAll('.post-content').forEach(content => {
         const fullText = content.getAttribute('data-content');
         if (fullText.length > truncateLength) {
