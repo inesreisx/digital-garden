@@ -9,6 +9,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <meta name="google-adsense-account" content="ca-pub-7773778866708742">
 <meta name="p:domain_verify" content="157cc04a149e352ddf504ac1489079a8"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
 <script src="include.js" defer></script>
@@ -177,6 +178,86 @@
     }
 }
 
+/* Style for the share icon */
+.share-icon {
+    position: absolute;
+    bottom: 10px; /* Adjust position from the bottom */
+    right: 10px; /* Adjust position from the right */
+    text-decoration: none; /* Remove underline */
+    color: grey; /* Grey color for the icon */
+    font-size: 1.2em; /* Adjust size as needed */
+    transition: color 0.3s; /* Add a hover effect */
+}
+
+.share-icon:hover {
+    color: #72f1ff; /* Change color on hover */
+}
+
+/* Ensure the post has relative positioning for proper placement of the icon */
+.post {
+    position: relative; /* Required for .share-icon positioning */
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-left: 3px solid #72f1ff;
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+      
+/* Share menu for mobile */
+.mobile-share-menu {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1e1e1e;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    text-align: center;
+}
+
+.mobile-share-menu h3 {
+    color: #72f1ff;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.share-option {
+    display: inline-block;
+    margin: 10px 15px;
+    color: grey;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.share-option:hover {
+    color: #72f1ff;
+}
+
+.close-menu {
+    background: #72f1ff;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Only allow clipboard functionality on desktop */
+@media (min-width: 768px) {
+    .mobile-share-menu {
+        display: none !important;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -187,10 +268,23 @@
     <div class="author">by <a href="https://inesreisx.com" target="_blank">Inês Reis</a></div>
 
     <!-- Blog Posts -->
-    <div class="post" id="post1">
-        <h2>Post 1: A Small Intro</h2>
-        <p>I dreamed of creating a web page where I could write and share some of my unfiltered thoughts. Here it is! There’s no schedule or obligation, just a willingness to write whenever I’m able to put into words the blend of ideas and experiences.</p>
-    </div>
+<div class="post" id="post1">
+    <h2>Post 1: A Small Intro</h2>
+    <p>I dreamed of creating a web page where I could write and share some of my unfiltered thoughts. Here it is! There’s no schedule or obligation, just a willingness to write whenever I’m able to put into words the blend of ideas and experiences.</p>
+    <i class="fas fa-share-alt share-icon" data-id="post1" title="Share this post"></i>
+</div>
+
+<!-- Mobile Share Menu -->
+<div class="mobile-share-menu" id="mobile-share-menu">
+    <h3>Share This Post</h3>
+    <a href="#" class="share-option" data-platform="whatsapp">WhatsApp</a>
+    <a href="#" class="share-option" data-platform="facebook">Facebook</a>
+    <a href="#" class="share-option" data-platform="sms">Send via SMS</a>
+    <a href="#" class="share-option" data-platform="clipboard">Copy Link</a>
+    <button class="close-menu">Close</button>
+</div>
+
+
 
     <!-- Scroll to Top Button -->
     <div class="scroll-to-top" id="scrollToTop">↑</div>
@@ -241,6 +335,74 @@
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+      
+
+      document.addEventListener('DOMContentLoaded', () => {
+    // Function to copy text to clipboard
+    async function copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+            alert('Link copied to clipboard!');
+        } catch (error) {
+            console.error('Clipboard copy failed:', error);
+            alert('Unable to copy link. Please try again.');
+        }
+    }
+
+    // Handle Share Icon Clicks
+    document.querySelectorAll('.share-icon').forEach(icon => {
+        icon.addEventListener('click', (event) => {
+            const postId = event.target.getAttribute('data-id');
+            const postUrl = `${window.location.origin}/#${postId}`;
+
+            if (window.innerWidth >= 768) {
+                // Desktop: Copy link to clipboard
+                copyToClipboard(postUrl);
+            } else {
+                // Mobile: Show share menu
+                const shareMenu = document.getElementById('mobile-share-menu');
+                shareMenu.style.display = 'block';
+
+                // Update sharing links dynamically
+                document.querySelectorAll('.share-option').forEach(option => {
+                    const platform = option.getAttribute('data-platform');
+                    let shareLink;
+
+                    switch (platform) {
+                        case 'whatsapp':
+                            shareLink = `https://wa.me/?text=${encodeURIComponent(postUrl)}`;
+                            break;
+                        case 'facebook':
+                            shareLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`;
+                            break;
+                        case 'sms':
+                            shareLink = `sms:?body=${encodeURIComponent(postUrl)}`;
+                            break;
+                        case 'clipboard':
+                            option.onclick = (e) => {
+                                e.preventDefault(); // Prevent the link's default behavior
+                                copyToClipboard(postUrl);
+                                document.getElementById('mobile-share-menu').style.display = 'none';
+                            };
+                            return; // Skip setting href for clipboard
+                    }
+
+                    // Set the href for other platforms
+                    if (shareLink) {
+                        option.setAttribute('href', shareLink);
+                        option.setAttribute('target', '_blank');
+                    }
+                });
+            }
+        });
+    });
+
+    // Close the mobile share menu
+    document.querySelector('.close-menu').addEventListener('click', () => {
+        document.getElementById('mobile-share-menu').style.display = 'none';
+    });
+});
+
     </script>
 </body>
 </html>
