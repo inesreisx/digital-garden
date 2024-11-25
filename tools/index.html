@@ -24,8 +24,7 @@
 
       gtag('config', 'G-GTLQ4VKFB1');
     </script>
-    <style>
-    /* General Styles */
+  <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -41,91 +40,91 @@
       height: 100%;
       z-index: -1;
     }
-    header, footer {
-      background-color: rgba(51, 51, 51, 0.2);
-      padding: 20px;
-      text-align: center;
-      z-index: 2;
-    }
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-    .content {
-      padding: 20px;
-      z-index: 2;
-    }
-
-    /* Search Bar Styles */
-    .search-bar {
-      margin: 20px auto;
-      text-align: center;
-    }
-    .search-bar input {
-      padding: 10px;
-      font-size: 1rem;
-      width: 80%;
-      max-width: 500px;
-    }
-
-    /* Tool Container Styles */
-    .tool-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      z-index: 2;
-    }
-    .tool-item {
-      width: 150px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    .tool-item img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .tool-item:hover {
-      transform: scale(1.1);
-    }
-
-    /* Support Button Styles */
-    .support-button {
-      background-color: white;
-      color: #333;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    header {
       display: flex;
       align-items: center;
-      gap: 5px;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: rgba(51, 51, 51, 0.8);
+      z-index: 2;
     }
-    .support-button i {
-      font-size: 1.2em;
+    .tool-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-
-    /* Credit Link */
+    .tool-button {
+      padding: 10px 15px;
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s;
+      user-select: none;
+    }
+    .tool-button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .tool-button:hover {
+      background-color: #444;
+    }
+    .support-button {
+      padding: 10px 15px;
+      background-color: #008AD8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .support-button:hover {
+      background-color: #005f9e;
+    }
+    .search-bar {
+      text-align: right;
+    }
+    .search-bar input {
+      padding: 8px;
+      font-size: 0.9rem;
+      width: 250px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    #tool-display {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow-y: auto;
+      height: calc(100vh - 150px);
+      width: 90%;
+      margin: 20px auto;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
     .by-inesreisx {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
       background-color: white;
       color: black;
       padding: 5px 10px;
       border-radius: 5px;
       text-decoration: none;
-      font-family: Arial, sans-serif;
       font-size: 14px;
       transition: background-color 0.3s ease;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
       z-index: 2;
     }
     .by-inesreisx:hover {
-      background-color: #F7F7F7;
+      background-color: #f7f7f7;
     }
   </style>
 </head>
@@ -133,112 +132,82 @@
   <canvas id="universe"></canvas>
   
   <header>
-    <h1>Online Text Tools</h1>
+    <div class="tool-buttons">
+      <!-- Tool Buttons -->
+      <div class="tool-button" data-tool-name="Character Counter" onclick="loadTool('character-count')">Character Counter</div>
+      <div class="tool-button" data-tool-name="Text to HTML Converter" onclick="loadTool('text-to-html-converter')">Text to HTML Converter</div>
+      <div class="tool-button" data-tool-name="Simple Counter" onclick="loadTool('simple-counter')">Simple Counter</div>
+      <div class="tool-button" data-tool-name="Superscript and Subscript Generator" onclick="loadTool('superscript-subscript-generator')">Superscript & Subscript Generator</div>
+      <!-- Support Buttons -->
+      <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#008AD8', 'A0A36GIJG');kofiwidget2.draw();</script> 
+    <button class="support-button" onclick="window.open('https://paypal.me/inesreisx', '_blank')">
+      <i class="fas fa-heart"></i> Donate with PayPal
+    </button>
+    </div>
     <div class="search-bar">
       <input type="text" id="toolSearch" placeholder="Search for a tool..." oninput="filterTools()">
     </div>
   </header>
 
-  <div class="content">
-    <div id="toolList" class="tool-container">
-      <!-- Tool Items -->
-      <div class="tool-item" data-tool-name="Character Counter" onclick="loadTool('character-count')">
-        <img src="/media/Projects/Character-Counter-free-online-tool-inesreisx.png" alt="Character Counter">
-      </div>
-      <div class="tool-item" data-tool-name="Text to HTML Converter" onclick="loadTool('text-to-html-converter')">
-        <img src="/media/Projects/Text-to-html-converter-free-online-tool-inesreisx.png" alt="Text to HTML Converter">
-      </div>
-      <div class="tool-item" data-tool-name="Simple Counter" onclick="loadTool('simple-counter')">
-        <img src="/media/Projects/simple-counter-tool-inesreisx.png" alt="Simple Counter">
-      </div>
-      <div class="tool-item" data-tool-name="Superscript and Subscript Generator" onclick="loadTool('superscript-subscript-generator')">
-        <img src="/media/Projects/superscript-subscript-generator-inesreisx.jpeg" alt="Superscript and Subscript Generator">
-      </div>
-    </div>
+  <div id="tool-display">
+    <p>Select a tool to see its content here.</p>
   </div>
 
   <footer>
-<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Buy me a coffee', '#008AD8', 'A0A36GIJG');kofiwidget2.draw();</script> 
-    <button class="support-button" onclick="window.open('https://paypal.me/inesreisx', '_blank')">
-      <i class="fas fa-heart"></i> Donate with PayPal
-    </button>
+    <a class="by-inesreisx" href="https://inesreisx.com/" target="_blank">by @inesreisx</a>
   </footer>
-
-  <!-- Credit Link -->
-  <a tabindex="-1" class="by-inesreisx" target="_blank" href="https://inesreisx.com/">
-    by @inesreisx
-  </a>
 
   <script>
     function filterTools() {
       const query = document.getElementById('toolSearch').value.toLowerCase();
-      const tools = document.querySelectorAll('.tool-item');
-
+      const tools = document.querySelectorAll('.tool-button');
       tools.forEach(tool => {
-        const toolName = tool.getAttribute('data-tool-name').toLowerCase();
-        tool.style.display = toolName.includes(query) ? 'block' : 'none';
+        const toolName = tool.getAttribute('data-tool-name')?.toLowerCase();
+        tool.style.display = toolName && toolName.includes(query) ? 'inline-block' : 'none';
       });
     }
-
     function loadTool(toolPath) {
-      const toolURL = `https://inesreisx.com/tools/${toolPath}`;
-      window.location.href = toolURL;
+      const toolDisplay = document.getElementById('tool-display');
+      toolDisplay.innerHTML = `<iframe src="https://inesreisx.com/tools/${toolPath}.html"></iframe>`;
     }
-
-    // Background Animation Script
-    var canvas = document.getElementById('universe');
-    var context = canvas.getContext('2d');
-    var stars = [];
-    var numStars = 200;
-
+    const canvas = document.getElementById('universe');
+    const context = canvas.getContext('2d');
+    const stars = [];
+    const numStars = 200;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
     function initializeStars() {
-      for (var i = 0; i < numStars; i++) {
-        var x = Math.random() * canvas.width;
-        var y = Math.random() * canvas.height;
-        var radius = Math.random() * 1.5;
-        var blur = Math.random() * 5;
+      for (let i = 0; i < numStars; i++) {
         stars.push({
-          x: x,
-          y: y,
-          radius: radius,
-          blur: blur
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5,
+          blur: Math.random() * 5,
         });
       }
     }
-
     function drawStars() {
       context.clearRect(0, 0, canvas.width, canvas.height);
-
       context.fillStyle = '#fff';
-      for (var i = 0; i < numStars; i++) {
-        var star = stars[i];
+      stars.forEach(star => {
         context.beginPath();
         context.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
         context.shadowColor = '#fff';
         context.shadowBlur = star.blur;
         context.fill();
-      }
+      });
     }
-
     function updateStars() {
-      for (var i = 0; i < numStars; i++) {
-        var star = stars[i];
+      stars.forEach(star => {
         star.x -= 0.2;
-        if (star.x < 0) {
-          star.x = canvas.width;
-        }
-      }
+        if (star.x < 0) star.x = canvas.width;
+      });
     }
-
     function animate() {
       drawStars();
       updateStars();
       requestAnimationFrame(animate);
     }
-
     initializeStars();
     animate();
   </script>
