@@ -337,7 +337,7 @@
         });
       
 
-      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
     // Function to copy text to clipboard
     async function copyToClipboard(text) {
         try {
@@ -353,7 +353,7 @@
     document.querySelectorAll('.share-icon').forEach(icon => {
         icon.addEventListener('click', (event) => {
             const postId = event.target.getAttribute('data-id');
-            const postUrl = `${window.location.origin}/#${postId}`;
+            const postUrl = `${window.location.origin}${window.location.pathname}#${postId}`; // Correct full URL
 
             if (window.innerWidth >= 768) {
                 // Desktop: Copy link to clipboard
