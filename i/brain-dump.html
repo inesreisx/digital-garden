@@ -250,6 +250,17 @@
     margin-top: 10px;
 }
 
+.read-more {
+    color: #72f1ff; /* Match the share icon color */
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
 /* Only allow clipboard functionality on desktop */
 @media (min-width: 768px) {
     .mobile-share-menu {
@@ -268,11 +279,12 @@
     <div class="author">by <a href="https://inesreisx.com" target="_blank">Inês Reis</a></div>
 
     <!-- Blog Posts -->
-<div class="post" id="post1">
-    <h2>Post 1: A Small Intro</h2>
-    <p>I dreamed of creating a web page where I could write and share some of my unfiltered thoughts. Here it is! There’s no schedule or obligation, just a willingness to write whenever I’m able to put into words the blend of ideas and experiences.</p>
-    <i class="fas fa-share-alt share-icon" data-id="post1" title="Share this post"></i>
-</div>
+    <div class="post" id="post1">
+        <h2>Post 1: A Small Intro</h2>
+        <p class="post-content" data-content="I dreamed of creating a web page where I could write and share some of my unfiltered thoughts. Here it is! There’s no schedule or obligation, just a willingness to write whenever I’m able to put into words the blend of ideas and experiences.">I dreamed of creating a web page where I could write and share some of my unfiltered thoughts. Here it is! There’s no schedule or obligation, just a willingness to write whenever I’m able to put into words the blend of ideas and experiences.</p>
+        <a href="#" class="read-more">Read more...</a>
+        <i class="fas fa-share-alt share-icon" data-id="post1" title="Share this post"></i>
+    </div>
 
 <!-- Mobile Share Menu -->
 <div class="mobile-share-menu" id="mobile-share-menu">
@@ -402,6 +414,39 @@
         document.getElementById('mobile-share-menu').style.display = 'none';
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const truncateLength = 150; // Limit for truncated text
+
+    // Truncate content and setup Read more...
+    document.querySelectorAll('.post-content').forEach(content => {
+        const fullText = content.getAttribute('data-content');
+        if (fullText.length > truncateLength) {
+            const truncatedText = fullText.substring(0, truncateLength) + '...';
+            content.textContent = truncatedText;
+        }
+    });
+
+    // Handle Read more... clicks
+    document.querySelectorAll('.read-more').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const post = link.closest('.post');
+            const content = post.querySelector('.post-content');
+            const fullText = content.getAttribute('data-content');
+
+            if (link.textContent === 'Read more...') {
+                content.textContent = fullText; // Expand to full content
+                link.textContent = 'Read less'; // Change link text
+            } else {
+                content.textContent = fullText.substring(0, truncateLength) + '...'; // Re-truncate
+                link.textContent = 'Read more...'; // Change link text back
+            }
+        });
+    });
+});
+
 
     </script>
 </body>
