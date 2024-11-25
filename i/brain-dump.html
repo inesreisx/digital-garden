@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brain Dump by Inês Reis</title>
+<meta name="description" content="Unfiltered thoughts from Inês Reis, shaped by and subject to change through her experiences." />
+<meta property="og:description" content="Unfiltered thoughts from Inês Reis, shaped by and subject to change through her experiences." />
+<meta property="og:title" content="Brain Dump by Inês Reis"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<meta name="google-adsense-account" content="ca-pub-7773778866708742">
+<meta name="p:domain_verify" content="157cc04a149e352ddf504ac1489079a8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
+<script src="include.js" defer></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GTLQ4VKFB1');
+	
+</script>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Courier New", Courier, monospace; /* Typewriter font */
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Neon sign at the top */
+/* Neon text */
+.neon-text {
+    position: relative;
+    font-size: 5em;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 
+        0 0 5px #fff, 
+        0 0 10px #fff, 
+        0 0 20px #ff0080, /* Default Pink */
+        0 0 30px #ff0080, 
+        0 0 40px #ff0080, 
+        0 0 50px #ff0080, 
+        0 0 75px #ff0080;
+    animation: neon-glow 9s infinite; /* Updated animation */
+    text-align: center;
+    margin: 50px 0 10px 0;
+}
+
+
+/* Neon glow animation */
+@keyframes neon-glow {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px #fff, 
+            0 0 10px #fff, 
+            0 0 20px #ff0080, /* Pink */
+            0 0 30px #ff0080, 
+            0 0 40px #ff0080, 
+            0 0 50px #ff0080, 
+            0 0 75px #ff0080;
+    }
+    33% {
+        text-shadow: 
+            0 0 5px #fff, 
+            0 0 10px #fff, 
+            0 0 20px #00ffff, /* Blue */
+            0 0 30px #00ffff, 
+            0 0 40px #00ffff, 
+            0 0 50px #00ffff, 
+            0 0 75px #00ffff;
+    }
+    66% {
+        text-shadow: 
+            0 0 5px #fff, 
+            0 0 10px #fff, 
+            0 0 20px #00ff00, /* Light Green */
+            0 0 30px #00ff00, 
+            0 0 40px #00ff00, 
+            0 0 50px #00ff00, 
+            0 0 75px #00ff00;
+    }
+}
+
+
+/* Author link */
+.author {
+    text-align: right; /* Align the text to the right */
+    max-width: 600px; /* Restrict width to align under the neon sign */
+    margin: 0 auto; /* Center align within the neon sign container */
+    margin-top: -10px; /* Adjust spacing between neon sign and author */
+    margin-bottom: 30px;
+    font-size: 1em;
+    color: #72f1ff;
+}
+
+.author a {
+    color: #72f1ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.author a:hover {
+    text-decoration: underline;
+}
+
+        /* Blog post styling */
+        .post {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-left: 3px solid #72f1ff;
+            background: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .post h2 {
+            margin-top: 0;
+            color: #72f1ff;
+        }
+        .post p {
+            font-size: 1.1em;
+        }
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #00ffff); 
+    border-radius: 50%;
+    box-shadow: 
+        0 0 5px #00ffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+
+}
+
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- Neon Sign -->
+    <div class="neon-text">Brain Dump</div>
+
+    <!-- Author Tag -->
+    <div class="author">by <a href="https://inesreisx.com" target="_blank">Inês Reis</a></div>
+
+    <!-- Blog Posts -->
+    <div class="post" id="post1">
+        <h2>Post 1: A Small Intro</h2>
+        <p>This section will be filled in very soon</p>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">↑</div>
+
+    <script>
+        // Function to handle updating the URL based on the most visible section
+        const posts = document.querySelectorAll('.post');
+        const observerOptions = {
+            root: null, // Use viewport
+            rootMargin: '0px',
+            threshold: 0.6, // 60% of the post must be visible to trigger
+        };
+
+        let mostVisiblePostId = null;
+
+        const observerCallback = (entries) => {
+            let maxIntersectionRatio = 0;
+            let currentlyVisiblePostId = null;
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.intersectionRatio > maxIntersectionRatio) {
+                    maxIntersectionRatio = entry.intersectionRatio;
+                    currentlyVisiblePostId = entry.target.id;
+                }
+            });
+
+            // Update the URL only if the visible post has changed
+            if (currentlyVisiblePostId && currentlyVisiblePostId !== mostVisiblePostId) {
+                mostVisiblePostId = currentlyVisiblePostId;
+                history.replaceState(null, null, `#${mostVisiblePostId}`);
+            }
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        posts.forEach(post => observer.observe(post));
+
+        // Scroll to Top Button Logic
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
