@@ -17,6 +17,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="../include.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLQ4VKFB1"></script>
@@ -195,6 +197,22 @@ img {
     line-height: 2.3rem;
 }
 
+  .graph-container {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+  
   @media only screen and (max-width: 768px) {
     html, body {
         font-size: 20px;
@@ -983,7 +1001,11 @@ p[cite] {
             </div>
         </div>
   
-  
+  <div class="graph-container">
+    <h2>Salary Transparency</h2>
+    <canvas id="salaryChart" width="400" height="200"></canvas>
+</div>
+            
        <button onclick="scrollToTop()" id="scrollToTopButton">
     <span style="font-size: 20px;">&#8593;</span>
   </button> 
@@ -1067,6 +1089,53 @@ p[cite] {
     });
   });
 });
+  
+  const ctx = document.getElementById('salaryChart').getContext('2d');
+
+    const data = {
+        labels: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+        datasets: [{
+            label: 'Gross Earnings per Hour (€)',
+            data: [8, 7, 9, 14, 14, 14, 21, 22, null, null], // Update the data as needed
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 2,
+            fill: true,
+        }]
+    };
+
+    const options = {
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Earnings (€)',
+                },
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: 'Year',
+                },
+            },
+        },
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top',
+            },
+        },
+    };
+
+    const salaryChart = new Chart(ctx, {
+        type: 'line', // Change to 'bar' if you prefer a bar chart
+        data: data,
+        options: options,
+    });
+  
+  
 </script>
 </body>
 </html>
