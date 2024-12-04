@@ -24,109 +24,176 @@
 
       gtag('config', 'G-GTLQ4VKFB1');
     </script>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      overflow: hidden;
-    }
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: rgba(51, 51, 51, 0.8);
-      z-index: 2;
-    }
-    .tool-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .tool-button {
-      padding: 10px 15px;
-      background-color: #333;
-      color: #fff;
-      border: 1px solid #444;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.1s, box-shadow 0.1s;
-      user-select: none;
-    }
-    .tool-button:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    .tool-button:hover {
-      background-color: #444;
-    }
-    .support-button {
-      padding: 10px 15px;
-      background-color: #008AD8;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .support-button:hover {
-      background-color: #005f9e;
-    }
-    .search-bar {
-      text-align: right;
-    }
-    .search-bar input {
-      padding: 8px;
-      font-size: 0.9rem;
-      width: 250px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    #tool-display {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      overflow-y: auto;
-      height: calc(100vh - 150px);
-      width: 90%;
-      margin: 20px auto;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .by-inesreisx {
-      background-color: white;
-      color: black;
-      padding: 5px 10px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      z-index: 2;
-    }
-    .by-inesreisx:hover {
-      background-color: #f7f7f7;
-    }
-  </style>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow: auto; /* Allow scrolling */
+}
+
+html {
+  overflow: auto; /* Ensure the root element supports scrolling */
+}
+
+#tool-display {
+  margin-top: 20px; /* Space between search bar and content */
+  margin-bottom: 20px;
+  overflow-y: auto; /* Enable scrolling for tool content */
+  height: auto; /* Let it grow naturally with content */
+  min-height: calc(100vh - 160px); /* Subtract header and margins */
+}
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(51, 51, 51, 0.8);
+    z-index: 2;
+  }
+  .tool-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .tool-button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    user-select: none;
+  }
+  .tool-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .tool-button:hover {
+    background-color: #444;
+  }
+  .support-button {
+    background-color: #008AD8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .support-button:hover {
+    background-color: #005f9e;
+  }
+  
+  
+  .search-bar {
+    text-align: right;
+  }
+  .search-bar input {
+    padding: 8px;
+    font-size: 0.9rem;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  #tool-display {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow-y: auto;
+    height: calc(100vh - 150px);
+    width: 90%;
+    margin: 20px auto;
+
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+            background-color: #444;
+  }
+  .by-inesreisx {
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+  .by-inesreisx:hover {
+    background-color: #f7f7f7;
+  }
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .tool-buttons {
+    position: static;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    max-height: 30vh; /* Allow scrolling for tool buttons */
+  }
+
+  .search-bar {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .search-bar input {
+    width: 90%;
+  }
+  
+
+  #tool-display {
+    margin-top: 20px; /* Space between search bar and content */
+    margin-bottom: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: calc(100vh - 160px); /* Subtract header height and margins */
+  }
+
+  .by-inesreisx {
+    display: block;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .by-inesreisx.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+  
+</style>
+
+
+
 </head>
 <body>
   <canvas id="universe"></canvas>
@@ -134,7 +201,7 @@
   <header>
     <div class="tool-buttons">
       <!-- Tool Buttons -->
-      <div class="tool-button" data-tool-name="Character Counter" onclick="loadTool('character-count')">Character Counter</div>
+      <div class="tool-button" data-tool-name="Character Counter" onclick="loadTool('character-count')" style="background-color: #444">Character Counter</div>
       <div class="tool-button" data-tool-name="Text to HTML Converter" onclick="loadTool('text-to-html-converter')">Text to HTML Converter</div>
       <div class="tool-button" data-tool-name="Simple Counter" onclick="loadTool('simple-counter')">Simple Counter</div>
       <div class="tool-button" data-tool-name="Superscript and Subscript Generator" onclick="loadTool('superscript-subscript-generator')">Superscript & Subscript Generator</div>
@@ -210,6 +277,23 @@
     }
     initializeStars();
     animate();
+    
+      const byInesreisx = document.querySelector('.by-inesreisx');
+  let lastScrollY = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      // Scrolling down
+      byInesreisx.classList.add('hidden');
+    } else {
+      // Scrolling up
+      byInesreisx.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  });
   </script>
 </body>
 </html>
